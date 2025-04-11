@@ -1,0 +1,86 @@
+<!-- Jai bhavani jai shivaji -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link src="https://cdn.tailwindcss.com"></link>
+  </head>
+  <body class="bg-[#1e1e2a] flex items-center gap-10 h-[97vh] justify-center">
+      
+    <div class="aspect-square shadow-lg relative countdowncard h-32 text-[#d2516f] text-5xl font-semibold text-center flex items-center justify-center">
+        <p class="absolute text-[#8b8aa8] bottom-[-40px] text-sm font-semibold tracking-[3px]">DAYS</p>
+        <p class="" id="days"></p>
+    </div>
+    
+    <div class="aspect-square shadow-lg relative countdowncard h-32 text-[#d2516f] text-5xl font-semibold text-center flex items-center justify-center">
+        <p class="absolute text-[#8b8aa8] bottom-[-40px] text-sm font-semibold tracking-[3px]">HOURS</p>
+        <p class="" id="hours"></p>
+    </div>
+    
+    <div class="aspect-square shadow-lg relative countdowncard h-32 text-[#d2516f] text-5xl font-semibold text-center flex items-center justify-center">
+        <p class="absolute text-[#8b8aa8] bottom-[-40px] text-sm font-semibold tracking-[3px]">MINUTES</p>
+        <p class="" id="mins"></p>
+    </div>
+    
+    <div class="aspect-square shadow-lg relative countdowncard h-32 text-[#d2516f] text-5xl font-semibold text-center flex items-center justify-center">
+        <p class="absolute text-[#8b8aa8] bottom-[-40px] text-sm font-semibold tracking-[3px]">SECONDS</p>
+        <p class="" id="sex"></p>
+    </div>
+  </body>
+</html>
+<script>
+    const MainDay = new Date('2025-07-01T00:00:00');
+    const Today = Date.now();
+    diff = Math.round((MainDay-Today)/1000);
+
+    if (diff >= 0){
+        sex = diff % 60;
+        diff = Math.round(diff/60)
+
+        mins = diff % 60;
+        diff = Math.round(diff/60)
+
+        hours = diff % (24);
+        diff = Math.round(diff/24)
+
+        days = diff 
+    }
+    else{
+        sex = 0
+        mins = 0
+        hours = 0
+        days = 0
+    }
+
+    document.getElementById("days").innerText = document.getElementById("days").innerText +  days
+    document.getElementById("hours").innerText = document.getElementById("hours").innerText + hours
+    document.getElementById("mins").innerText = document.getElementById("mins").innerText + mins
+    document.getElementById("sex").innerText =document.getElementById("sex").innerText +  sex
+</script>
+<style>
+.countdowncard{
+    backdrop-filter: blur(17px) saturate(191%);
+    -webkit-backdrop-filter: blur(17px) saturate(191%);
+    /* background-color: rgba(44, 44, 68, 0.59); */
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    /* box-shadow: 0 0 100px 10px rgba(0, 0, 0, 0.25),
+        0 0px 10px 20px, rgba(255, 255, 255, 1) inset; */
+    background: linear-gradient(225deg, #222237, #292941);
+box-shadow:  -12px 12px 43px #222236,
+            4px -4px 43px -20px #2a2a44;
+
+    }
+
+
+body{
+    background-color: #111927;
+    background-image: 
+        /* radial-gradient(at 47% 53%, #203111 0, transparent 19%),  */
+        radial-gradient(at 82% 12%, hsl(218.00, 39%, 11%) 0, transparent 55%);
+}
+
+</style>
