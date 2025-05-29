@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link src="https://cdn.tailwindcss.com"></link>
+
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Rozha+One&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </head>
+  <body class="w-[92vw] left-0 overflow-x-hidden">
+   
+    <ul id="nav" class="backdrop-filter backdrop-blur-lg bg-opacity-10 bg-black-950 mt-0 list-none p-4 text-[#169948] absolute border-b-[0.5px] border-gray-800 flex items-center justify-between w-full sticky top-0 z-50">
+        <!-- Left side of the navbar -->
+        <li class="float-left">
+        <a href="#" class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out">RNPSMUN</a>
+        </li>
+    
+        <!-- Centered nav items -->
+        <div class="topnav-centered absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-sm space-x-3">
+        <li class="inline-block">
+            <a href="#" class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out">Secretariat</a>
+        </li>
+        <li class="inline-block">
+            <a href="#" class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out">Committees</a>
+        </li>
+        <li class="inline-block">
+            <a href="#" class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out">Delegate Materials</a>
+        </li>
+        <li class="inline-block">
+            <a href="#" class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out">Guide</a>
+        </li>
+        <li class="inline-block">
+            <a href="#" class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out">About</a>
+        </li>
+        <li class="inline-block">
+            <a href="#" class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out">Contact</a>
+        </li>
+        </div>
+    
+        <!-- Right side of the navbar -->
+        <div class="topnav-right pr-9">
+        <li class="float-right inline-block">
+            <a href="#" class="inline-block text-aliceblue text-center px-3 py-3 no-underline hover:font-bold hover:text-gray-300 font-bold transition-all duration-100 ease-in-out">Register</a>
+        </li>
+        </div>
+    </ul>
+
+<div class="strip w-[200vw] h-72 bg-[#322996bd] absolute top-25 translate-x-[-1400px] -rotate-45 z-[-1]"></div>
+<!-- <div class="strip w-[200vw] h-72 bg-[#322996bd] absolute top-50 translate-x-[-700px] -rotate-45 z-[-1]"></div> -->
+<div class="strip w-[200vw] h-72 bg-[#322996bd] absolute top-50 translate-x-[-550px] -rotate-45 z-[-1]"></div>
+<div class="strip w-[360vw] h-72 bg-[#322996bd] absolute top-50 -translate-x-[700px] -rotate-45 z-[-1]"></div>
+
+<section class="w-[92vw] h-[80vh] bg-black-900">
+    <div class="relative translate-y-24 flex items-center gap-20 justify-center">
+    <div id="day" class="glass aspect-square shadow-lg relative countdowncard h-32 text-[#d2516f] text-5xl font-semibold text-center flex items-center justify-center translate-y-[-400px]">
+        <p class="absolute text-[#169948] bottom-[-40px] text-sm font-semibold tracking-[3px]">DAYS</p>
+        <p class="text-[#169948]" id="days"></p>
+    </div>
+    
+    <div id="hour" class="glass aspect-square shadow-lg relative countdowncard h-32 text-[#d2516f] text-5xl font-semibold text-center flex items-center justify-center translate-y-[-400px]">
+        <p class="absolute text-[#169948] bottom-[-40px] text-sm font-semibold tracking-[3px]">HOURS</p>
+        <p class="text-[#169948]" id="hours"></p>
+    </div>
+    
+    <div id="min" class="glass aspect-square shadow-lg relative countdowncard h-32 text-[#d2516f] text-5xl font-semibold text-center flex items-center justify-center translate-y-[-400px]">
+        <p class="absolute text-[#169948] bottom-[-40px] text-sm font-semibold tracking-[3px]">MINUTES</p>
+        <p class="text-[#169948]" id="mins"></p>
+    </div>
+    
+    <div id="sec" class="glass aspect-square shadow-lg relative countdowncard h-32 text-[#d2516f] text-5xl font-semibold text-center flex items-center justify-center translate-y-[-400px]">
+        <p class="absolute text-[#169948] bottom-[-40px] text-sm font-semibold tracking-[3px]">SECONDS</p>
+        <p class="text-[#169948]" id="secs"></p>
+    </div>
+    <p id="to" class="font absolute text-[#169948] bottom-[-40px] text-[80px] font-bold translate-x-[-400px] opacity-0 translate-y-[170px] tracking-[2px]">TO</p>
+    <p id="mun" class="font absolute text-[#169948] bottom-[-40px] text-[80px] font-bold translate-x-[200px] opacity-0 translate-y-[170px] tracking-[2px]">RNPSMUN 25'</p>
+    <p class="date absolute opacity-0 right-[10px] translate-x-[75px] translate-y-[290px] text-[40px] text-[#e16383] tracking-[-4px]">22 / 23</p>
+    <p class="date absolute opacity-0 right-1 translate-x-[75px] translate-y-[330px] text-[45px] text-[#e16383] tracking-[4px]">JULY</p>
+    </div>
+
+    <div class="links opacity-0 absolute left-5 translate-x-[-30px] flex gap-[2px]">
+        <a href="https://www.instagram.com/rnpsmun2023/" class="p-2 border border-[#e16383] border-[1.5px] translate-y-[350px] scale-[0.8] w-12 aspect-square grid flex items-center justify-center rounded-full"><i class="text-[#e16383] text-[20px] fa-brands fa-instagram fa-thin"></i></a>
+        <a href="mailto:rnpsmun24@gmail.com" class="p-2 border border-[#e16383] border-[1.5px] translate-y-[350px] scale-[0.8] w-12 aspect-square grid flex items-center justify-center rounded-full"><i class="text-[#e16383] text-[20px] fa-thin fa-envelope"></i></a>
+        <a href="tel:08023350361" class="p-2 border border-[#e16383] border-[1.5px] translate-y-[350px] scale-[0.8] w-12 aspect-square grid flex items-center justify-center rounded-full"><i class="text-[#e16383] text-[20px] fa-thin fa-circle-phone"></i></a>
+    </div>
+
+</section>
+<div class="w-[100vw] h-[130vh] p-8 overflow-hidden flex flex-col items-center justify-center gap-[30px]">
+  <div class="w-[80vw] h-[50vh] p-12 overflow-hidden shadow-xl bg-[#161D3A] rounded-xl">
+
+    <div class="flex justify-between items-center mb-6 relative">
+      <!-- Gray timeline line -->
+      <div class="absolute left-0 right-0 h-[3px] bg-gray-500 z-0"></div>
+
+      <!-- Background Dots -->
+      <div class="absolute left-0 right-0 top-1/2 -translate-y-1/2 z-0 flex justify-between items-center px-2" id="dot-track">
+        <div class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
+        <div class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
+        <div class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
+        <div class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
+        <div class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
+        <div class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
+      </div>
+
+      <!-- Animated Active Dot -->
+        <div id="active-dot" class="w-4 h-4 bg-[#2BD4A9] border-2 border-white rounded-full absolute top-1/2 -translate-y-1/2 z-10"></div>
+        </div>
+
+        <p id="timestamp" class="text-sm text-white mb-4">8:15 am – 8:45 am</p>
+
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="md:w-1/2">
+            <h2 class="text-6xl font-extrabold text-white/20 leading-none mb-6">Day<br>1</h2>
+            <div class="flex items-center gap-4">
+                <button onclick="prevStep()" class="w-12 h-12 rounded-full bg-[#2BD4A9] text-[#0C1226] text-xl font-bold">&larr;</button>
+                <span class="text-white text-lg" id="step-count">1 of 6</span>
+                <button onclick="nextStep()" class="w-12 h-12 rounded-full bg-[#2BD4A9] text-[#0C1226] text-xl font-bold">&rarr;</button>
+            </div>
+            </div>
+
+            <div class="w-[40vw]" id="content">
+            <h3 class="text-xl font-semibold mb-2 text-white" id="title">Inaugural</h3>
+            <p class="text-white/70 mb-4" id="description">
+                Welcome to the event! This is the inaugural session to kick things off.
+            </p>
+            <a href="#" class="text-[#2BD4A9] font-medium hover:underline">Continue Reading</a>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Day 2 --> 
+
+    <div class="w-[80vw] h-[50vh] p-12 overflow-hidden shadow-xl bg-[#161D3A] rounded-xl">
+    <div class="flex justify-between items-center mb-6 relative">
+      <!-- Gray timeline line -->
+      <div class="absolute left-0 right-0 h-[3px] bg-gray-500 z-0"></div>
+
+      <!-- Background Dots -->
+      <div class="absolute left-0 right-0 top-1/2 -translate-y-1/2 z-0 flex justify-between items-center px-2" id="dot-track1">
+        <div class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
+        <div class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
+        <div class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
+        <div class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
+        <div class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
+        <div class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
+      </div>
+
+      <!-- Animated Active Dot -->
+        <div id="active-dot1" class="w-4 h-4 bg-[#2BD4A9] border-2 border-white rounded-full absolute top-1/2 -translate-y-1/2 z-10"></div>
+        </div>
+
+        <p id="timestamp1" class="text-sm text-white mb-4">8:15 am – 8:45 am</p>
+
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="md:w-1/2">
+            <h2 class="text-6xl font-extrabold text-white/20 leading-none mb-6">Day<br>2</h2>
+            <div class="flex items-center gap-4">
+                <button onclick="prevStep1()" class="w-12 h-12 rounded-full bg-[#2BD4A9] text-[#0C1226] text-xl font-bold">&larr;</button>
+                <span class="text-white text-lg" id="step-count1">1 of 6</span>
+                <button onclick="nextStep1()" class="w-12 h-12 rounded-full bg-[#2BD4A9] text-[#0C1226] text-xl font-bold">&rarr;</button>
+            </div>
+            </div>
+
+            <div class="w-[40vw]" id="content1">
+            <h3 class="text-xl font-semibold mb-2 text-white" id="title1">Inaugural</h3>
+            <p class="text-white/70 mb-4" id="description1">
+                Welcome to the event! This is the inaugural session to kick things off.
+            </p>
+            <a href="#" class="text-[#2BD4A9] font-medium hover:underline">Continue Reading</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
+
+<!-- Day 1 script -->
+  <script>
+    const steps = [
+      { date: "8:15 am – 8:45 am", title: "Inaugural", description: "Welcome to the event! This is the inaugural session to kick things off." },
+      { date: "9:00 am – 10:15 am", title: "Session 1", description: "Topic-based interactive session with key speakers." },
+      { date: "10:15 am – 10:30 am", title: "Break", description: "Take a short break, grab some coffee or stretch." },
+      { date: "10:30 am – 12:30 pm", title: "Session 2", description: "Deep-dive into specific subjects with panels." },
+      { date: "12:30 pm – 1:00 pm", title: "Lunch", description: "Refuel and connect over lunch." },
+      { date: "1:00 pm – 2:45 pm", title: "Session 3", description: "Final session of the day with Q&A." },
+    ];
+
+    let current = 0;
+
+    const timestampEl = document.getElementById("timestamp");
+    const titleEl = document.getElementById("title");
+    const descriptionEl = document.getElementById("description");
+    const countEl = document.getElementById("step-count");
+    const contentEl = document.getElementById("content");
+    const activeDot = document.getElementById("active-dot");
+    const dotTrack = document.getElementById("dot-track");
+
+    function moveActiveDot(index) {
+      const dots = dotTrack.querySelectorAll("div");
+      const target = dots[index];
+      const dotCenter = target.offsetLeft + (target.offsetWidth / 2);
+      gsap.to(activeDot, {
+        x: dotCenter - (activeDot.offsetWidth / 2),
+        duration: 0.4,
+        ease: "sine.inOut"
+      });
+    }
+
+    function updateContent(index) {
+      const data = steps[index];
+
+      gsap.to(contentEl, {
+        opacity: 0,
+        x: 30,
+        duration: 0.6,
+        onComplete: () => {
+          titleEl.textContent = data.title;
+          descriptionEl.textContent = data.description;
+          timestampEl.textContent = data.date;
+          countEl.textContent = `${index + 1} of ${steps.length}`;
+          moveActiveDot(index);
+
+          gsap.fromTo(contentEl, { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.6 });
+        }
+      });
+    }
+
+    function nextStep() {
+      if (current < steps.length - 1) {
+        current++;
+        updateContent(current);
+      }
+    }
+
+    function prevStep() {
+      if (current > 0) {
+        current--;
+        updateContent(current);
+      }
+    }
+
+    // Init on page load
+    updateContent(current);
+  </script>
+
+<!-- Day 2 script -->
+<!-- Can you do day 2 script using different element ids pls-->
+
+<script>
+    const MainDay = new Date('2025-07-01T00:00:00');
+    const Today = Date.now();
+    diff = Math.round((MainDay-Today)/1000);
+
+    if (diff >= 0){
+        secs = diff % 60;
+        diff = Math.round(diff/60)
+
+        mins = diff % 60;
+        diff = Math.round(diff/60)
+
+        hours = diff % (24);
+        diff = Math.round(diff/24)
+
+        days = diff 
+    }
+    else{
+        secs = 0
+        mins = 0
+        hours = 0
+        days = 0
+    }
+
+    document.getElementById("days").innerText = document.getElementById("days").innerText +  days
+    document.getElementById("hours").innerText = document.getElementById("hours").innerText + hours
+    document.getElementById("mins").innerText = document.getElementById("mins").innerText + mins
+    document.getElementById("secs").innerText =document.getElementById("secs").innerText +  secs
+
+    tmain = gsap.timeline({ delay: 1, defaults: {ease: "power4.out"}})
+    tmain.to("#day", {
+        y : +0,
+        duration: 0.75,
+        x: 0,
+    }).to( "#hour", {
+        y : +0,
+        duration: 0.75,
+        x: 0,
+    }, "-=0.6").to( "#min", {
+        y : +0,
+        duration: 0.75,
+        x: 0,
+    }, "-=0.6").to( "#sec", {
+        y : +0,
+        duration: 0.75,
+        x: 0,
+    } , "-=0.6"
+    ).to("#to", {
+        x: -280,
+        opacity: 1,
+        ease: "power3.out"
+    }, ).to("#mun", {
+        x: 65,
+        opacity: 1,
+        ease: "power3.out"
+    }, ).to(".date", {
+        opacity: 1,
+        x: +50,
+        duration: 0.5
+    }).to(".links", {
+        opacity: 1,
+        x: +0,
+        duration: 0.5
+    })
+</script>
+<style>
+
+body{
+            background: radial-gradient(#0C1226 ,  #161D3A);
+}
+
+.strip {
+        
+        filter: blur( 100px );
+        /* -webkit-backdrop-filter: blur( 60px ); */
+        }
+        
+    ul *{
+        font-weight: 200 !important;
+        color: white !important
+    }
+
+    .glass{
+        background: rgba(39, 39, 39, 0.1);
+        box-shadow: 0 0 200px rgba(0, 0, 0, 0.7),
+        inset 0 0 100px rgba(255, 255, 255, 0.09);
+    backdrop-filter: blur( 60px );
+    -webkit-backdrop-filter: blur( 60px );
+    border-radius: 20px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    /* background-color: gray; */
+    }
+    .font {
+  font-family: "Rozha One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+    .date{
+        
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+
+}
+
+
+</style>
