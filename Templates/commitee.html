@@ -1,192 +1,444 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-      </head>
-  <body class="z-[-100000000] relative ">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="z-[-100000000] relative">
     <!-- Navbar -->
-    <ul id="nav" class="backdrop-filter backdrop-blur-lg bg-opacity-10 bg-black-950 mt-0 list-none p-4 text-white absolute border-b-[0.5px] border-gray-800 flex items-center justify-between w-full sticky top-0 z-50">
-        <!-- Left side of the navbar -->
-        <li class="float-left">
-        <a href="#" class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out">RNPSMUN</a>
-        </li>
-    
-        <!-- Centered nav items -->
-        <div class="topnav-centered absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-sm space-x-3">
+    <ul
+      id="nav"
+      class="backdrop-filter backdrop-blur-lg bg-opacity-10 bg-black-950 mt-0 list-none p-4 text-[#169948] absolute border-b-[0.5px] border-gray-800 flex items-center justify-between w-full sticky top-0 z-50"
+      style="width: full !important"
+    >
+      <!-- Left side of the navbar -->
+      <li class="float-left">
+        <a
+          href="landing.html"
+          class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+          >RNPSMUN</a
+        >
+      </li>
+
+      <!-- Centered nav items -->
+      <div
+        class="topnav-centered absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-sm space-x-3"
+      >
         <li class="inline-block">
-            <a href="#" class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out">Secretariat</a>
+          <a
+            href="pepal.html"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+            >Secretariat</a
+          >
         </li>
         <li class="inline-block">
-            <a href="#" class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out">Committees</a>
+          <a
+            href="commitee.html"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+            >Committees</a
+          >
         </li>
         <li class="inline-block">
-            <a href="#" class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out">Delegate Materials</a>
+          <a
+            href="files.html"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+            >Guide</a
+          >
         </li>
         <li class="inline-block">
-            <a href="#" class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out">Guide</a>
+          <a
+            href="contactus.html"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+            >Contact</a
+          >
         </li>
-        <li class="inline-block">
-            <a href="#" class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out">About</a>
-        </li>
-        <li class="inline-block">
-            <a href="#" class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out">Contact</a>
-        </li>
-        </div>
-    
-        <!-- Right side of the navbar -->
-        <div class="topnav-right pr-9">
+      </div>
+
+      <!-- Right side of the navbar -->
+      <div class="topnav-right pr-9">
         <li class="float-right inline-block">
-            <a href="#" class="inline-block text-aliceblue text-center px-3 py-3 no-underline hover:font-bold hover:text-gray-300 font-bold transition-all duration-100 ease-in-out">Register</a>
+          <a
+            href="#"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline hover:font-bold hover:text-gray-300 font-bold transition-all duration-100 ease-in-out"
+            >Register</a
+          >
         </li>
-        </div>
+      </div>
     </ul>
 
-
-
     <!-- Main -->
-    <div class="relative -mt-20 w-full overflow-x-hidden h-[190vh] grid grad py-[90px] pt-[150px] grid-rows-2 grid-cols-2 gap-y-[121px] z-[-2] overflow-y-hidden pb-[200px]">
-        <div id = "cum1" class="glass w-[35vw] relative h-[60vh] m-auto z-10 flex items-center flex-col pt-20 gap-10">
-            <img src="/static/ra.png" id="logo" class="w-40 h-40 rounded-full">
-            <div class="hover -mt-20 absolute w-full h-[100%] bg-[#1f1f1fe9] opacity-[0] scale-[1.01] rounded-[50px] flex items-center flex-col gap-4 text-[#ffffffdb] justify-center z-[2]">
-                    <i class="fa-thin fa-arrow-pointer text-[50px]"></i>
-                    <div class="">Click to learn more</div>
-            </div>
-            <div id="name" class="text-center text-pink-600 font-bold">DISECNUTS</div>
-            <div id="dis" class="opacity-0 absolute w-[25vw] text-center text-slate-400 text-light translate-x-[-305px] translate-y-[00px]">A conflict whose intricate history is often obscured with an elaborate web of global diplomacy: The Israel-Palestine Conflict. This ongoing struggle, dating back to the 20th century, involves disputes over land, national identity, and historical grievances. It has led to numerous wars, uprisings, and an unending cycle of violence, impacting millions of lives.</div>
-            <div id="agenda" class="text-[#169c49] left-10 absolute opacity-0 text-lg w-[350px] text-center"><b>AGENDA: </b>Self Regulation vs. Legal Regulations; 'How strong are Journalistic Ethics?'</div>
-            <div id="line" class="w-2 shadow-lg absolute h-[100px] rounded-[100vh] bg-green-600 left-[250px] translate-y-[100px] opacity-[0]" style="backdrop-filter: blur(30px);filter: blur( 1px );"></div>
-
-
-            <div id="people" class="absolute top-0 translate-x-[200px] w-full">
-                <div id="one" class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[400px] flex items-center justify-center opacity-0" style="border-color: #169c49">
-                    <img src="/static/person.jpg" class="w-20 h-20 relative rounded-full">
-                    <div class=""></div>
-                </div>
-                <div id="two" class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[600px] flex items-center justify-center opacity-0" style="border-color: #169c49">
-                    <img src="/static/person.jpg" class="w-20 h-20 relative rounded-full">
-                    <div class=""></div>
-                </div>
-                <div id="three" class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[400px] flex items-center justify-center opacity-0" style="border-color: #169c49">
-                    <img src="/static/person.jpg" class="w-20 h-20 relative rounded-full">
-                    <div class=""></div>
-                </div>
-                <div id="four" class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[600px] flex items-center justify-center opacity-0" style="border-color: #169c49">
-                    <img src="/static/person.jpg" class="w-20 h-20 relative rounded-full">
-                    <div class=""></div>
-                </div>
-            </div>
+    <div
+      class="relative -mt-20 w-full overflow-x-hidden h-[190vh] grid grad py-[90px] pt-[150px] grid-rows-2 grid-cols-2 gap-y-[121px] z-[-2] overflow-y-hidden pb-[200px]"
+    >
+      <div
+        id="cum1"
+        class="glass w-[35vw] relative h-[60vh] m-auto z-10 flex items-center flex-col pt-20 gap-10"
+      >
+        <img src="/static/ra.png" id="logo" class="w-40 h-40 rounded-full" />
+        <div
+          class="hover -mt-20 absolute w-full h-[100%] bg-[#1f1f1fe9] opacity-[0] scale-[1.01] rounded-[50px] flex items-center flex-col gap-4 text-[#ffffffdb] justify-center z-[2]"
+        >
+          <i class="fa-thin fa-arrow-pointer text-[50px]"></i>
+          <div class="">Click to learn more</div>
         </div>
-        <div id = "cum2" class="glass w-[35vw] relative h-[60vh] m-auto z-10 flex items-center flex-col pt-20 gap-10">
-            <img src="/static/ra.png" id="logo" class="w-40 h-40 rounded-full">
-            <div class="hover -mt-20 absolute w-full h-[100%] bg-[#1f1f1fe9] opacity-[0] scale-[1.01] rounded-[50px] flex items-center flex-col gap-4 text-[#ffffffdb] justify-center z-[2]">
-                    <i class="fa-thin fa-arrow-pointer text-[50px]"></i>
-                    <div class="">Click to learn more</div>
-            </div>
-            <div id="name" class="text-center text-pink-600 font-bold">DISECNUTS</div>
-            <div id="dis" class="opacity-0 absolute w-[25vw] text-center text-slate-400 text-light translate-x-[-305px] translate-y-[00px]">A conflict whose intricate history is often obscured with an elaborate web of global diplomacy: The Israel-Palestine Conflict. This ongoing struggle, dating back to the 20th century, involves disputes over land, national identity, and historical grievances. It has led to numerous wars, uprisings, and an unending cycle of violence, impacting millions of lives.</div>
-            <div id="agenda" class="text-[#169c49] left-10 absolute opacity-0 text-lg w-[350px] text-center"><b>AGENDA: </b>Self Regulation vs. Legal Regulations; 'How strong are Journalistic Ethics?'</div>
-            <div id="line" class="w-2 shadow-lg absolute h-[100px] rounded-[100vh] bg-green-600 left-[250px] translate-y-[100px] opacity-[0]" style="backdrop-filter: blur(30px);filter: blur( 1px );"></div>
-
-
-            <div id="people" class="absolute top-0 translate-x-[200px] w-full">
-                <div id="one" class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[400px] flex items-center justify-center opacity-0" style="border-color: #169c49">
-                    <img src="/static/person.jpg" class="w-20 h-20 relative rounded-full">
-                    <div class=""></div>
-                </div>
-                <div id="two" class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[600px] flex items-center justify-center opacity-0" style="border-color: #169c49">
-                    <img src="/static/person.jpg" class="w-20 h-20 relative rounded-full">
-                    <div class=""></div>
-                </div>
-                <div id="three" class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[400px] flex items-center justify-center opacity-0" style="border-color: #169c49">
-                    <img src="/static/person.jpg" class="w-20 h-20 relative rounded-full">
-                    <div class=""></div>
-                </div>
-                <div id="four" class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[600px] flex items-center justify-center opacity-0" style="border-color: #169c49">
-                    <img src="/static/person.jpg" class="w-20 h-20 relative rounded-full">
-                    <div class=""></div>
-                </div>
-            </div>
-
-
-
-            
+        <div id="name" class="text-center text-pink-600 font-bold">
+          DISECNUTS
         </div>
-        <div id = "cum3" class="glass w-[35vw] relative h-[60vh] m-auto z-10 flex items-center flex-col pt-20 gap-10">
-            <img src="/static/ra.png" id="logo" class="w-40 h-40 rounded-full">
-            <div class="hover -mt-20 absolute w-full h-[100%] bg-[#1f1f1fe9] opacity-[0] scale-[1.01] rounded-[50px] flex items-center flex-col gap-4 text-[#ffffffdb] justify-center z-[2]">
-                    <i class="fa-thin fa-arrow-pointer text-[50px]"></i>
-                    <div class="">Click to learn more</div>
-            </div>
-            <div id="name" class="text-center text-pink-600 font-bold">DISECNUTS</div>
-            <div id="dis" class="opacity-0 absolute w-[25vw] text-center text-slate-400 text-light translate-x-[-305px] translate-y-[00px]">A conflict whose intricate history is often obscured with an elaborate web of global diplomacy: The Israel-Palestine Conflict. This ongoing struggle, dating back to the 20th century, involves disputes over land, national identity, and historical grievances. It has led to numerous wars, uprisings, and an unending cycle of violence, impacting millions of lives.</div>
-            <div id="agenda" class="text-[#169c49] left-10 absolute opacity-0 text-lg w-[350px] text-center"><b>AGENDA: </b>Self Regulation vs. Legal Regulations; 'How strong are Journalistic Ethics?'</div>
-            <div id="line" class="w-2 shadow-lg absolute h-[100px] rounded-[100vh] bg-green-600 left-[250px] translate-y-[100px] opacity-[0]" style="backdrop-filter: blur(30px);filter: blur( 1px );"></div>
-
-
-            <div id="people" class="absolute top-0 translate-x-[200px] w-full">
-                <div id="one" class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[400px] flex items-center justify-center opacity-0" style="border-color: #169c49">
-                    <img src="/static/person.jpg" class="w-20 h-20 relative rounded-full">
-                    <div class=""></div>
-                </div>
-                <div id="two" class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[600px] flex items-center justify-center opacity-0" style="border-color: #169c49">
-                    <img src="/static/person.jpg" class="w-20 h-20 relative rounded-full">
-                    <div class=""></div>
-                </div>
-                <div id="three" class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[400px] flex items-center justify-center opacity-0" style="border-color: #169c49">
-                    <img src="/static/person.jpg" class="w-20 h-20 relative rounded-full">
-                    <div class=""></div>
-                </div>
-                <div id="four" class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[600px] flex items-center justify-center opacity-0" style="border-color: #169c49">
-                    <img src="/static/person.jpg" class="w-20 h-20 relative rounded-full">
-                    <div class=""></div>
-                </div>
-            </div>
-
+        <div
+          id="dis"
+          class="opacity-0 absolute w-[25vw] text-center text-slate-400 text-light translate-x-[-305px] translate-y-[00px]"
+        >
+          A conflict whose intricate history is often obscured with an elaborate
+          web of global diplomacy: The Israel-Palestine Conflict. This ongoing
+          struggle, dating back to the 20th century, involves disputes over
+          land, national identity, and historical grievances. It has led to
+          numerous wars, uprisings, and an unending cycle of violence, impacting
+          millions of lives.
         </div>
-        <div id = "cum4" class="glass w-[35vw] relative h-[60vh] m-auto z-10 flex items-center flex-col pt-20 gap-10">
-            <img src="/static/ra.png" id="logo" class="w-40 h-40 rounded-full">
-            <div class="hover -mt-20 absolute w-full h-[100%] bg-[#1f1f1fe9] opacity-[0] scale-[1.01] rounded-[50px] flex items-center flex-col gap-4 text-[#ffffffdb] justify-center z-[2]">
-                    <i class="fa-thin fa-arrow-pointer text-[50px]"></i>
-                    <div class="">Click to learn more</div>
-            </div>
-            <div  id="name"  class="text-center text-pink-600 font-bold">DISECNUTS</div>
-            <div id="dis" class="opacity-0 absolute w-[25vw] text-center text-slate-400 text-light translate-x-[-305px] translate-y-[00px]">A conflict whose intricate history is often obscured with an elaborate web of global diplomacy: The Israel-Palestine Conflict. This ongoing struggle, dating back to the 20th century, involves disputes over land, national identity, and historical grievances. It has led to numerous wars, uprisings, and an unending cycle of violence, impacting millions of lives.</div>
-            <div id="agenda" class="text-[#169c49] left-10 absolute opacity-0 text-lg w-[350px] text-center"><b>AGENDA: </b>Self Regulation vs. Legal Regulations; 'How strong are Journalistic Ethics?'</div>
-            <div id="line" class="w-2 shadow-lg absolute h-[100px] rounded-[100vh] bg-green-600 left-[250px] translate-y-[100px] opacity-[0]" style="backdrop-filter: blur(30px);filter: blur( 1px );"></div>
-
-
-            <div id="people" class="absolute top-0 translate-x-[200px] w-full">
-                <div id="one" class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[400px] flex items-center justify-center opacity-0" style="border-color: #169c49">
-                    <img src="/static/person.jpg" class="w-20 h-20 relative rounded-full">
-                    <div class=""></div>
-                </div>
-                <div id="two" class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[600px] flex items-center justify-center opacity-0" style="border-color: #169c49">
-                    <img src="/static/person.jpg" class="w-20 h-20 relative rounded-full">
-                    <div class=""></div>
-                </div>
-                <div id="three" class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[400px] flex items-center justify-center opacity-0" style="border-color: #169c49">
-                    <img src="/static/person.jpg" class="w-20 h-20 relative rounded-full">
-                    <div class=""></div>
-                </div>
-                <div id="four" class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[600px] flex items-center justify-center opacity-0" style="border-color: #169c49">
-                    <img src="/static/person.jpg" class="w-20 h-20 relative rounded-full">
-                    <div class=""></div>
-                </div>
-            </div>
+        <div
+          id="agenda"
+          class="text-[#169c49] left-10 absolute opacity-0 text-lg w-[350px] text-center"
+        >
+          <b>AGENDA: </b>Self Regulation vs. Legal Regulations; 'How strong are
+          Journalistic Ethics?'
         </div>
-        
-        <div class="strip w-[200vw] h-72 bg-[#322996bd] absolute top-50 translate-x-[-700px] -rotate-45 z-[-1]"></div>
-        <div class="strip w-[360vw] h-72 bg-[#322996bd] absolute top-50 -translate-x-[700px] -rotate-45 z-[-1]"></div>
+        <div
+          id="line"
+          class="w-2 shadow-lg absolute h-[100px] rounded-[100vh] bg-green-600 left-[250px] translate-y-[100px] opacity-[0]"
+          style="backdrop-filter: blur(30px); filter: blur(1px)"
+        ></div>
+
+        <div id="people" class="absolute top-0 translate-x-[200px] w-full">
+          <div
+            id="one"
+            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[400px] flex items-center justify-center opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="/static/person.jpg"
+              class="w-20 h-20 relative rounded-full"
+            />
+            <div class=""></div>
+          </div>
+          <div
+            id="two"
+            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[600px] flex items-center justify-center opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="/static/person.jpg"
+              class="w-20 h-20 relative rounded-full"
+            />
+            <div class=""></div>
+          </div>
+          <div
+            id="three"
+            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[400px] flex items-center justify-center opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="/static/person.jpg"
+              class="w-20 h-20 relative rounded-full"
+            />
+            <div class=""></div>
+          </div>
+          <div
+            id="four"
+            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[600px] flex items-center justify-center opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="/static/person.jpg"
+              class="w-20 h-20 relative rounded-full"
+            />
+            <div class=""></div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="cum2"
+        class="glass w-[35vw] relative h-[60vh] m-auto z-10 flex items-center flex-col pt-20 gap-10"
+      >
+        <img src="/static/ra.png" id="logo" class="w-40 h-40 rounded-full" />
+        <div
+          class="hover -mt-20 absolute w-full h-[100%] bg-[#1f1f1fe9] opacity-[0] scale-[1.01] rounded-[50px] flex items-center flex-col gap-4 text-[#ffffffdb] justify-center z-[2]"
+        >
+          <i class="fa-thin fa-arrow-pointer text-[50px]"></i>
+          <div class="">Click to learn more</div>
+        </div>
+        <div id="name" class="text-center text-pink-600 font-bold">
+          DISECNUTS
+        </div>
+        <div
+          id="dis"
+          class="opacity-0 absolute w-[25vw] text-center text-slate-400 text-light translate-x-[-305px] translate-y-[00px]"
+        >
+          A conflict whose intricate history is often obscured with an elaborate
+          web of global diplomacy: The Israel-Palestine Conflict. This ongoing
+          struggle, dating back to the 20th century, involves disputes over
+          land, national identity, and historical grievances. It has led to
+          numerous wars, uprisings, and an unending cycle of violence, impacting
+          millions of lives.
+        </div>
+        <div
+          id="agenda"
+          class="text-[#169c49] left-10 absolute opacity-0 text-lg w-[350px] text-center"
+        >
+          <b>AGENDA: </b>Self Regulation vs. Legal Regulations; 'How strong are
+          Journalistic Ethics?'
+        </div>
+        <div
+          id="line"
+          class="w-2 shadow-lg absolute h-[100px] rounded-[100vh] bg-green-600 left-[250px] translate-y-[100px] opacity-[0]"
+          style="backdrop-filter: blur(30px); filter: blur(1px)"
+        ></div>
+
+        <div id="people" class="absolute top-0 translate-x-[200px] w-full">
+          <div
+            id="one"
+            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[400px] flex items-center justify-center opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="/static/person.jpg"
+              class="w-20 h-20 relative rounded-full"
+            />
+            <div class=""></div>
+          </div>
+          <div
+            id="two"
+            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[600px] flex items-center justify-center opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="/static/person.jpg"
+              class="w-20 h-20 relative rounded-full"
+            />
+            <div class=""></div>
+          </div>
+          <div
+            id="three"
+            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[400px] flex items-center justify-center opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="/static/person.jpg"
+              class="w-20 h-20 relative rounded-full"
+            />
+            <div class=""></div>
+          </div>
+          <div
+            id="four"
+            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[600px] flex items-center justify-center opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="/static/person.jpg"
+              class="w-20 h-20 relative rounded-full"
+            />
+            <div class=""></div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="cum3"
+        class="glass w-[35vw] relative h-[60vh] m-auto z-10 flex items-center flex-col pt-20 gap-10"
+      >
+        <img src="/static/ra.png" id="logo" class="w-40 h-40 rounded-full" />
+        <div
+          class="hover -mt-20 absolute w-full h-[100%] bg-[#1f1f1fe9] opacity-[0] scale-[1.01] rounded-[50px] flex items-center flex-col gap-4 text-[#ffffffdb] justify-center z-[2]"
+        >
+          <i class="fa-thin fa-arrow-pointer text-[50px]"></i>
+          <div class="">Click to learn more</div>
+        </div>
+        <div id="name" class="text-center text-pink-600 font-bold">
+          DISECNUTS
+        </div>
+        <div
+          id="dis"
+          class="opacity-0 absolute w-[25vw] text-center text-slate-400 text-light translate-x-[-305px] translate-y-[00px]"
+        >
+          A conflict whose intricate history is often obscured with an elaborate
+          web of global diplomacy: The Israel-Palestine Conflict. This ongoing
+          struggle, dating back to the 20th century, involves disputes over
+          land, national identity, and historical grievances. It has led to
+          numerous wars, uprisings, and an unending cycle of violence, impacting
+          millions of lives.
+        </div>
+        <div
+          id="agenda"
+          class="text-[#169c49] left-10 absolute opacity-0 text-lg w-[350px] text-center"
+        >
+          <b>AGENDA: </b>Self Regulation vs. Legal Regulations; 'How strong are
+          Journalistic Ethics?'
+        </div>
+        <div
+          id="line"
+          class="w-2 shadow-lg absolute h-[100px] rounded-[100vh] bg-green-600 left-[250px] translate-y-[100px] opacity-[0]"
+          style="backdrop-filter: blur(30px); filter: blur(1px)"
+        ></div>
+
+        <div id="people" class="absolute top-0 translate-x-[200px] w-full">
+          <div
+            id="one"
+            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[400px] flex items-center justify-center opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="/static/person.jpg"
+              class="w-20 h-20 relative rounded-full"
+            />
+            <div class=""></div>
+          </div>
+          <div
+            id="two"
+            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[600px] flex items-center justify-center opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="/static/person.jpg"
+              class="w-20 h-20 relative rounded-full"
+            />
+            <div class=""></div>
+          </div>
+          <div
+            id="three"
+            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[400px] flex items-center justify-center opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="/static/person.jpg"
+              class="w-20 h-20 relative rounded-full"
+            />
+            <div class=""></div>
+          </div>
+          <div
+            id="four"
+            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[600px] flex items-center justify-center opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="/static/person.jpg"
+              class="w-20 h-20 relative rounded-full"
+            />
+            <div class=""></div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="cum4"
+        class="glass w-[35vw] relative h-[60vh] m-auto z-10 flex items-center flex-col pt-20 gap-10"
+      >
+        <img src="/static/ra.png" id="logo" class="w-40 h-40 rounded-full" />
+        <div
+          class="hover -mt-20 absolute w-full h-[100%] bg-[#1f1f1fe9] opacity-[0] scale-[1.01] rounded-[50px] flex items-center flex-col gap-4 text-[#ffffffdb] justify-center z-[2]"
+        >
+          <i class="fa-thin fa-arrow-pointer text-[50px]"></i>
+          <div class="">Click to learn more</div>
+        </div>
+        <div id="name" class="text-center text-pink-600 font-bold">
+          DISECNUTS
+        </div>
+        <div
+          id="dis"
+          class="opacity-0 absolute w-[25vw] text-center text-slate-400 text-light translate-x-[-305px] translate-y-[00px]"
+        >
+          A conflict whose intricate history is often obscured with an elaborate
+          web of global diplomacy: The Israel-Palestine Conflict. This ongoing
+          struggle, dating back to the 20th century, involves disputes over
+          land, national identity, and historical grievances. It has led to
+          numerous wars, uprisings, and an unending cycle of violence, impacting
+          millions of lives.
+        </div>
+        <div
+          id="agenda"
+          class="text-[#169c49] left-10 absolute opacity-0 text-lg w-[350px] text-center"
+        >
+          <b>AGENDA: </b>Self Regulation vs. Legal Regulations; 'How strong are
+          Journalistic Ethics?'
+        </div>
+        <div
+          id="line"
+          class="w-2 shadow-lg absolute h-[100px] rounded-[100vh] bg-green-600 left-[250px] translate-y-[100px] opacity-[0]"
+          style="backdrop-filter: blur(30px); filter: blur(1px)"
+        ></div>
+
+        <div id="people" class="absolute top-0 translate-x-[200px] w-full">
+          <div
+            id="one"
+            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[400px] flex items-center justify-center opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="/static/person.jpg"
+              class="w-20 h-20 relative rounded-full"
+            />
+            <div class=""></div>
+          </div>
+          <div
+            id="two"
+            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[600px] flex items-center justify-center opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="/static/person.jpg"
+              class="w-20 h-20 relative rounded-full"
+            />
+            <div class=""></div>
+          </div>
+          <div
+            id="three"
+            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[400px] flex items-center justify-center opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="/static/person.jpg"
+              class="w-20 h-20 relative rounded-full"
+            />
+            <div class=""></div>
+          </div>
+          <div
+            id="four"
+            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[600px] flex items-center justify-center opacity-0"
+            style="border-color: #169c49"
+          >
+            <img
+              src="/static/person.jpg"
+              class="w-20 h-20 relative rounded-full"
+            />
+            <div class=""></div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="strip w-[200vw] h-72 bg-[#322996bd] absolute top-50 translate-x-[-700px] -rotate-45 z-[-1]"
+      ></div>
+      <div
+        class="strip w-[360vw] h-72 bg-[#322996bd] absolute top-50 -translate-x-[700px] -rotate-45 z-[-1]"
+      ></div>
     </div>
-<footer
-      class="w-full text-white bg-transparent border-t-[1px] border-gray-600 body-font h-[10vh] z-[-100000000]"
+    <footer
+      class="mt-20 w-full text-white bg-transparent border-t-[1px] border-gray-600 body-font h"
     >
       <div
         class="container flex flex-col flex-wrap px-5 py-24 mx-auto md:items-center lg:items-start md:flex-row md:flex-no-wrap"
@@ -195,7 +447,7 @@
           class="flex-shrink-0 w-64 mx-auto text-center md:mx-0 md:text-left mt-[-5vh]"
         >
           <div class="w-36 h-36 mt-[1.2rem]">
-            <img class="w-96 object-cover scale-[]" src="/static/nps.png" />
+            <img class="w-96 object-cover scale-[]" src="logo.png" />
           </div>
           <div class="ml-2 mt-4">
             <span
@@ -232,12 +484,14 @@
             <nav class="mb-10 list-none">
               <li class="mt-3">
                 <a
+                  href="people.html"
                   class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
                   >Secretariat</a
                 >
               </li>
               <li class="mt-3">
                 <a
+                  href="commitee.html"
                   class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
                   >Committees</a
                 >
@@ -249,18 +503,14 @@
             <nav class="mb-10 list-none">
               <li class="mt-3">
                 <a
+                  href="contactus.html"
                   class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
                   >Contact Us</a
                 >
               </li>
               <li class="mt-3">
                 <a
-                  class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
-                  >Delegate Materials</a
-                >
-              </li>
-              <li class="mt-3">
-                <a
+                  href="files.html"
                   class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
                   >Guide</a
                 >
@@ -272,12 +522,14 @@
             <nav class="mb-10 list-none">
               <li class="mt-3">
                 <a
+                  href="mailto:rnpsmun24@gmail.com"
                   class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
                   >Send a Message</a
                 >
               </li>
               <li class="mt-3">
                 <a
+                  href="registerparthere"
                   class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
                   >Register Now</a
                 >
@@ -285,7 +537,7 @@
             </nav>
           </div>
         </div>
-        <div class="relative text-center mt-20 flex flex-col">
+        <div class="mx-auto text-center mt-20 flex flex-col">
           <div class="text-teal-400">© R-NPSMUN Inc. All rights reserved.</div>
           <div class="name tracking-[1px] mt-3">
             Made by Vrishank R, Shrivardhan C, Athreya S
@@ -293,356 +545,465 @@
         </div>
       </div>
     </footer>
-
-
   </body>
 </html>
 <style>
-    *{
-        transition: opacity ease 0.3s;
-    }
-    .glass{
-        background: rgba(39, 39, 39, 0.1);
-        box-shadow: 0 0 200px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur( 60px );
-    -webkit-backdrop-filter: blur( 60px );
+  * {
+    transition: opacity ease 0.3s;
+  }
+  .glass {
+    background: rgba(39, 39, 39, 0.1);
+    box-shadow: 0 0 200px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(60px);
+    -webkit-backdrop-filter: blur(60px);
     border-radius: 50px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border: 1px solid rgba(255, 255, 255, 0.18);
     /* background-color: gray; */
-    }
-    .strip {
-        
-    filter: blur( 100px );
+  }
+
+  .name {
+    font-family: "Bungee Spice", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .strip {
+    filter: blur(100px);
     /* -webkit-backdrop-filter: blur( 60px ); */
-    }
-    .hover:hover{
-        opacity: 1 !important;
+  }
+  .hover:hover {
+    opacity: 1 !important;
+  }
 
-    }
+  ul * {
+    font-weight: 200 !important;
+    color: white;
+  }
 
-    ul *{
-        font-weight: 200 !important;
-    }
-    
-    body {
-            background: radial-gradient(#0C1226 ,  #161D3A);
-    }
+  footer * {
+    font-weight: 200 !important;
+  }
+
+  body {
+    background: radial-gradient(#0c1226, #161d3a);
+  }
 </style>
 
 <script>
-    t1 = gsap.timeline({paused: true, defaults: {duration: "0.3", ease: "power3.out"}})
-    t1.to('#cum1', {
-        width: "85vw",
-        height: "90vh",
-        zIndex: 1000,
-        x: +90, y: -25,
-    }).fromTo(
-        "#cum1 .hover", {opacity: 0}, {
-            opacity: 0,
-            zIndex: -10,
-            display: "none",
-
-        }, "<"
-    ).to("#cum1 #logo", {
+  t1 = gsap.timeline({
+    paused: true,
+    defaults: { duration: "0.3", ease: "power3.out" },
+  });
+  t1.to("#cum1", {
+    width: "85vw",
+    height: "90vh",
+    zIndex: 1000,
+    x: +90,
+    y: -25,
+  })
+    .fromTo(
+      "#cum1 .hover",
+      { opacity: 0 },
+      {
+        opacity: 0,
+        zIndex: -10,
+        display: "none",
+      },
+      "<"
+    )
+    .to(
+      "#cum1 #logo",
+      {
         x: -300,
         y: -30,
-        duration: "0.5"
-    }, "+=0.2"
-    ).to(
-        "#cum1 #name", {
-            x: -300,
-            y: -60,
-            duration: "0.5",
-            color: "#94a3b8",
-        }, "<"
-    ).to(
-        "#cum1 #dis", {
-            opacity: 1,
-            y: +200,
-        }
-    ).to("#cum1 #line", {
-        opacity: 1,
-        x: +250,
-        y: -30,
-        height: 457,
+        duration: "0.5",
+      },
+      "+=0.2"
+    )
+    .to(
+      "#cum1 #name",
+      {
+        x: -300,
+        y: -60,
+        duration: "0.5",
+        color: "#94a3b8",
+      },
+      "<"
+    )
+    .to("#cum1 #dis", {
+      opacity: 1,
+      y: +200,
     })
-    
+    .to("#cum1 #line", {
+      opacity: 1,
+      x: +250,
+      y: -30,
+      height: 457,
+    })
+
     .to("#cum1 #agenda", {
-        opacity: 1,
-        x: +550,
+      opacity: 1,
+      x: +550,
     })
     .to("#cum1 #one", {
-        opacity: 1,
-        y: +180,
-        duration: 0.3,
-        ease: "back.out(1.2)",
+      opacity: 1,
+      y: +180,
+      duration: 0.3,
+      ease: "back.out(1.2)",
     })
-    .to("#cum1 #two", {
+    .to(
+      "#cum1 #two",
+      {
         opacity: 1,
         y: +180,
         duration: 0.3,
         ease: "back.out(1.2)",
-    }, ">-0.20")
-    .to("#cum1 #three", {
+      },
+      ">-0.20"
+    )
+    .to(
+      "#cum1 #three",
+      {
         opacity: 1,
         y: +350,
         duration: 0.4,
         ease: "back.out(1.2)",
-    }, ">-0.30")
-    .to("#cum1 #four", {
+      },
+      ">-0.30"
+    )
+    .to(
+      "#cum1 #four",
+      {
         opacity: 1,
         y: +350,
         duration: 0.4,
         ease: "back.out(1.2)",
-    },  ">-0.30")
+      },
+      ">-0.30"
+    );
 
-
-    t3 = gsap.timeline({paused: true, defaults: {duration: "0.3", ease: "sine.inOut"}})
-    t3.to('#cum3', {
-        width: "85vw",
-        height: "90vh",
-        zIndex: 1000,
-        x: +90, y: -25,
-    }).fromTo(
-        "#cum3 .hover", {opacity: 0}, {
-            opacity: 0,
-            zIndex: -10,
-            display: "none",
-
-        }, "<"
-    ).to("#cum3 #logo", {
+  t3 = gsap.timeline({
+    paused: true,
+    defaults: { duration: "0.3", ease: "sine.inOut" },
+  });
+  t3.to("#cum3", {
+    width: "85vw",
+    height: "90vh",
+    zIndex: 1000,
+    x: +90,
+    y: -25,
+  })
+    .fromTo(
+      "#cum3 .hover",
+      { opacity: 0 },
+      {
+        opacity: 0,
+        zIndex: -10,
+        display: "none",
+      },
+      "<"
+    )
+    .to(
+      "#cum3 #logo",
+      {
         x: -300,
         y: -30,
-        duration: "0.5"
-    }, "+=0.2"
-    ).to(
-        "#cum3 #name", {
-            x: -300,
-            y: -60,
-            duration: "0.5",
-            color: "#94a3b8",
-        }, "<"
-    ).to(
-        "#cum3 #dis", {
-            opacity: 1,
-            y: +200,
-        }
-    ).to("#cum3 #line", {
-        opacity: 1,
-        x: +250,
-        y: -30,
-        height: 457,
+        duration: "0.5",
+      },
+      "+=0.2"
+    )
+    .to(
+      "#cum3 #name",
+      {
+        x: -300,
+        y: -60,
+        duration: "0.5",
+        color: "#94a3b8",
+      },
+      "<"
+    )
+    .to("#cum3 #dis", {
+      opacity: 1,
+      y: +200,
     })
-    
+    .to("#cum3 #line", {
+      opacity: 1,
+      x: +250,
+      y: -30,
+      height: 457,
+    })
+
     .to("#cum3 #agenda", {
-        opacity: 1,
-        x: +550,
+      opacity: 1,
+      x: +550,
     })
     .to("#cum3 #one", {
-        opacity: 1,
-        y: +180,
-        duration: 0.3,
-        ease: "back.out(1.2)",
+      opacity: 1,
+      y: +180,
+      duration: 0.3,
+      ease: "back.out(1.2)",
     })
-    .to("#cum3 #two", {
+    .to(
+      "#cum3 #two",
+      {
         opacity: 1,
         y: +180,
         duration: 0.3,
         ease: "back.out(1.2)",
-    }, ">-0.20")
-    .to("#cum3 #three", {
+      },
+      ">-0.20"
+    )
+    .to(
+      "#cum3 #three",
+      {
         opacity: 1,
         y: +350,
         duration: 0.4,
         ease: "back.out(1.2)",
-    }, ">-0.30")
-    .to("#cum3 #four", {
+      },
+      ">-0.30"
+    )
+    .to(
+      "#cum3 #four",
+      {
         opacity: 1,
         y: +350,
         duration: 0.4,
         ease: "back.out(1.2)",
-    },  ">-0.30")
+      },
+      ">-0.30"
+    );
 
-
-    t2 = gsap.timeline({paused: true, defaults: {duration: "0.3", ease: "sine.inOut"}})
-    t2.to('#cum2', {
-        width: "85vw",
-        height: "90vh",
-        zIndex: 1000,
-        x: -550, y: -25,
-    }).fromTo(
-        "#cum2 .hover", {opacity: 0}, {
-            opacity: 0,
-            zIndex: -10,
-            display: "none",
-
-        }, "<"
-    ).to("#cum2 #logo", {
+  t2 = gsap.timeline({
+    paused: true,
+    defaults: { duration: "0.3", ease: "sine.inOut" },
+  });
+  t2.to("#cum2", {
+    width: "85vw",
+    height: "90vh",
+    zIndex: 1000,
+    x: -550,
+    y: -25,
+  })
+    .fromTo(
+      "#cum2 .hover",
+      { opacity: 0 },
+      {
+        opacity: 0,
+        zIndex: -10,
+        display: "none",
+      },
+      "<"
+    )
+    .to(
+      "#cum2 #logo",
+      {
         x: -300,
         y: -30,
-        duration: "0.5"
-    }, "+=0.2"
-    ).to(
-        "#cum2 #name", {
-            x: -300,
-            y: -60,
-            duration: "0.5",
-            color: "#94a3b8",
-        }, "<"
-    ).to(
-        "#cum2 #dis", {
-            opacity: 1,
-            y: +200,
-        }
-    ).to("#cum2 #line", {
-        opacity: 1,
-        x: +250,
-        y: -30,
-        height: 457,
+        duration: "0.5",
+      },
+      "+=0.2"
+    )
+    .to(
+      "#cum2 #name",
+      {
+        x: -300,
+        y: -60,
+        duration: "0.5",
+        color: "#94a3b8",
+      },
+      "<"
+    )
+    .to("#cum2 #dis", {
+      opacity: 1,
+      y: +200,
     })
-    
+    .to("#cum2 #line", {
+      opacity: 1,
+      x: +250,
+      y: -30,
+      height: 457,
+    })
+
     .to("#cum2 #agenda", {
-        opacity: 1,
-        x: +550,
+      opacity: 1,
+      x: +550,
     })
     .to("#cum2 #one", {
-        opacity: 1,
-        y: +180,
-        duration: 0.3,
-        ease: "back.out(1.2)",
+      opacity: 1,
+      y: +180,
+      duration: 0.3,
+      ease: "back.out(1.2)",
     })
-    .to("#cum2 #two", {
+    .to(
+      "#cum2 #two",
+      {
         opacity: 1,
         y: +180,
         duration: 0.3,
         ease: "back.out(1.2)",
-    }, ">-0.20")
-    .to("#cum2 #three", {
+      },
+      ">-0.20"
+    )
+    .to(
+      "#cum2 #three",
+      {
         opacity: 1,
         y: +350,
         duration: 0.4,
         ease: "back.out(1.2)",
-    }, ">-0.30")
-    .to("#cum2 #four", {
+      },
+      ">-0.30"
+    )
+    .to(
+      "#cum2 #four",
+      {
         opacity: 1,
         y: +350,
         duration: 0.4,
         ease: "back.out(1.2)",
-    },  ">-0.30")
+      },
+      ">-0.30"
+    );
 
-
-    t4 = gsap.timeline({paused: true, defaults: {duration: "0.3", ease: "sine.inOut"}})
-    t4.to('#cum4', {
-        width: "85vw",
-        height: "90vh",
-        zIndex: 1000,
-        x: -550, y: -25,
-    }).fromTo(
-        "#cum4 .hover", {opacity: 0}, {
-            opacity: 0,
-            zIndex: -10,
-            display: "none",
-
-        }, "<"
-    ).to("#cum4 #logo", {
+  t4 = gsap.timeline({
+    paused: true,
+    defaults: { duration: "0.3", ease: "sine.inOut" },
+  });
+  t4.to("#cum4", {
+    width: "85vw",
+    height: "90vh",
+    zIndex: 1000,
+    x: -550,
+    y: -25,
+  })
+    .fromTo(
+      "#cum4 .hover",
+      { opacity: 0 },
+      {
+        opacity: 0,
+        zIndex: -10,
+        display: "none",
+      },
+      "<"
+    )
+    .to(
+      "#cum4 #logo",
+      {
         x: -300,
         y: -30,
-        duration: "0.5"
-    }, "+=0.2"
-    ).to(
-        "#cum4 #name", {
-            x: -300,
-            y: -60,
-            duration: "0.5",
-            color: "#94a3b8",
-        }, "<"
-    ).to(
-        "#cum4 #dis", {
-            opacity: 1,
-            y: +200,
-        }
-    ).to("#cum4 #line", {
-        opacity: 1,
-        x: +250,
-        y: -30,
-        height: 457,
+        duration: "0.5",
+      },
+      "+=0.2"
+    )
+    .to(
+      "#cum4 #name",
+      {
+        x: -300,
+        y: -60,
+        duration: "0.5",
+        color: "#94a3b8",
+      },
+      "<"
+    )
+    .to("#cum4 #dis", {
+      opacity: 1,
+      y: +200,
     })
-    
+    .to("#cum4 #line", {
+      opacity: 1,
+      x: +250,
+      y: -30,
+      height: 457,
+    })
+
     .to("#cum4 #agenda", {
-        opacity: 1,
-        x: +550,
+      opacity: 1,
+      x: +550,
     })
     .to("#cum4 #one", {
+      opacity: 1,
+      y: +180,
+      duration: 0.3,
+      ease: "back.out(1.2)",
+    })
+    .to(
+      "#cum4 #two",
+      {
         opacity: 1,
         y: +180,
         duration: 0.3,
         ease: "back.out(1.2)",
-    })
-    .to("#cum4 #two", {
-        opacity: 1,
-        y: +180,
-        duration: 0.3,
-        ease: "back.out(1.2)",
-    }, ">-0.20")
-    .to("#cum4 #three", {
+      },
+      ">-0.20"
+    )
+    .to(
+      "#cum4 #three",
+      {
         opacity: 1,
         y: +350,
         duration: 0.4,
         ease: "back.out(1.2)",
-    }, ">-0.30")
-    .to("#cum4 #four", {
+      },
+      ">-0.30"
+    )
+    .to(
+      "#cum4 #four",
+      {
         opacity: 1,
         y: +350,
         duration: 0.4,
         ease: "back.out(1.2)",
-    },  ">-0.30")
+      },
+      ">-0.30"
+    );
 
-    cum1 = document.getElementById("cum1")
-    cum2 = document.getElementById("cum2")
-    cum3 = document.getElementById("cum3")
-    cum4 = document.getElementById("cum4")
-    clicked = false;
-    cum1.addEventListener("click", function(){
-        console.log("click");
-        if (clicked == false){
-            t1.play();
-            clicked=true}
-        else{
-            t1.reverse();
-            clicked = false;
-        }
-    })
+  cum1 = document.getElementById("cum1");
+  cum2 = document.getElementById("cum2");
+  cum3 = document.getElementById("cum3");
+  cum4 = document.getElementById("cum4");
+  clicked = false;
+  cum1.addEventListener("click", function () {
+    console.log("click");
+    if (clicked == false) {
+      t1.play();
+      clicked = true;
+    } else {
+      t1.reverse();
+      clicked = false;
+    }
+  });
 
-    cum2.addEventListener("click", function(){
-        console.log("click");
-        if (clicked == false){
-            t2.play();
-            clicked=true}
-        else{
-            t2.reverse();
-            clicked = false;
-        }
-    })
+  cum2.addEventListener("click", function () {
+    console.log("click");
+    if (clicked == false) {
+      t2.play();
+      clicked = true;
+    } else {
+      t2.reverse();
+      clicked = false;
+    }
+  });
 
-    cum3.addEventListener("click", function(){
-        console.log("click");
-        if (clicked == false){
-            t3.play();
-            clicked=true}
-        else{
-            t3.reverse();
-            clicked = false;
-        }
-    })
+  cum3.addEventListener("click", function () {
+    console.log("click");
+    if (clicked == false) {
+      t3.play();
+      clicked = true;
+    } else {
+      t3.reverse();
+      clicked = false;
+    }
+  });
 
-    cum4.addEventListener("click", function(){
-        console.log("click");
-        if (clicked == false){
-            t4.play();
-            clicked=true}
-        else{
-            t4.reverse();
-            clicked = false;
-        }
-    })
+  cum4.addEventListener("click", function () {
+    console.log("click");
+    if (clicked == false) {
+      t4.play();
+      clicked = true;
+    } else {
+      t4.reverse();
+      clicked = false;
+    }
+  });
 </script>
