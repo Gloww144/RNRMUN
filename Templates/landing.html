@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Rozha+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Quicksand:wght@300..700&family=Rozha+One&display=swap" rel="stylesheet">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
@@ -54,9 +54,11 @@
     </ul>
 
 <div class="strip w-[200vw] h-72 bg-[#322996bd] absolute top-25 translate-x-[-1400px] -rotate-45 z-[-1]"></div>
-<!-- <div class="strip w-[200vw] h-72 bg-[#322996bd] absolute top-50 translate-x-[-700px] -rotate-45 z-[-1]"></div> -->
 <div class="strip w-[200vw] h-72 bg-[#322996bd] absolute top-50 translate-x-[-550px] -rotate-45 z-[-1]"></div>
 <div class="strip w-[360vw] h-72 bg-[#322996bd] absolute top-50 -translate-x-[700px] -rotate-45 z-[-1]"></div>
+<div class="strip w-[275px] aspect-square bg-[#322996] absolute top-[300vh] left-[50vw] rounded-full z-[-1]"></div>
+<div class="strip w-[275px] aspect-square bg-[#322996] absolute top-[320vh] left-[20vw] rounded-full z-[-1]"></div>
+<div class="strip w-[275px] aspect-square bg-[#322996] absolute top-[320vh] left-[80vw] rounded-full z-[-1]"></div>
 
 <section class="w-[92vw] h-[80vh] bg-black-900">
     <div class="relative translate-y-24 flex items-center gap-20 justify-center">
@@ -154,12 +156,12 @@
 
           <!-- Background Dots -->
           <div class="absolute left-0 right-0 top-1/2 -translate-y-1/2 z-0 flex justify-between items-center px-0">
-            <div class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
-            <div class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
-            <div class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
-            <div class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
-            <div class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
-            <div class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
+            <div id="bgdot0" class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
+            <div id="bgdot1" class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
+            <div id="bgdot2" class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
+            <div id="bgdot3" class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
+            <div id="bgdot4" class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
+            <div id="bgdot5" class="w-4 h-4 bg-white/30 border border-white rounded-full"></div>
           </div>
 
           <!-- Animated Active Dot -->
@@ -190,7 +192,114 @@
 
   </div>
 </section>
-
+<footer
+      class="mt-20 w-full text-white bg-transparent border-t-[1px] border-gray-600 body-font h"
+    >
+      <div
+        class="container flex flex-col flex-wrap px-5 py-24 mx-auto md:items-center lg:items-start md:flex-row md:flex-no-wrap"
+      >
+        <div
+          class="flex-shrink-0 w-64 mx-auto text-center md:mx-0 md:text-left mt-[-5vh]"
+        >
+          <div class="w-36 h-36 mt-[1.2rem]">
+            <img class="w-96 object-cover scale-[]" src="logo.png" />
+          </div>
+          <div class="ml-2 mt-4">
+            <span
+              class="flex justify-center mt-2 sm:ml-auto sm:mt-0 sm:justify-start gap-6"
+            >
+              <a
+                href="tel:08023350361"
+                class="text-white cursor-pointer hover:text-[#169948] transition-all"
+              >
+                <i
+                  class="fa-thin font-semilight fa-circle-phone scale-[1.2]"
+                ></i>
+              </a>
+              <a
+                href="mailto:rnpsmun24@gmail.com"
+                class="ml-3 text-white cursor-pointer hover:text-[#169948] transition-all"
+              >
+                <i class="fa-thin font-semilight fa-envelope scale-[1.2]"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/rnpsmun2023/"
+                class="ml-3 text-white cursor-pointer hover:text-[#169948] transition-all"
+              >
+                <i class="fa-brands opacity-[0.7] fa-instagram scale-[1.2]"></i>
+              </a>
+            </span>
+          </div>
+        </div>
+        <div
+          class="flex flex-wrap flex-grow justify-between mt-10 -mb-20 text-center md:pl-20 md:mt-0 md:text-left"
+        >
+          <div class="w-full px-4 lg:w-1/4 md:w-1/2 h-[10vh]">
+            <h2 class="text-[#169948] font-bold uppercase">About</h2>
+            <nav class="mb-10 list-none">
+              <li class="mt-3">
+                <a
+                  class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                  >Secretariat</a
+                >
+              </li>
+              <li class="mt-3">
+                <a
+                  class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                  >Committees</a
+                >
+              </li>
+            </nav>
+          </div>
+          <div class="w-full px-4 lg:w-1/4 md:w-1/2">
+            <h2 class="text-[#169948] font-bold uppercase">Resources</h2>
+            <nav class="mb-10 list-none">
+              <li class="mt-3">
+                <a
+                  class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                  >Contact Us</a
+                >
+              </li>
+              <li class="mt-3">
+                <a
+                  class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                  >Delegate Materials</a
+                >
+              </li>
+              <li class="mt-3">
+                <a
+                  class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                  >Guide</a
+                >
+              </li>
+            </nav>
+          </div>
+          <div class="w-full px-4 lg:w-1/4 md:w-1/2">
+            <h2 class="text-[#169948] font-bold uppercase">Contact</h2>
+            <nav class="mb-10 list-none">
+              <li class="mt-3">
+                <a
+                  class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                  >Send a Message</a
+                >
+              </li>
+              <li class="mt-3">
+                <a
+                  class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                  >Register Now</a
+                >
+              </li>
+            </nav>
+          </div>
+        </div>
+        <div class="relative left-[50%] text-center translate-x-[-50%] mt-20 flex flex-col">
+          <div class="text-teal-400">© R-NPSMUN Inc. All rights reserved.</div>
+          <div class="name tracking-[1px] mt-3">
+            Made by Vrishank R, Shrivardhan C, Athreya S
+          </div>
+        </div>
+      </div>
+    </footer>
 </body>
 </html>
 <script>
@@ -234,8 +343,10 @@
         x: 0,
 
       })
+      l = document.getElementById("bgdot" + currIndexNumber1).getBoundingClientRect().x;
+
       gsap.to('#dot1', {
-        x: 156.5*currIndexNumber1, ease: "power3.Out", duration: 1
+        x: l-188.7, ease: "power3.Out", duration: 1
       })
 
       des1.innerText = bodies1[currIndexNumber1]
@@ -264,8 +375,10 @@
 
       })
       
+      l = document.getElementById("bgdot" + currIndexNumber1).getBoundingClientRect().x;
+      
       gsap.to('#dot1', {
-        x: 156.5*currIndexNumber1, ease: "power3.out", duration: 1
+        x: l-188.7, ease: "power3.out", duration: 1
       })
       des1.innerText = bodies1[currIndexNumber1]
       header1.innerText = headers1[currIndexNumber1]
@@ -293,9 +406,13 @@
         ease: "power2.out",
         x: -10,
 
+
       })
+
+      l = document.getElementById("bgdot" + currIndexNumber2).getBoundingClientRect().x;
+
       gsap.to('#dot2', {
-        x: 156.5*currIndexNumber2, ease: "power.inOut", duration: 0.7
+        x: l-188.7, ease: "power.inOut", duration: 0.7
       })
 
       des2.innerText = bodies2[currIndexNumber2]
@@ -326,8 +443,10 @@
 
       })
       
+      l = document.getElementById("bgdot" + currIndexNumber2).getBoundingClientRect().x;
+
       gsap.to('#dot2', {
-        x: 156.5*currIndexNumber2, ease: "power.inOut", duration: 0.7
+        x: l-188.7, ease: "power.inOut", duration: 0.7
       })
 
 
@@ -430,6 +549,11 @@ body{
         color: white !important
     }
 
+      .name {
+        font-family: "Bungee Spice", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
     .glass{
         background: rgba(39, 39, 39, 0.1);
         box-shadow: 0 0 200px rgba(0, 0, 0, 0.7),
