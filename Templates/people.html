@@ -1,28 +1,45 @@
 <html>
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"> <!-- Link to Tailwind CDN -->
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-body {
-  user-select: none;
-  min-height: 100vh;
-  overscroll-behavior: none;
-  background: #161D3A;
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-  text-align: center;
-    justify-content:center;
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+    <link src="https://cdn.tailwindcss.com"></link>
+  <!-- Link to Tailwind CDN -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
 
-  padding: 0;
+.name{
+  font-family: "Bungee Spice", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-.js-tilt-glare {
+
+  .strip {
+    filter: blur(100px);
+    /* -webkit-backdrop-filter: blur( 60px ); */
+  }
+    body {
+      user-select: none;
+      min-height: 100vh;
+      overscroll-behavior: none;
+      background: radial-gradient(#0c1226, #161d3a);
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      text-align: center;
+      justify-content: center;
+
+      padding: 0;
+    }
+
+    .js-tilt-glare {
       position: absolute;
       top: 0;
       left: 0;
@@ -46,111 +63,125 @@ body {
       opacity: 0;
     }
 
-.container{
-  padding: 5.359vw;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  align-items: start;
-  column-gap: 8.039vw;
-  justify-self:center;
-  margin:0;
-  row-gap: 8.039vw;
+    .container {
+      padding: 5.359vw;
+      display: grid;
+      grid-template-columns: auto auto auto;
+      align-items: start;
+      column-gap: 8.039vw;
+      justify-self: center;
+      margin: 0;
+      row-gap: 8.039vw;
+    }
+    .box {
+      position: relative;
+      border-radius: 20px;
+      transform-style: preserve-3d;
 
+      z-index: 1;
+    }
+    .box .card {
+      position: relative;
+      background: rgba(212, 212, 212, 0.1);
+      width: 19vw;
+      min-height: 24.116vw;
+      backdrop-filter: blur(7px);
+      border: 0.5px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      box-shadow: 0 2.412vw 5.091vw rgba(0, 0, 0, 0.4);
+      z-index: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-}
-.box {
-  position: relative;
-  border-radius: 20px;
-  transform-style: preserve-3d;
+      overflow: hidden;
+      padding: 0.536vw;
+    }
 
-  z-index: 1;
-}
-.box .card {
-  position: relative;
-  background: rgba(212, 212, 212, 0.1);
-  width: 19vw;
-  min-height: 24.116vw;
-  backdrop-filter: blur(7px);
-  border: 0.5px solid rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
-  box-shadow: 0 2.412vw 5.091vw rgba(0,0,0,0.4);
-  z-index: 0;
-     display: flex;
-  justify-content: center;
-  align-items: center;
+    .box .card .elements {
+      position: absolute;
+      left: 1.34vw;
+      width: 16.077vw;
+      height: auto;
+      border-radius: 5px;
+      text-align: center;
+      background: transparent;
+      z-index: 2;
+      transform: translateY(50px);
+      align-items: center;
+      transition: all 0.63s ease;
+    }
+    .box .card .elements h2 {
+      font-size: 1.876vw;
+      font-weight: 600;
+      color: #c9c9c9;
+      text-transform: uppercase;
+    }
+    .box .card .elements p {
+      font-size: 1.5rem;
+      color: #2bd4a9;
+    }
+    .box .card .elements .a1 {
+      font-size: 21px;
+      color: #2bd4a9;
+      overflow: hidden;
+      opacity: 0;
+      padding: 2.68vw;
+      bottom: 0vw;
+    }
+    .box .card .elements .iamge {
+      object-fit: cover;
+      padding: 1.608vw;
+      justify-self: center;
+    }
+    .box .card:hover .elements {
+      transform: translateY(1.072vw);
+      transition: 0.5s;
+      transition-timing-function: ease;
+    }
 
-  overflow: hidden;
-  padding: 0.536vw;
-}
+    .box .card:hover .elements .a1 {
+      transform: translateY(-1.608vw);
+      padding: 3.215vw;
+      transition: 0.5s;
+      transition-timing-function: ease;
+      opacity: 1;
+    }
+    .box .card .elements .iamge img {
+      border-radius: 50%;
+      border: 1px solid #2d2d2d;
+      width: 10.718vw;
+      height: 10.718vw;
+    }
+    ul * {
+      color: white;
+      font-weight: 200 !important;
+    }
+  </style>
 
+  <body class="overflow-x-hidden">
+    <div
+      class="strip w-[200vw] h-72 bg-[#322996bd] absolute top-25 translate-x-[-1400px] -rotate-45 z-[-1]"
+    ></div>
+    <div
+      class="strip w-[200vw] h-72 bg-[#322996bd] absolute top-50 translate-x-[-550px] -rotate-45 z-[-1]"
+    ></div>
+    <div
+      class="strip w-[360vw] h-72 bg-[#322996bd] absolute top-50 -translate-x-[700px] -rotate-45 z-[-1]"
+    ></div>
+    <div
+      class="strip w-[275px] aspect-square bg-[#322996] absolute top-[230vh] left-[50vw] rounded-full z-[-1]"
+    ></div>
+    <div
+      class="strip w-[275px] aspect-square bg-[#322996] absolute top-[260vh] left-[20vw] rounded-full z-[-1]"
+    ></div>
+    <div
+      class="strip w-[275px] aspect-square bg-[#322996] absolute top-[260vh] left-[100vw] rounded-full z-[-1]"
+    ></div>
 
-.box .card .elements{
-  position: absolute;
-  left: 1.34vw;
-  width: 16.077vw;
-  height: auto;
-  border-radius: 5px;
-  text-align: center;
-  background: transparent;
-  z-index: 2;
-  transform: translateY(50px);
-    align-items: center;
-    transition: all 0.63s ease;
-
-}
-.box .card .elements h2{
-  font-size: 1.876vw;
-  font-weight: 600;
-  color: #c9c9c9;
-  text-transform: uppercase;
-}
-.box .card .elements p{
-  font-size: 1.5rem;
-  color: #2BD4A9;
-}
-.box .card .elements .a1{
-    font-size: 21px;
-    color: #2BD4A9;
-    overflow: hidden;
-    opacity: 0;
-    padding: 2.68vw;
-    bottom: 0vw;
-
-}
-.box .card .elements .iamge{
-  object-fit: cover; 
-  padding: 1.608vw;
-justify-self:center;
-
-
-
-}
-.box .card:hover .elements{
-  transform: translateY(1.072vw);
-  transition: 0.5s;
-  transition-timing-function: ease;
-}
-
-.box .card:hover .elements .a1{
-  transform: translateY(-1.608vw);
-  padding: 3.215vw;
-  transition: 0.5s;
-  transition-timing-function: ease;
-  opacity: 1;
-}
-.box .card .elements .iamge img{
-  border-radius: 50%; border: 1px solid #2d2d2d; width: 10.718vw; height: 10.718vw;
-
-}
-
-
-    </style>
-
-<body>
     <ul
       id="nav"
       class="backdrop-filter backdrop-blur-lg bg-opacity-10 bg-black-950 mt-0 list-none p-4 text-[#169948] absolute border-b-[0.5px] border-gray-800 flex items-center justify-between w-full sticky top-0 z-50"
-      style="width: full !important"
     >
       <!-- Left side of the navbar -->
       <li class="float-left">
@@ -207,121 +238,120 @@ justify-self:center;
       </div>
     </ul>
 
-  <div class="container">
-    <div class="box">
-      <div class="card">
-        <div class="elements">
-          <div class="iamge">
-          <img src="/static/Portrait_Placeholder.png"  alt="Avatar">
-          </div>
-          <h2>John Doe</h2>
-          <div class="a1">CO-HEAD OF PRESS</div>
-        </div>
-         <div class="js-tilt-glare">
-      <div class="js-tilt-glare-inner"></div>
-      </div>
-      </div>
-    </div>
+    <div class="container">
       <div class="box">
         <div class="card">
           <div class="elements">
             <div class="iamge">
-            <img src="/static/Portrait_Placeholder.png"  alt="Avatar">
+              <img src="/static/Portrait_Placeholder.png" alt="Avatar" />
+            </div>
+            <h2>John Doe</h2>
+            <div class="a1">CO-HEAD OF PRESS</div>
+          </div>
+          <div class="js-tilt-glare">
+            <div class="js-tilt-glare-inner"></div>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="card">
+          <div class="elements">
+            <div class="iamge">
+              <img src="/static/Portrait_Placeholder.png" alt="Avatar" />
             </div>
             <h2>John Doe hello</h2>
             <div class="a1">CO-HEAD OF PRESS</div>
           </div>
-           <div class="js-tilt-glare">
-      <div class="js-tilt-glare-inner"></div>
-      </div>
+          <div class="js-tilt-glare">
+            <div class="js-tilt-glare-inner"></div>
           </div>
-      </div> 
+        </div>
+      </div>
       <div class="box">
         <div class="card">
           <div class="elements">
             <div class="iamge">
-            <img src="/static/Portrait_Placeholder.png"  alt="Avatar">
+              <img src="/static/Portrait_Placeholder.png" alt="Avatar" />
             </div>
             <h2>John Doe</h2>
             <div class="a1">UNSC CHAIR</div>
           </div>
-           <div class="js-tilt-glare">
-      <div class="js-tilt-glare-inner"></div>
-      </div>
+          <div class="js-tilt-glare">
+            <div class="js-tilt-glare-inner"></div>
           </div>
-      </div>  
+        </div>
+      </div>
       <div class="box">
         <div class="card">
           <div class="elements">
             <div class="iamge">
-            <img src="/static/Portrait_Placeholder.png"  alt="Avatar">
+              <img src="/static/Portrait_Placeholder.png" alt="Avatar" />
             </div>
             <h2>John Doe</h2>
             <div class="a1">UNSC VICE-CHAIR</div>
           </div>
-           <div class="js-tilt-glare">
-      <div class="js-tilt-glare-inner"></div>
-      </div>
+          <div class="js-tilt-glare">
+            <div class="js-tilt-glare-inner"></div>
           </div>
-      </div> 
+        </div>
+      </div>
       <div class="box">
         <div class="card">
           <div class="elements">
             <div class="iamge">
-            <img src="/static/Portrait_Placeholder.png"  alt="Avatar">
+              <img src="/static/Portrait_Placeholder.png" alt="Avatar" />
             </div>
             <h2>John Doe</h2>
             <div class="a1">UNHRC CHAIR</div>
           </div>
-           <div class="js-tilt-glare">
-      <div class="js-tilt-glare-inner"></div>
-      </div>
+          <div class="js-tilt-glare">
+            <div class="js-tilt-glare-inner"></div>
+          </div>
         </div>
       </div>
-        <div class="box">
-          <div class="card">
-            <div class="elements">
-              <div class="iamge">
-              <img src="/static/Portrait_Placeholder.png"  alt="Avatar">
-              </div>
-              <h2>John Doe</h2>
-              <div class="a1">UNHRC VICE-CHAIR</div>
+      <div class="box">
+        <div class="card">
+          <div class="elements">
+            <div class="iamge">
+              <img src="/static/Portrait_Placeholder.png" alt="Avatar" />
             </div>
-             <div class="js-tilt-glare">
-      <div class="js-tilt-glare-inner"></div>
+            <h2>John Doe</h2>
+            <div class="a1">UNHRC VICE-CHAIR</div>
+          </div>
+          <div class="js-tilt-glare">
+            <div class="js-tilt-glare-inner"></div>
+          </div>
+        </div>
       </div>
+      <div class="box">
+        <div class="card">
+          <div class="elements">
+            <div class="iamge">
+              <img src="/static/Portrait_Placeholder.png" alt="Avatar" />
             </div>
-        </div> 
-        <div class="box">
-          <div class="card">
-            <div class="elements">
-              <div class="iamge">
-              <img src="/static/Portrait_Placeholder.png"  alt="Avatar">
-              </div>
-              <h2>John Doe</h2>
-              <div class="a1">DISEC CHAIR</div>
-            </div>
-             <div class="js-tilt-glare">
-      <div class="js-tilt-glare-inner"></div>
+            <h2>John Doe</h2>
+            <div class="a1">DISEC CHAIR</div>
+          </div>
+          <div class="js-tilt-glare">
+            <div class="js-tilt-glare-inner"></div>
+          </div>
+        </div>
       </div>
+      <div class="box">
+        <div class="card">
+          <div class="elements">
+            <div class="iamge">
+              <img src="/static/Portrait_Placeholder.png" alt="Avatar" />
             </div>
-        </div>  
-        <div class="box">
-          <div class="card">
-            <div class="elements">
-              <div class="iamge">
-              <img src="/static/Portrait_Placeholder.png"  alt="Avatar">
-              </div>
-              <h2>John Doe</h2>
-              <div class="a1">DISEC VICE-CHAIR</div>
-            </div>
-             <div class="js-tilt-glare">
-      <div class="js-tilt-glare-inner"></div>
+            <h2>John Doe</h2>
+            <div class="a1">DISEC VICE-CHAIR</div>
+          </div>
+          <div class="js-tilt-glare">
+            <div class="js-tilt-glare-inner"></div>
+          </div>
+        </div>
       </div>
-            </div>
-        </div> 
-
-  </div>
+    </div>
     <footer
       class="mt-20 w-full text-white bg-transparent border-t-[1px] border-gray-600 body-font h"
     >
@@ -430,16 +460,16 @@ justify-self:center;
         </div>
       </div>
     </footer>
-</body>
-<script>
+  </body>
+  <script>
     VanillaTilt.init(document.querySelectorAll(".box"), {
-  max: 10,
-  speed: 180,
-  easing: "cubic-bezier(.03,.98,.52,.99)",
-  reverse: true,
- glare: true,
+      max: 10,
+      speed: 180,
+      easing: "cubic-bezier(.03,.98,.52,.99)",
+      reverse: true,
+      glare: true,
       "max-glare": 0.1,
-      "glare-prerender": true
-});
-</script>
+      "glare-prerender": true,
+    });
+  </script>
 </html>
