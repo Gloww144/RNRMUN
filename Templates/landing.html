@@ -8,6 +8,9 @@
     <link src="https://cdn.tailwindcss.com"></link>
 
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css">
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -104,7 +107,7 @@
     <div class="w-[100vw] h-[150vh] p-8 overflow-hidden flex flex-col items-center justify-center gap-[30px]">
     <!-- Day 1 -->
 
-      <div class="w-[70vw] h-[50vh] p-12 overflow-hidden shadow-xl bg-[#161D3A] rounded-xl">
+      <div data-aos="fade-up" data-aos-duration="2000" class="w-[70vw] h-[50vh] p-12 overflow-hidden shadow-xl bg-[#161D3A] rounded-xl">
 
         <div class="flex justify-between items-center mb-6 relative">
           <!-- Gray timeline line -->
@@ -148,7 +151,7 @@
 
         
         <!-- Day 2 --> 
-      <div class="mt-20 w-[70vw] h-[50vh] p-12 overflow-hidden shadow-xl bg-[#161D3A] rounded-xl">
+      <div data-aos="fade-up" data-aos-duration="2000" data-aos-delay="1000" class="mt-20 w-[70vw] h-[50vh] p-12 overflow-hidden shadow-xl bg-[#161D3A] rounded-xl">
 
         <div class="flex justify-between items-center mb-6 relative">
           <!-- Gray timeline line -->
@@ -202,7 +205,7 @@
           class="flex-shrink-0 w-64 mx-auto text-center md:mx-0 md:text-left mt-[-5vh]"
         >
           <div class="w-36 h-36 mt-[1.2rem]">
-            <img class="w-96 object-cover scale-[]" src="logo.png" />
+            <img class="w-96 object-cover scale-[]" src="/static/nps.png" />
           </div>
           <div class="ml-2 mt-4">
             <span
@@ -532,6 +535,12 @@
         duration: 0.5
     })
 </script>
+
+
+<script>
+  AOS.init();
+</script>
+
 <style>
 
 body{
@@ -578,6 +587,7 @@ body{
   font-style: normal;
 
 }
+
 
 
 </style>
