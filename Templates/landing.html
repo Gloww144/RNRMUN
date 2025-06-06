@@ -594,50 +594,58 @@ function closeNav() {
           </div>
     </footer>
 </section>
- <script>
-      const container = document.getElementById("expandableDiv");
-      const readMoreBtn = document.getElementById("readMoreBtn");
-      const fullText = document.getElementById("fullText");
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const containers = document.querySelectorAll("[data-expandable]");
 
-      function expand() {
-        container.classList.add("expanded");
-        readMoreBtn.classList.add("hidden");
-        setTimeout(() => {
+      function setExpandedState(container, isExpanded) {
+        const readMoreBtn = container.querySelector(".read-more");
+        const fullText = container.querySelector(".full-text");
+        const cancelBtn = container.querySelector(".cancel-btn");
+
+        if (isExpanded) {
+          container.classList.add("expanded");
           fullText.classList.add("visible");
-        }, 300);
-      }
+          readMoreBtn.classList.add("hidden");
+          cancelBtn.style.display = "block";
 
-      function collapse() {
-        fullText.classList.remove("visible");
-        setTimeout(() => {
+          readMoreBtn.setAttribute("aria-expanded", "true");
+          cancelBtn.setAttribute("aria-expanded", "true");
+          fullText.setAttribute("aria-hidden", "false");
+        } else {
           container.classList.remove("expanded");
+          fullText.classList.remove("visible");
           readMoreBtn.classList.remove("hidden");
-        }, 500);
+          cancelBtn.style.display = "none";
+
+          readMoreBtn.setAttribute("aria-expanded", "false");
+          cancelBtn.setAttribute("aria-expanded", "false");
+          fullText.setAttribute("aria-hidden", "true");
+        }
       }
 
-     
-      const container1 = document.getElementById("expandableDiv1");
-      const readMoreBtn1 = document.getElementById("readMoreBtn1");
-      const fullText1 = document.getElementById("fullText1");
-
-      function expand1() {
-        container1.classList.add("expanded");
-        readMoreBtn1.classList.add("hidden");
-        setTimeout(() => {
-          fullText1.classList.add("visible");
-        }, 300);
+      function checkScreenWidth() {
+        containers.forEach((container) => {
+          if (window.innerWidth < 1200) {
+            setExpandedState(container, true);
+          } else {
+            setExpandedState(container, false);
+          }
+        });
       }
 
-      function collapse1() {
-        fullText1.classList.remove("visible");
-        setTimeout(() => {
-          container1.classList.remove("expanded");
-          readMoreBtn1.classList.remove("hidden");
-        }, 500);
-      }
+      containers.forEach((container) => {
+        const readMoreBtn = container.querySelector(".read-more");
+        const cancelBtn = container.querySelector(".cancel-btn");
 
-  
-    </script></body>
+        readMoreBtn.addEventListener("click", () => setExpandedState(container, true));
+        cancelBtn.addEventListener("click", () => setExpandedState(container, false));
+      });
+
+      window.addEventListener("resize", checkScreenWidth);
+      checkScreenWidth();
+    });
+  </script></body>
 <script>
   const headers1 = ["Inaugural", "Session 1", "Break", "Session 2", "Lunch", "Session 3"]
   const bodies1 = ["Welcome to the event! This is the inaugural session to kick things off.", "Topic-based interactive session with key speakers", 
