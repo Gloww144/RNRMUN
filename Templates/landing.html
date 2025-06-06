@@ -17,6 +17,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Quicksand:wght@300..700&family=Rozha+One&display=swap" rel="stylesheet">
+    <script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "100%";
+  document.getElementById("main").style.marginLeft = "25%";
+  document.getElementById("main").style.display="none";
+
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+    document.getElementById("main").style.display="block";
+}
+</script>
+
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
       * {
@@ -24,242 +39,183 @@
         padding: 0;
         box-sizing: border-box;
         font-family: "Poppins", sans-serif;
-      }
-      .center-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .bigcont{
-        padding: 5.359vw;
-        display: grid;
-        grid-template-columns: auto auto;
-        align-items: start;
-        column-gap: 5.359vw;
-        justify-content:center;
-        row-gap: 8.039vw;
+      }  </style>
+    <style>
+       <style>
+    
+    .center-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
 
+    .bigcont {
+      padding: 3vw;
+      display: grid;
+      grid-template-columns: auto auto;
+      gap: 2vw 3vw;
+      justify-content: center;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    @media only screen and (max-width: 1200px) {
+      .bigcont {
+        grid-template-columns: auto;
+        width: 90vw;
       }
+
       .container {
-        width: 25vw; /* smaller initial width */
-        height: 10.718vw; /* lets it grow if content needs */
-        text-align: center;
-        color: white;
-        display: flex;
-        flex-direction: column; /* stack children vertically */
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        transition: width 0.3s ease-in-out, min-height 0.3s ease-in-out,
-          padding 0.3s ease-in-out;
-        background: rgba(212, 212, 212, 0.1);
-        backdrop-filter: blur(7px);
-        box-sizing: border-box;
-        border: 0.5px solid rgba(255, 255, 255, 0.15);
-        border-radius: 20px;
-        box-shadow: 0 45px 95px rgba(0, 0, 0, 0.4);
-        position: relative;
-        padding: 0.536vw 1.608vw;
-      }
-      .container:hover {
-        border: 3px solid rgba(255, 255, 255, 0.15);
-        transition: all 0.3s ease;
-      }
-      .container.expanded {
-        width: 44vw;
-        justify-content:space-evenly;
-        height: 30vw;
-        padding: 1.608vw 2.144vw 2.144vw;
-        overflow-y: auto;
-      }
-      .cancel-btn {
-        position: absolute;
-        top: 0.536vw;
-        right: 0.536vw;
-        color: gray;
-        border: none;
-        padding: 0.322vw 0.644vw;
-        cursor: pointer;
-        display: none;
-        z-index: 2;
-        border-radius: 20px;
-        font-size: 12px;
-        transition: background-color 0.1s ease-in-out;
-      }
-      .cancel-btn:hover {
-        color: grey;
-      }
-      .container.expanded .cancel-btn {
-        display: block;
-      }
-      .read-more {
-        font-size: 12px;
-        color: rgba(255, 255, 255, 0.229);
-        padding: 0.429vw 0.858vw;
-        border: none;
-        cursor: pointer;
-        border-radius: 20px;
-        margin-top: 1.072vw; /* Space above the button */
-        align-self: center; /* Center horizontally */
-        transition: opacity 0.3s ease-in-out, background-color 0.2s ease;
-      }
-      .read-more.hidden {
-        opacity: 0;
-        pointer-events: none;
-      }
-      .text-wrapper {
-        position: relative;
-        width: 100%;
-        border-radius: 20px;
-        padding-top: 1.072vw; /* Clear space for cancel button */
-        box-sizing: border-box;
-        text-align: left;
-      }
-      .preview-text {
-        display: block;
-        border-radius: 20px;
-        line-height: 1.2; 
-          color: #26A69A;
-        text-align: center;
-      }
-      .container.expanded .preview-text {
-        display: inline;
-        font-size: 29px;
-      
-        text-decoration:0.536vw underline white;
-        text-align: center;
-       transition: all 0.3s ease;
-      }
-      .full-text {
-        opacity: 0;
-        display: none;
-        transition: opacity 0.3s ease-in-out, display 0.3s ease;
-        border-radius: 20px;
-        padding: 0.536vw 0;
-        text-align: left;
-      }
-      .full-text.visible {
-        opacity: 1;
-        display: inline;
+        width: 80vw !important;
+        height: auto !important;
+        padding: 1.5vw 2vw 2vw !important;
+        box-shadow: 0 2.4vw 5vw rgba(0, 0, 0, 0.4) !important;
       }
 
-      .center-wrapper1 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      .cancel-btn,
+      .read-more {
+        display: none !important;
       }
-      .container1 {
-        width: 25vw; /* smaller initial width */
-        height: 10.718vw; /* lets it grow if content needs */
+
+      .full-text {
+        display: inline !important;
+        opacity: 1 !important;
+      }
+
+      .preview-text {
+        font-size: 1.8rem;
+        text-decoration: underline white;
         text-align: center;
-        color: white;
-        display: flex;
-        flex-direction: column; /* stack children vertically */
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        transition: width 0.3s ease-in-out, min-height 0.3s ease-in-out,
-          padding 0.3s ease-in-out;
-        background: rgba(212, 212, 212, 0.1);
-        backdrop-filter: blur(7px);
-        box-sizing: border-box;
-        border: 0.5px solid rgba(255, 255, 255, 0.15);
-        border-radius: 20px;
-        box-shadow: 0 2.412vw 5.091vw rgba(0, 0, 0, 0.4);
-        position: relative;
-        padding: 0.536vw 1.608vw;
       }
-      .container1:hover {
-        border: 3px solid rgba(255, 255, 255, 0.15);
-        transition: all 0.3s ease;
-      }
-      .container1.expanded {
-        width: 44vw;
-        height: 30vw;
-        padding: 1.608vw 2.144vw 2.144vw;
-      }
-      .cancel-btn1 {
-        position: absolute;
-        top: 0.536vw;
-        right: 0.536vw;
-        color: gray;
-        border: none;
-        padding: 0.322vw 0.644vw;
-        cursor: pointer;
-        display: none;
-        z-index: 2;
-        border-radius: 20px;
-        font-size: 12px;
-        transition: background-color 0.1s ease-in-out;
-      }
-      .cancel-btn1:hover {
-        color: grey;
-      }
-      .container1.expanded .cancel-btn1 {
-        display: block;
-      }
-      .read-more1 {
-        font-size: 12px;
-        color: rgba(255, 255, 255, 0.229);
-        padding: 0.429vw 0.858vw;
-        border: none;
-        cursor: pointer;
-        border-radius: 20px;
-        margin-top: 1.072vw; /* Space above the button */
-        align-self: center; /* Center horizontally */
-        transition: opacity 0.3s ease-in-out, background-color 0.2s ease;
-      }
-      .read-more1.hidden {
-        opacity: 0;
-        pointer-events: none;
-      }
-      .text-wrapper1 {
-        position: relative;
-        text-align: left;
-        width: 100%;
-        border-radius: 20px;
-        padding-top: 1.072vw; /* Clear space for cancel button */
-        box-sizing: border-box;
-      }
-      .preview-text1 {
-        display: block;
-        border-radius: 20px;
-          color: #26A69A;
-        line-height: 1.2;
-        text-align: center;
-        text-decoration: 1px underline transparent;
-  
-      }
-      .container1.expanded .preview-text1 {
-        display: inline;
-        font-size: 29px;
-      
-        text-decoration:0.536vw underline white;
-        text-align: center;
-       transition: all 0.3s ease;
-       
-      }
-      .full-text1 {
-        opacity: 0;
-        display: none;
-        transition: opacity 0.3s ease-in-out, display 0.3s ease;
-        border-radius: 20px;
-        padding: 0.536vw 0;
-        text-align: left;
-      }
-      .full-text1.visible {
-        opacity: 1;
-        display: inline;
-      }
+    }
+
+    .container {
+      width: 25vw;
+      height: 10.7vw;
+      text-align: center;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      transition: width 0.3s ease-in-out, min-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+      background: rgba(212, 212, 212, 0.1);
+      backdrop-filter: blur(7px);
+      border: 0.5px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      box-shadow: 0 45px 95px rgba(0, 0, 0, 0.4);
+      position: relative;
+      padding: 0.5vw 1.5vw;
+      box-sizing: border-box;
+    }
+
+    .container:hover {
+      border: 3px solid rgba(255, 255, 255, 0.15);
+      transition: all 0.3s ease;
+    }
+
+    .container.expanded {
+      width: 44vw;
+      height: 30vw;
+      padding: 1.5vw 2vw 2vw;
+      justify-content: space-evenly;
+      overflow-y: auto;
+    }
+    .container.expanded .bigcont{
+      width: 100vw;
+    }
+
+    .cancel-btn {
+      position: absolute;
+      top: 0.5vw;
+      right: 0.5vw;
+      color: gray;
+      border: none;
+      padding: 0.3vw 0.6vw;
+      cursor: pointer;
+      display: none;
+      z-index: 2;
+      border-radius: 20px;
+      font-size: 12px;
+      background: transparent;
+      transition: background-color 0.1s ease-in-out;
+    }
+
+    .cancel-btn:hover {
+      color: grey;
+    }
+
+    .container.expanded .cancel-btn {
+      display: block;
+    }
+
+    .read-more {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.3);
+      padding: 0.4vw 0.8vw;
+      border: none;
+      cursor: pointer;
+      border-radius: 20px;
+      margin-top: 1vw;
+      align-self: center;
+      transition: opacity 0.3s ease-in-out, background-color 0.2s ease;
+      background: transparent;
+    }
+
+    .read-more.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .text-wrapper {
+      position: relative;
+      width: 100%;
+      border-radius: 20px;
+      padding-top: 1vw;
+      box-sizing: border-box;
+      text-align: left;
+    }
+
+    .preview-text {
+      display: block;
+      border-radius: 20px;
+      line-height: 1.2;
+      color: #26a69a;
+      text-align: center;
+    }
+
+    .container.expanded .preview-text {
+      font-size: 1.8rem;
+      text-decoration: underline white;
+      text-align: center;
+      transition: all 0.3s ease;
+      display: inline;
+    }
+
+    .full-text {
+      opacity: 0;
+      display: none;
+      transition: opacity 0.3s ease-in-out;
+      border-radius: 20px;
+      padding: 0.5vw 0;
+      text-align: left;
+    }
+
+    .full-text.visible {
+      opacity: 1;
+      display: inline;
+    }
+  </style>
     </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
   <body class="w-[100vw] left-0 overflow-x-hidden">
 
-    <ul
+      <ul
       id="nav"
-      class="backdrop-filter backdrop-blur-lg bg-opacity-10 bg-black-950 mt-0 list-none p-4 text-[#169948] absolute border-b-[0.5px] border-gray-800 flex items-center justify-between w-full sticky top-0 z-50"
-      style="width: full !important"
+      class="backdrop-filter backdrop-blur-lg bg-opacity-10 bg-black-950 mt-0 list-none p-4 text-[#169948] absolute border-b-[0.5px] border-gray-800 flex items-center justify-between w-full sticky top-0 z-50 hidden lg:flex"
     >
       <!-- Left side of the navbar -->
       <li class="float-left">
@@ -315,6 +271,28 @@
         </li>
       </div>
     </ul>
+    <div id="mySidebar" class="sidebar block lg:hidden z-50 fixed top-0 left-0 h-full w-0 overflow-x-hidden bg-[#000] pt-[60px] backdrop-filter backdrop-blur-2xl bg-opacity-50 transition-all duration-500">
+  <a href="javascript:void(0)" class="closebtn absolute top-0 right-[25px] text-[#fff] text-[10vw] ml-[50px]" onclick="closeNav()">×</a>
+ 
+    <a href="landing.html" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">RNPSMUN</a>
+    <a href="people.html" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">Secretariat</a>
+    <a href="commitee.html" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">Committees</a>
+    <a href="files.html" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">Guide</a>
+    <a href="contactus.html" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">Contact</a>
+    <a href="#" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">Register</a>
+  </div>
+
+<div id="main" class="block lg:hidden z-50 transition-all duration-500 p-4">
+  <button 
+    onclick="openNav()" 
+    class="fixed top-4 left-4 z-50 text-[7vw] text-white px-[5.405vw] py-[4.324vw] rounded-[70px] 
+          backdrop-filter backdrop-blur-lg bg-opacity-10 shadow-lg">
+    ☰
+  </button>
+
+  <h2></h2>
+  <p></p>
+</div>
 
 <div class="strip w-[200vw] h-72 bg-[#322996bd] absolute top-25 translate-x-[-1400px] -rotate-45 z-[-1]"></div>
 <div class="strip w-[200vw] h-72 bg-[#322996bd] absolute top-50 translate-x-[-550px] -rotate-45 z-[-1]"></div>
@@ -360,53 +338,55 @@
 
 <div class="mt-10 bigcont">
     <div class="center-wrapper">
-      <div id="expandableDiv" class="container">
-        <button class="cancel-btn" onclick="collapse()">X</button>
+      <div id="expandableDiv" class="container" data-expandable>
+        <button type="button" class="cancel-btn" aria-label="Collapse content" aria-expanded="false">X</button>
         <div class="text-wrapper">
           <div class="preview-text">Letter from the Secretary General</div>
-          <br><br>
-          <div id="fullText" class="full-text">
-           Greetings delegates! <br><br>
-           As the Secretary-General, I welcome you to the RNPS MUN 2024: The 8th Edition. 
-           <br>Over the years, RNPS MUN has established itself as a platform where young minds with exceptional 
-           problem-solving skills can learn, grow, and shine. My journey is not just filled with research, debates 
-           and negotiations but also with a confidence that has helped me become who I am today. 
-           <br><br>I’m here today as your Secretary General because 8th-grade me, pulled out all the courage she had and 
-           registered for her very first MUN. This year’s intra-school MUN is the perfect place to be. It’s not 
-           just about the trophy or the title; it’s about the experience. <br>In the years to come, it’s the skills 
-           you pick up in these two days that will do all the talking.Prepare to dive into fiery debates, 
-           embrace challenges and let the diplomat in you take over. I strongly believe that every one of 
-           you has it in you to climb the ladder and make the 8th Edition of this wonderful tradition a huge success.
-           <br><br>I look forward to seeing you all make your mark this year and I wish you the best of luck!
+          <br /><br />
+          <div id="fullText" class="full-text" aria-hidden="true">
+            Greetings delegates! <br /><br />
+            As the Secretary-General, I welcome you to the RNPS MUN 2024: The 8th Edition.
+            <br />Over the years, RNPS MUN has established itself as a platform where young minds with exceptional
+            problem-solving skills can learn, grow, and shine. My journey is not just filled with research, debates
+            and negotiations but also with a confidence that has helped me become who I am today.
+            <br /><br />I’m here today as your Secretary General because 8th-grade me, pulled out all the courage she
+            had and registered for her very first MUN. This year’s intra-school MUN is the perfect place to be. It’s
+            not just about the trophy or the title; it’s about the experience. <br />In the years to come, it’s the
+            skills you pick up in these two days that will do all the talking.Prepare to dive into fiery debates,
+            embrace challenges and let the diplomat in you take over. I strongly believe that every one of you has it
+            in you to climb the ladder and make the 8th Edition of this wonderful tradition a huge success.
+            <br /><br />I look forward to seeing you all make your mark this year and I wish you the best of luck!
           </div>
         </div>
-        <button id="readMoreBtn" class="read-more" onclick="expand()">
+        <button type="button" class="read-more" aria-label="Expand content" aria-expanded="false">
           Click to read more
         </button>
       </div>
     </div>
-    <div class="center-wrapper1">
-      <div id="expandableDiv1" class="container1">
-        <button class="cancel-btn1" onclick="collapse1()">X</button>
-        <div class="text-wrapper1">
-          <div class="preview-text1">What is RNPSMUN?</div>
-          <br><br>
-          <div id="fullText1" class="full-text1">
-            An amalgamation of consistent committees fused with a few unconventional ones, 
-            we have ensured that each delegate, new or experienced, has something to look forward to. 
-            Delegates will have to think on their feet to keep up with the pace of the debate, 
+
+    <div class="center-wrapper">
+      <div id="expandableDiv1" class="container" data-expandable>
+        <button type="button" class="cancel-btn" aria-label="Collapse content" aria-expanded="false">X</button>
+        <div class="text-wrapper">
+          <div class="preview-text">What is RNPSMUN?</div>
+          <br /><br />
+          <div id="fullText1" class="full-text" aria-hidden="true">
+            An amalgamation of consistent committees fused with a few unconventional ones,
+            we have ensured that each delegate, new or experienced, has something to look forward to.
+            Delegates will have to think on their feet to keep up with the pace of the debate,
             combating the obstacles posed, while sticking to the portfolios represented.
-            <br><br>Alliances will be made, strategies devised, while keeping the nations’ 
+            <br /><br />Alliances will be made, strategies devised, while keeping the nations’
             best interests at heart. Factual knowledge along with rational arbitrations will
-             help sail you through! So delegates, come be a part of this exhilarating experience!
+            help sail you through! So delegates, come be a part of this exhilarating experience!
           </div>
         </div>
-        <button id="readMoreBtn1" class="read-more1" onclick="expand1()">
+        <button type="button" class="read-more" aria-label="Expand content" aria-expanded="false">
           Click to read more
         </button>
       </div>
     </div>
-    </div>
+  </div>
+
 
 
 
