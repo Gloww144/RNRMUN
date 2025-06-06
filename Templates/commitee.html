@@ -9,6 +9,10 @@
       rel="stylesheet"
       href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
       integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
@@ -23,12 +27,11 @@
       rel="stylesheet"
     />
   </head>
-  <body class="z-[-1000000] grad relative">
+  <body class="z-[-1000000] h-[200vh grad relative overflow-x-hidden">
     <!-- Navbar -->
     <ul
       id="nav"
-      class="backdrop-filter backdrop-blur-lg bg-opacity-10 bg-black-950 mt-0 list-none p-4 text-[#169948] absolute border-b-[0.5px] border-gray-800 flex items-center justify-between w-full sticky top-0 z-50"
-      style="width: full !important"
+      class="backdrop-filter backdrop-blur-lg bg-opacity-10 bg-black-950 mt-0 list-none p-4 text-[#169948] absolute border-b-[0.5px] border-gray-800 flex items-center justify-between w-full sticky top-0 z-50 hidden lg:flex"
     >
       <!-- Left side of the navbar -->
       <li class="float-left">
@@ -84,26 +87,83 @@
         </li>
       </div>
     </ul>
+    <div
+      id="mySidebar"
+      class="sidebar block lg:hidden z-50 fixed top-0 left-0 h-full w-0 overflow-x-hidden bg-[#000] pt-[60px] backdrop-filter backdrop-blur-2xl bg-opacity-50 transition-all duration-500"
+    >
+      <a
+        href="javascript:void(0)"
+        class="closebtn absolute top-0 right-[25px] text-[#fff] text-[10vw] ml-[50px]"
+        onclick="closeNav()"
+        >×</a
+      >
 
+      <a
+        href="landing.html"
+        class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]"
+        >RNPSMUN</a
+      >
+      <a
+        href="people.html"
+        class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]"
+        >Secretariat</a
+      >
+      <a
+        href="commitee.html"
+        class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]"
+        >Committees</a
+      >
+      <a
+        href="files.html"
+        class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]"
+        >Guide</a
+      >
+      <a
+        href="contactus.html"
+        class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]"
+        >Contact</a
+      >
+      <a href="#" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]"
+        >Register</a
+      >
+    </div>
+
+    <div id="main" class="block lg:hidden z-50 transition-all duration-500 p-4">
+      <button
+        onclick="openNav()"
+        class="fixed top-4 left-4 z-50 text-[7vw] text-white px-[5.405vw] py-[4.324vw] rounded-[70px] backdrop-filter backdrop-blur-lg bg-opacity-10 shadow-lg"
+      >
+        ☰
+      </button>
+
+      <h2></h2>
+      <p></p>
+    </div>
     <!-- Main -->
     <div
-      class="relative -mt-20 w-full overflow-x-hidden h-[190vh] grid py-[90px] pt-[150px] grid-rows-2 grid-cols-2 gap-y-[121px] z-[-2] overflow-y-hidden pb-[200px]"
+      class="relative -mt-20 w-full overflow-x-hidden md:h-[190vh] grid py-[90px] pt-[150px] md:grid-cols-2 gap-y-[9.5vw] z-[-2] overflow-y-hidden pb-[200px] grid-cols-1"
     >
       <div
-        id="cum1"
-        class="glass w-[35vw] relative h-[60vh] m-auto z-10 flex items-center flex-col pt-20 gap-10"
+        id="card1"
+        class="glass rounded-[4vw] md:w-[35vw] relative md:h-[60vh] w-[90vw] mx-auto z-10 flex md:px-0 px-[min(5vw,_20px)] items-center flex-col pt-[6.24vw] gap-[4vw] pb-5"
       >
-        <img src="static/ra.png" id="logo" class="w-40 h-40 rounded-full" />
+        <img
+          src="static/ra.png"
+          id="logo"
+          class="h-[max(12.65vw,_100px)] w-[max(12.65vw,_100px)] rounded-full"
+        />
         <div
-          class="hover -mt-20 absolute w-full h-[100%] bg-[#1f1f1fe9] opacity-[0] scale-[1.01] rounded-[50px] flex items-center flex-col gap-4 text-[#ffffffdb] justify-center z-[2]"
+          id="hover1"
+          class="md:opacity-0 md:hover:opacity-100 md:flex hidden -mt-[6.324vw] absolute w-full h-[100%] bg-[#1f1f1fe9] scale-[1.01] rounded-[4vw] items-center flex-col gap-[1.265vw] text-[#ffffffdb] flex justify-center z-[2]"
         >
-          <i class="fa-thin fa-arrow-pointer text-[50px]"></i>
+          <i class="fa-thin fa-arrow-pointer text-[3.953vw]"></i>
           <div class="">Click to learn more</div>
         </div>
-        <div id="name" class="text-center text-pink-600 font-bold">XYZ</div>
+
+        <div id="name" class="text-center text-pink-600 font-bold">DISEC</div>
         <div
           id="dis"
-          class="opacity-0 absolute w-[25vw] text-center text-slate-400 text-light translate-x-[-305px] translate-y-[00px]"
+          class="md:opacity-0 md:absolute md:w-[25vw] text-center text-slate-400 text-light md:translate-x-[-24.1vw] md:text-[1.2vw] text-[max(2vw,_10px)]"
         >
           A conflict whose intricate history is often obscured with an elaborate
           web of global diplomacy: The Israel-Palestine Conflict. This ongoing
@@ -112,81 +172,91 @@
           numerous wars, uprisings, and an unending cycle of violence, impacting
           millions of lives.
         </div>
+
+        <div
+          id="line"
+          class="md:w-2 w-1 shadow-lg md:absolute h-[16.31vh] rounded-[100vh] bg-green-600 left-[19.747vw] rotate-[90deg] mt-[max(-7vh,_-70px)] mb-[max(-8vh,_-50px)] md:rotate-0 translate-y-[3vw] md:opacity-0"
+          style="backdrop-filter: blur(30px); filter: blur(1px)"
+        ></div>
         <div
           id="agenda"
-          class="text-[#169c49] left-10 absolute opacity-0 text-lg w-[350px] text-center"
+          class="text-[#169c49] left-[3.162vw] md:absolute md:opacity-0 opacity-100 text-[max(1.4vw,_10px)] md:w-[27.68vw] mt-[min(5vw,_20px)] text-center"
         >
           <b>AGENDA: </b>Self Regulation vs. Legal Regulations; 'How strong are
           Journalistic Ethics?'
         </div>
-        <div
-          id="line"
-          class="w-2 shadow-lg absolute h-[100px] rounded-[100vh] bg-green-600 left-[250px] translate-y-[100px] opacity-[0]"
-          style="backdrop-filter: blur(30px); filter: blur(1px)"
-        ></div>
 
-        <div id="people" class="absolute top-0 translate-x-[200px] w-full">
+        <div
+          id="people"
+          class="md:absolute top-0 md:translate-x-[19vw] md:translate-y-[3vw] md:block w-full grid grid-cols-2 grid-rows-2 gap-y-[max(1vw,_20px)] place-items-center"
+        >
           <div
             id="one"
-            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[400px] flex items-center justify-center opacity-0"
+            class="glass rounded-[min(4vw,_40px)] md:w-[7vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13.05vh] md:translate-x-[31.6vw] flex items-center justify-center md:opacity-0"
             style="border-color: #169c49"
           >
             <img
               src="static/person.jpg"
-              class="w-20 h-20 relative rounded-full"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
             />
             <div class=""></div>
           </div>
           <div
             id="two"
-            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[600px] flex items-center justify-center opacity-0"
+            class="glass rounded-[min(4vw,_40px)] md:w-[7vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13vh] md:translate-x-[47.4vw] flex items-center justify-center md:opacity-0"
             style="border-color: #169c49"
           >
             <img
               src="static/person.jpg"
-              class="w-20 h-20 relative rounded-full"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
             />
             <div class=""></div>
           </div>
           <div
             id="three"
-            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[400px] flex items-center justify-center opacity-0"
+            class="glass rounded-[min(4vw,_40px)] md:w-[7vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13vh] md:translate-x-[31.6vw] flex items-center justify-center md:opacity-0"
             style="border-color: #169c49"
           >
             <img
               src="static/person.jpg"
-              class="w-20 h-20 relative rounded-full"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
             />
             <div class=""></div>
           </div>
           <div
             id="four"
-            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[600px] flex items-center justify-center opacity-0"
+            class="glass rounded-[min(4vw,_40px)] md:w-[7vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13vh] md:translate-x-[47.4vw] flex items-center justify-center md:opacity-0"
             style="border-color: #169c49"
           >
             <img
               src="static/person.jpg"
-              class="w-20 h-20 relative rounded-full"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
             />
             <div class=""></div>
           </div>
         </div>
       </div>
+
       <div
-        id="cum2"
-        class="glass w-[35vw] relative h-[60vh] m-auto z-10 flex items-center flex-col pt-20 gap-10"
+        id="card2"
+        class="glass rounded-[4vw] md:w-[35vw] relative md:h-[60vh] w-[90vw] mx-auto z-10 flex md:px-0 px-[min(5vw,_20px)] items-center flex-col pt-[6.24vw] gap-[4vw] pb-5"
       >
-        <img src="static/ra.png" id="logo" class="w-40 h-40 rounded-full" />
+        <img
+          src="static/ra.png"
+          id="logo"
+          class="h-[max(12.65vw,_100px)] w-[max(12.65vw,_100px)] rounded-full"
+        />
         <div
-          class="hover -mt-20 absolute w-full h-[100%] bg-[#1f1f1fe9] opacity-[0] scale-[1.01] rounded-[50px] flex items-center flex-col gap-4 text-[#ffffffdb] justify-center z-[2]"
+          id="hover2"
+          class="md:opacity-0 md:hover:opacity-100 md:flex hidden -mt-[6.324vw] absolute w-full h-[100%] bg-[#1f1f1fe9] scale-[1.01] rounded-[4vw] items-center flex-col gap-[1.265vw] text-[#ffffffdb] justify-center z-[2]"
         >
-          <i class="fa-thin fa-arrow-pointer text-[50px]"></i>
+          <i class="fa-thin fa-arrow-pointer text-[3.953vw]"></i>
           <div class="">Click to learn more</div>
         </div>
         <div id="name" class="text-center text-pink-600 font-bold">XYZ</div>
         <div
           id="dis"
-          class="opacity-0 absolute w-[25vw] text-center text-slate-400 text-light translate-x-[-305px] translate-y-[00px]"
+          class="md:opacity-0 md:absolute md:w-[25vw] text-center text-slate-400 text-light md:translate-x-[-24.1vw] md:text-[1.2vw] text-[max(2vw,_10px)]"
         >
           A conflict whose intricate history is often obscured with an elaborate
           web of global diplomacy: The Israel-Palestine Conflict. This ongoing
@@ -195,81 +265,90 @@
           numerous wars, uprisings, and an unending cycle of violence, impacting
           millions of lives.
         </div>
+
+        <div
+          id="line"
+          class="md:w-2 w-1 shadow-lg md:absolute h-[16.31vh] rounded-[100vh] bg-green-600 left-[19.747vw] rotate-[90deg] mt-[max(-7vh,_-70px)] mb-[max(-8vh,_-50px)] md:rotate-0 translate-y-[3vw] md:opacity-0"
+          style="backdrop-filter: blur(30px); filter: blur(1px)"
+        ></div>
         <div
           id="agenda"
-          class="text-[#169c49] left-10 absolute opacity-0 text-lg w-[350px] text-center"
+          class="text-[#169c49] left-[3.162vw] md:absolute md:opacity-0 opacity-100 text-[max(1.4vw,_10px)] md:w-[27.68vw] mt-[min(5vw,_20px)] text-center"
         >
           <b>AGENDA: </b>Self Regulation vs. Legal Regulations; 'How strong are
           Journalistic Ethics?'
         </div>
-        <div
-          id="line"
-          class="w-2 shadow-lg absolute h-[100px] rounded-[100vh] bg-green-600 left-[250px] translate-y-[100px] opacity-[0]"
-          style="backdrop-filter: blur(30px); filter: blur(1px)"
-        ></div>
 
-        <div id="people" class="absolute top-0 translate-x-[200px] w-full">
+        <div
+          id="people"
+          class="md:absolute top-0 md:translate-x-[19vw] md:translate-y-[3vw] md:block w-full grid grid-cols-2 grid-rows-2 gap-y-[max(1vw,_20px)] place-items-center"
+        >
           <div
             id="one"
-            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[400px] flex items-center justify-center opacity-0"
+            class="glass rounded-[min(4vw,_40px)] md:w-[7vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13.05vh] md:translate-x-[31.6vw] flex items-center justify-center md:opacity-0"
             style="border-color: #169c49"
           >
             <img
               src="static/person.jpg"
-              class="w-20 h-20 relative rounded-full"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
             />
             <div class=""></div>
           </div>
           <div
             id="two"
-            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[600px] flex items-center justify-center opacity-0"
+            class="glass rounded-[min(4vw,_40px)] md:w-[7vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13vh] md:translate-x-[47.4vw] flex items-center justify-center md:opacity-0"
             style="border-color: #169c49"
           >
             <img
               src="static/person.jpg"
-              class="w-20 h-20 relative rounded-full"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
             />
             <div class=""></div>
           </div>
           <div
             id="three"
-            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[400px] flex items-center justify-center opacity-0"
+            class="glass rounded-[min(4vw,_40px)] md:w-[7vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13vh] md:translate-x-[31.6vw] flex items-center justify-center md:opacity-0"
             style="border-color: #169c49"
           >
             <img
               src="static/person.jpg"
-              class="w-20 h-20 relative rounded-full"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
             />
             <div class=""></div>
           </div>
           <div
             id="four"
-            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[600px] flex items-center justify-center opacity-0"
+            class="glass rounded-[min(4vw,_40px)] md:w-[7vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13vh] md:translate-x-[47.4vw] flex items-center justify-center md:opacity-0"
             style="border-color: #169c49"
           >
             <img
               src="static/person.jpg"
-              class="w-20 h-20 relative rounded-full"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
             />
             <div class=""></div>
           </div>
         </div>
       </div>
       <div
-        id="cum3"
-        class="glass w-[35vw] relative h-[60vh] m-auto z-10 flex items-center flex-col pt-20 gap-10"
+        id="card3"
+        class="glass rounded-[4vw] md:w-[35vw] relative md:h-[60vh] w-[90vw] mx-auto z-10 flex md:px-0 px-[min(5vw,_20px)] items-center flex-col pt-[6.24vw] gap-[4vw] pb-5"
       >
-        <img src="static/ra.png" id="logo" class="w-40 h-40 rounded-full" />
+        <img
+          src="static/ra.png"
+          id="logo"
+          class="h-[max(12.65vw,_100px)] w-[max(12.65vw,_100px)] rounded-full"
+        />
         <div
-          class="hover -mt-20 absolute w-full h-[100%] bg-[#1f1f1fe9] opacity-[0] scale-[1.01] rounded-[50px] flex items-center flex-col gap-4 text-[#ffffffdb] justify-center z-[2]"
+          id="hover3"
+          class="md:opacity-0 md:hover:opacity-100 md:flex hidden -mt-[6.324vw] absolute w-full h-[100%] bg-[#1f1f1fe9] scale-[1.01] rounded-[4vw] items-center flex-col gap-[1.265vw] text-[#ffffffdb] justify-center z-[2]"
         >
-          <i class="fa-thin fa-arrow-pointer text-[50px]"></i>
+          <i class="fa-thin fa-arrow-pointer text-[3.953vw]"></i>
           <div class="">Click to learn more</div>
         </div>
         <div id="name" class="text-center text-pink-600 font-bold">XYZ</div>
         <div
           id="dis"
-          class="opacity-0 absolute w-[25vw] text-center text-slate-400 text-light translate-x-[-305px] translate-y-[00px]"
+          class="md:opacity-0 md:absolute md:w-[25vw] text-center text-slate-400 text-light md:translate-x-[-24.1vw] md:text-[1.2vw] text-[max(2vw,_10px)]"
         >
           A conflict whose intricate history is often obscured with an elaborate
           web of global diplomacy: The Israel-Palestine Conflict. This ongoing
@@ -278,81 +357,90 @@
           numerous wars, uprisings, and an unending cycle of violence, impacting
           millions of lives.
         </div>
+
+        <div
+          id="line"
+          class="md:w-2 w-1 shadow-lg md:absolute h-[16.31vh] rounded-[100vh] bg-green-600 left-[19.747vw] rotate-[90deg] mt-[max(-7vh,_-70px)] mb-[max(-8vh,_-50px)] md:rotate-0 translate-y-[3vw] md:opacity-0"
+          style="backdrop-filter: blur(30px); filter: blur(1px)"
+        ></div>
         <div
           id="agenda"
-          class="text-[#169c49] left-10 absolute opacity-0 text-lg w-[350px] text-center"
+          class="text-[#169c49] left-[3.162vw] md:absolute md:opacity-0 opacity-100 text-[max(1.4vw,_10px)] md:w-[27.68vw] mt-[min(5vw,_20px)] text-center"
         >
           <b>AGENDA: </b>Self Regulation vs. Legal Regulations; 'How strong are
           Journalistic Ethics?'
         </div>
-        <div
-          id="line"
-          class="w-2 shadow-lg absolute h-[100px] rounded-[100vh] bg-green-600 left-[250px] translate-y-[100px] opacity-[0]"
-          style="backdrop-filter: blur(30px); filter: blur(1px)"
-        ></div>
 
-        <div id="people" class="absolute top-0 translate-x-[200px] w-full">
+        <div
+          id="people"
+          class="md:absolute top-0 md:translate-x-[19vw] md:translate-y-[3vw] md:block w-full grid grid-cols-2 grid-rows-2 gap-y-[max(1vw,_20px)] place-items-center"
+        >
           <div
             id="one"
-            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[400px] flex items-center justify-center opacity-0"
+            class="glass rounded-[min(4vw,_40px)] md:w-[7vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13.05vh] md:translate-x-[31.6vw] flex items-center justify-center md:opacity-0"
             style="border-color: #169c49"
           >
             <img
               src="static/person.jpg"
-              class="w-20 h-20 relative rounded-full"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
             />
             <div class=""></div>
           </div>
           <div
             id="two"
-            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[600px] flex items-center justify-center opacity-0"
+            class="glass rounded-[min(4vw,_40px)] md:w-[7vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13vh] md:translate-x-[47.4vw] flex items-center justify-center md:opacity-0"
             style="border-color: #169c49"
           >
             <img
               src="static/person.jpg"
-              class="w-20 h-20 relative rounded-full"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
             />
             <div class=""></div>
           </div>
           <div
             id="three"
-            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[400px] flex items-center justify-center opacity-0"
+            class="glass rounded-[min(4vw,_40px)] md:w-[7vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13vh] md:translate-x-[31.6vw] flex items-center justify-center md:opacity-0"
             style="border-color: #169c49"
           >
             <img
               src="static/person.jpg"
-              class="w-20 h-20 relative rounded-full"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
             />
             <div class=""></div>
           </div>
           <div
             id="four"
-            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[600px] flex items-center justify-center opacity-0"
+            class="glass rounded-[min(4vw,_40px)] md:w-[7vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13vh] md:translate-x-[47.4vw] flex items-center justify-center md:opacity-0"
             style="border-color: #169c49"
           >
             <img
               src="static/person.jpg"
-              class="w-20 h-20 relative rounded-full"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
             />
             <div class=""></div>
           </div>
         </div>
       </div>
       <div
-        id="cum4"
-        class="glass w-[35vw] relative h-[60vh] m-auto z-10 flex items-center flex-col pt-20 gap-10"
+        id="card4"
+        class="glass rounded-[4vw] md:w-[35vw] relative md:h-[60vh] w-[90vw] mx-auto z-10 flex md:px-0 px-[min(5vw,_20px)] items-center flex-col pt-[6.24vw] gap-[4vw] pb-5"
       >
-        <img src="static/ra.png" id="logo" class="w-40 h-40 rounded-full" />
+        <img
+          src="static/ra.png"
+          id="logo"
+          class="h-[max(12.65vw,_100px)] w-[max(12.65vw,_100px)] rounded-full"
+        />
         <div
-          class="hover -mt-20 absolute w-full h-[100%] bg-[#1f1f1fe9] opacity-[0] scale-[1.01] rounded-[50px] flex items-center flex-col gap-4 text-[#ffffffdb] justify-center z-[2]"
+          id="hover4"
+          class="md:opacity-0 md:hover:opacity-100 md:flex hidden -mt-[6.324vw] absolute w-full h-[100%] bg-[#1f1f1fe9] scale-[1.01] rounded-[4vw] items-center flex-col gap-[1.265vw] text-[#ffffffdb] justify-center z-[2]"
         >
-          <i class="fa-thin fa-arrow-pointer text-[50px]"></i>
+          <i class="fa-thin fa-arrow-pointer text-[3.953vw]"></i>
           <div class="">Click to learn more</div>
         </div>
         <div id="name" class="text-center text-pink-600 font-bold">XYZ</div>
         <div
           id="dis"
-          class="opacity-0 absolute w-[25vw] text-center text-slate-400 text-light translate-x-[-305px] translate-y-[00px]"
+          class="md:opacity-0 md:absolute md:w-[25vw] text-center text-slate-400 text-light md:translate-x-[-24.1vw] md:text-[1.2vw] text-[max(2vw,_10px)]"
         >
           A conflict whose intricate history is often obscured with an elaborate
           web of global diplomacy: The Israel-Palestine Conflict. This ongoing
@@ -361,61 +449,65 @@
           numerous wars, uprisings, and an unending cycle of violence, impacting
           millions of lives.
         </div>
+
+        <div
+          id="line"
+          class="md:w-2 w-1 shadow-lg md:absolute h-[16.31vh] rounded-[100vh] bg-green-600 left-[19.747vw] rotate-[90deg] mt-[max(-7vh,_-70px)] mb-[max(-8vh,_-50px)] md:rotate-0 translate-y-[3vw] md:opacity-0"
+          style="backdrop-filter: blur(30px); filter: blur(1px)"
+        ></div>
         <div
           id="agenda"
-          class="text-[#169c49] left-10 absolute opacity-0 text-lg w-[350px] text-center"
+          class="text-[#169c49] left-[3.162vw] md:absolute md:opacity-0 opacity-100 text-[max(1.4vw,_10px)] md:w-[27.68vw] mt-[min(5vw,_20px)] text-center"
         >
           <b>AGENDA: </b>Self Regulation vs. Legal Regulations; 'How strong are
           Journalistic Ethics?'
         </div>
-        <div
-          id="line"
-          class="w-2 shadow-lg absolute h-[100px] rounded-[100vh] bg-green-600 left-[250px] translate-y-[100px] opacity-[0]"
-          style="backdrop-filter: blur(30px); filter: blur(1px)"
-        ></div>
 
-        <div id="people" class="absolute top-0 translate-x-[200px] w-full">
+        <div
+          id="people"
+          class="md:absolute top-0 md:translate-x-[19vw] md:translate-y-[3vw] md:block w-full grid grid-cols-2 grid-rows-2 gap-y-[max(1vw,_20px)] place-items-center"
+        >
           <div
             id="one"
-            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[400px] flex items-center justify-center opacity-0"
+            class="glass rounded-[min(4vw,_40px)] md:w-[7vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13.05vh] md:translate-x-[31.6vw] flex items-center justify-center md:opacity-0"
             style="border-color: #169c49"
           >
             <img
               src="static/person.jpg"
-              class="w-20 h-20 relative rounded-full"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
             />
             <div class=""></div>
           </div>
           <div
             id="two"
-            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[600px] flex items-center justify-center opacity-0"
+            class="glass rounded-[min(4vw,_40px)] md:w-[7vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13vh] md:translate-x-[47.4vw] flex items-center justify-center md:opacity-0"
             style="border-color: #169c49"
           >
             <img
               src="static/person.jpg"
-              class="w-20 h-20 relative rounded-full"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
             />
             <div class=""></div>
           </div>
           <div
             id="three"
-            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[400px] flex items-center justify-center opacity-0"
+            class="glass rounded-[min(4vw,_40px)] md:w-[7vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13vh] md:translate-x-[31.6vw] flex items-center justify-center md:opacity-0"
             style="border-color: #169c49"
           >
             <img
               src="static/person.jpg"
-              class="w-20 h-20 relative rounded-full"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
             />
             <div class=""></div>
           </div>
           <div
             id="four"
-            class="glass w-32 aspect-square absolute translate-y-[80px] translate-x-[600px] flex items-center justify-center opacity-0"
+            class="glass rounded-[min(4vw,_40px)] md:w-[7vw] w-[max(80px,_7vw)] aspect-square md:absolute md:translate-y-[13vh] md:translate-x-[47.4vw] flex items-center justify-center md:opacity-0"
             style="border-color: #169c49"
           >
             <img
               src="static/person.jpg"
-              class="w-20 h-20 relative rounded-full"
+              class="w-[70%] h-[70%] relative rounded-[4vw]"
             />
             <div class=""></div>
           </div>
@@ -423,23 +515,31 @@
       </div>
 
       <div
-        class="strip w-[200vw] h-72 bg-[#322996bd] absolute top-50 translate-x-[-700px] -rotate-45 z-[-1]"
+        class="strip w-[200vw] h-[47vh] bg-[#322996bd] absolute top-[32.626vh] translate-x-[-55.3vw] -rotate-45 z-[-1]"
       ></div>
       <div
-        class="strip w-[360vw] h-72 bg-[#322996bd] absolute top-50 -translate-x-[700px] -rotate-45 z-[-1]"
+        class="strip w-[360vw] h-[47vh] bg-[#322996bd] absolute top-[110vh] md:top-[32.626vh] translate-x-[-70vw] md:translate-x-[-55.3vw] -rotate-45 z-[-1]"
+      ></div>
+      <div
+        class="strip w-[360vw] h-[47vh] bg-[#322996bd] absolute top-[210vh] md:top-[32.626vh] translate-x-[-70vw] md:translate-x-[-55.3vw] -rotate-45 z-[-1]"
+      ></div>
+      <div
+        class="strip w-[360vw] h-[47vh] bg-[#322996bd] absolute top-[310vh] md:top-[32.626vh] translate-x-[-70vw] md:translate-x-[-55.3vw] -rotate-45 z-[-1]"
       ></div>
     </div>
-     <footer
-      class="w-full text-white bg-transparent border-t-[1px] border-gray-600 body-font h"
+
+    <footer
+      class="mt-10 w-full text-white bg-transparent border-t-[1px] border-gray-600 body-font"
     >
       <div
-        class="container flex flex-col flex-wrap px-5 py-24 mx-auto md:items-center lg:items-start md:flex-row md:flex-no-wrap"
+        class="container flex flex-col flex-wrap items-center px-5 py-24 mx-auto md:items-center lg:items-start md:flex-row md:flex-no-wrap"
       >
+        <!-- Logo and Icons -->
         <div
-          class="flex-shrink-0 w-64 mx-auto text-center md:mx-0 md:text-left mt-[-5vh]"
+          class="flex flex-col w-full md:w-64 mx-auto text-center md:mx-0 md:text-left mt-[-5vh] items-center mb-10 md:mb-0"
         >
           <div class="w-36 h-36 mt-[1.2rem]">
-            <img class="w-96 object-cover scale-[]" src="static/nps.png" />
+            <img class="w-96 object-cover" src="static/nps.png" />
           </div>
           <div class="ml-2 mt-4">
             <span
@@ -468,74 +568,112 @@
             </span>
           </div>
         </div>
+
+        <!-- Link Sections -->
         <div
-          class="flex flex-wrap flex-grow justify-between mt-10 -mb-20 text-center md:pl-20 md:mt-0 md:text-left"
+          class="flex flex-col md:flex-row flex-grow w-full md:w-auto justify-center md:justify-between text-center md:pl-20 md:mt-0 md:text-left gap-8 md:gap-0"
         >
-          <div class="w-full px-4 lg:w-1/4 md:w-1/2 h-[10vh]">
-            <h2 class="text-[#169948] font-bold uppercase">About</h2>
-            <nav class="mb-10 list-none">
-              <li class="mt-3">
-                <a
-                  href="people.html"
-                  class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
-                  >Secretariat</a
-                >
-              </li>
-              <li class="mt-3">
-                <a
-                  href="commitee.html"
-                  class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
-                  >Committees</a
-                >
-              </li>
-            </nav>
+          <!-- About -->
+          <div
+            class="w-full md:w-1/4 flex flex-col md:block items-center md:items-start px-4"
+          >
+            <div
+              class="flex flex-row justify-between items-center w-full md:block"
+            >
+              <h2 class="text-[#169948] font-bold uppercase text-left">
+                About
+              </h2>
+              <nav
+                class="list-none flex flex-col md:block text-right md:text-left"
+              >
+                <li class="mt-3">
+                  <a
+                    href="people.html"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Secretariat</a
+                  >
+                </li>
+                <li class="mt-3">
+                  <a
+                    href="commitee.html"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Committees</a
+                  >
+                </li>
+              </nav>
+            </div>
           </div>
-          <div class="w-full px-4 lg:w-1/4 md:w-1/2">
-            <h2 class="text-[#169948] font-bold uppercase">Resources</h2>
-            <nav class="mb-10 list-none">
-              <li class="mt-3">
-                <a
-                  href="contactus.html"
-                  class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
-                  >Contact Us</a
-                >
-              </li>
-              <li class="mt-3">
-                <a
-                  href="files.html"
-                  class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
-                  >Guide</a
-                >
-              </li>
-            </nav>
+
+          <!-- Resources -->
+          <div
+            class="w-full md:w-1/4 flex flex-col md:block items-center md:items-start px-4"
+          >
+            <div
+              class="flex flex-row justify-between items-center w-full md:block"
+            >
+              <h2 class="text-[#169948] font-bold uppercase text-left">
+                Resources
+              </h2>
+              <nav
+                class="list-none flex flex-col md:block text-right md:text-left"
+              >
+                <li class="mt-3">
+                  <a
+                    href="contactus.html"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Contact Us</a
+                  >
+                </li>
+                <li class="mt-3">
+                  <a
+                    href="files.html"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Guide</a
+                  >
+                </li>
+              </nav>
+            </div>
           </div>
-          <div class="w-full px-4 lg:w-1/4 md:w-1/2">
-            <h2 class="text-[#169948] font-bold uppercase">Contact</h2>
-            <nav class="mb-10 list-none">
-              <li class="mt-3">
-                <a
-                  href="mailto:rnpsmun24@gmail.com"
-                  class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
-                  >Send a Message</a
-                >
-              </li>
-              <li class="mt-3">
-                <a
-                  href="registerparthere"
-                  class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
-                  >Register Now</a
-                >
-              </li>
-            </nav>
+
+          <!-- Contact -->
+          <div
+            class="w-full md:w-1/4 flex flex-col md:block items-center md:items-start px-4"
+          >
+            <div
+              class="flex flex-row justify-between items-center w-full md:block"
+            >
+              <h2 class="text-[#169948] font-bold uppercase text-left">
+                Contact
+              </h2>
+              <nav
+                class="list-none flex flex-col md:block text-right md:text-left"
+              >
+                <li class="mt-3">
+                  <a
+                    href="mailto:rnpsmun24@gmail.com"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Send a Message</a
+                  >
+                </li>
+                <li class="mt-3">
+                  <a
+                    href="registerparthere"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Register Now</a
+                  >
+                </li>
+              </nav>
+            </div>
           </div>
         </div>
       </div>
 
-        <div class="mx-auto -mt-20 mb-5 flex flex-col text-center">
-          <div class="text-teal-400">© R-NPSMUN Inc. All rights reserved.</div>
-          <div class="name tracking-[1px] mt-3">
-            Made by Vrishank R, Shrivardhan C, Athreya S
-          </div>
+      <!-- Bottom Text -->
+      <div class="mx-auto mt-10 md:mt-[-5vh] mb-5 flex flex-col text-center">
+        <div class="text-teal-400">© R-NPSMUN Inc. All rights reserved.</div>
+        <div class="name tracking-[1px] mt-3">
+          Made by Vrishank R, Shrivardhan C, Athreya S
+        </div>
       </div>
     </footer>
   </body>
@@ -549,7 +687,6 @@
     box-shadow: 0 0 200px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(60px);
     -webkit-backdrop-filter: blur(60px);
-    border-radius: 50px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     /* background-color: gray; */
   }
@@ -561,11 +698,8 @@
   }
 
   .strip {
-    filter: blur(100px);
-    /* -webkit-backdrop-filter: blur( 60px ); */
-  }
-  .hover:hover {
-    opacity: 1 !important;
+    filter: blur(70px);
+    /* -webkit-backdrop-filter: blur(100px); */
   }
 
   ul * {
@@ -583,92 +717,124 @@
 </style>
 
 <script>
+  function openNav() {
+    document.getElementById("mySidebar").style.width = "100%";
+    document.getElementById("main").style.marginLeft = "25%";
+    document.getElementById("main").style.display = "none";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+    document.getElementById("main").style.display = "block";
+  }
+  const isMobile = window.innerWidth <= 768;
+  clicked = false;
+
+  window.addEventListener("resize", () => {
+    const isMobile = window.innerWidth <= 768;
+
+    if (window.innerWidth <= 768) {
+      [
+        "#card1",
+        "#card2",
+        "#card3",
+        "#card4",
+        "#logo",
+        "#name",
+        "#dis",
+        "#line",
+        "#agenda",
+        "#people",
+        "#one",
+        "#two",
+        "#three",
+        "#four",
+        "#hover1",
+        "#hover2",
+        "#hover3",
+        "#hover4",
+      ].forEach((item) => {
+        gsap.set(item, { clearProps: "all" });
+      });
+    }
+  });
   t1 = gsap.timeline({
     paused: true,
     defaults: { duration: "0.3", ease: "power3.out" },
   });
-  t1.to("#cum1", {
+  t1.to("#card1", {
     width: "85vw",
     height: "90vh",
     zIndex: 1000,
-    x: +90,
-    y: -25,
+    x: "7.1vw",
+    y: "-4.07vh",
   })
-    .fromTo(
-      "#cum1 .hover",
-      { opacity: 0 },
-      {
-        opacity: 0,
-        zIndex: -10,
-        display: "none",
-      },
-      "<"
-    )
     .to(
-      "#cum1 #logo",
+      "#card1 #logo",
       {
-        x: -300,
-        y: -30,
+        x: "-23.7vw",
+        y: "-4.9vh",
         duration: "0.5",
       },
       "+=0.2"
     )
     .to(
-      "#cum1 #name",
+      "#card1 #name",
       {
-        x: -300,
-        y: -60,
+        x: "-23.7vw",
+        y: "-4.9vh",
         duration: "0.5",
         color: "#94a3b8",
       },
       "<"
     )
-    .to("#cum1 #dis", {
+    .to("#card1 #dis", {
       opacity: 1,
-      y: +200,
+      y: "+32.62vh",
     })
-    .to("#cum1 #line", {
+    .to("#card1 #line", {
       opacity: 1,
-      x: +250,
-      y: -30,
-      height: 457,
+      x: "+=19.75vw",
+      y: "+=-4.9vh",
+      height: "74.5vh",
     })
 
-    .to("#cum1 #agenda", {
+    .to("#card1 #agenda", {
       opacity: 1,
-      x: +550,
+      x: "+45vw",
     })
-    .to("#cum1 #one", {
+    .to("#card1 #one", {
       opacity: 1,
-      y: +180,
+      y: "+29.36vh",
       duration: 0.3,
       ease: "back.out(1.2)",
     })
     .to(
-      "#cum1 #two",
+      "#card1 #two",
       {
         opacity: 1,
-        y: +180,
+        y: "+29.36vh",
         duration: 0.3,
         ease: "back.out(1.2)",
       },
       ">-0.20"
     )
     .to(
-      "#cum1 #three",
+      "#card1 #three",
       {
         opacity: 1,
-        y: +350,
+        y: "+57.09vh",
         duration: 0.4,
         ease: "back.out(1.2)",
       },
       ">-0.30"
     )
     .to(
-      "#cum1 #four",
+      "#card1 #four",
       {
         opacity: 1,
-        y: +350,
+        y: "+57.09vh",
         duration: 0.4,
         ease: "back.out(1.2)",
       },
@@ -679,88 +845,78 @@
     paused: true,
     defaults: { duration: "0.3", ease: "sine.inOut" },
   });
-  t3.to("#cum3", {
+  t3.to("#card3", {
     width: "85vw",
     height: "90vh",
     zIndex: 1000,
-    x: +90,
-    y: -25,
+    x: "7.1vw",
+    y: "-4.07vh",
   })
-    .fromTo(
-      "#cum3 .hover",
-      { opacity: 0 },
-      {
-        opacity: 0,
-        zIndex: -10,
-        display: "none",
-      },
-      "<"
-    )
     .to(
-      "#cum3 #logo",
+      "#card3 #logo",
       {
-        x: -300,
-        y: -30,
+        x: "-23.7vw",
+        y: "-4.9vh",
         duration: "0.5",
       },
       "+=0.2"
     )
     .to(
-      "#cum3 #name",
+      "#card3 #name",
       {
-        x: -300,
-        y: -60,
+        x: "-23.7vw",
+        y: "-4.9vh",
         duration: "0.5",
         color: "#94a3b8",
       },
       "<"
     )
-    .to("#cum3 #dis", {
+    .to("#card3 #dis", {
       opacity: 1,
-      y: +200,
+      y: "+32.62vh",
     })
-    .to("#cum3 #line", {
+    .to("#card3 #line", {
       opacity: 1,
-      x: +250,
-      y: -30,
-      height: 457,
+      x: "+=19.75vw",
+      y: "-=4.9vh",
+      height: "74.5vh",
     })
 
-    .to("#cum3 #agenda", {
+    .to("#card3 #agenda", {
       opacity: 1,
-      x: +550,
+      x: "+45vw",
     })
-    .to("#cum3 #one", {
+    .to("#card3 #one", {
       opacity: 1,
-      y: +180,
+      y: "+29.36vh",
       duration: 0.3,
       ease: "back.out(1.2)",
     })
     .to(
-      "#cum3 #two",
+      "#card3 #two",
       {
         opacity: 1,
-        y: +180,
+        y: "+29.36vh",
         duration: 0.3,
         ease: "back.out(1.2)",
       },
       ">-0.20"
     )
     .to(
-      "#cum3 #three",
+      "#card3 #three",
       {
         opacity: 1,
-        y: +350,
+        y: "+57.09vh",
         duration: 0.4,
         ease: "back.out(1.2)",
       },
       ">-0.30"
     )
     .to(
-      "#cum3 #four",
+      "#card3 #four",
       {
         opacity: 1,
-        y: +350,
+        y: "+57.09vh",
         duration: 0.4,
         ease: "back.out(1.2)",
       },
@@ -771,88 +927,78 @@
     paused: true,
     defaults: { duration: "0.3", ease: "sine.inOut" },
   });
-  t2.to("#cum2", {
+  t2.to("#card2", {
     width: "85vw",
     height: "90vh",
     zIndex: 1000,
-    x: -550,
-    y: -25,
+    x: "-43.44vw",
+    y: "-4.07vh",
   })
-    .fromTo(
-      "#cum2 .hover",
-      { opacity: 0 },
-      {
-        opacity: 0,
-        zIndex: -10,
-        display: "none",
-      },
-      "<"
-    )
     .to(
-      "#cum2 #logo",
+      "#card2 #logo",
       {
-        x: -300,
-        y: -30,
+        x: "-23.7vw",
+        y: "-4.9vh",
         duration: "0.5",
       },
       "+=0.2"
     )
     .to(
-      "#cum2 #name",
+      "#card2 #name",
       {
-        x: -300,
-        y: -60,
+        x: "-23.7vw",
+        y: "-4.9vh",
         duration: "0.5",
         color: "#94a3b8",
       },
       "<"
     )
-    .to("#cum2 #dis", {
+    .to("#card2 #dis", {
       opacity: 1,
-      y: +200,
+      y: "+32.62vh",
     })
-    .to("#cum2 #line", {
+    .to("#card2 #line", {
       opacity: 1,
-      x: +250,
-      y: -30,
-      height: 457,
+      x: "+=19.75vw",
+      y: "-=4.9vh",
+      height: "74.5vh",
     })
 
-    .to("#cum2 #agenda", {
+    .to("#card2 #agenda", {
       opacity: 1,
-      x: +550,
+      x: "+45vw",
     })
-    .to("#cum2 #one", {
+    .to("#card2 #one", {
       opacity: 1,
-      y: +180,
+      y: "+29.36vh",
       duration: 0.3,
       ease: "back.out(1.2)",
     })
     .to(
-      "#cum2 #two",
+      "#card2 #two",
       {
         opacity: 1,
-        y: +180,
+        y: "+29.36vh",
         duration: 0.3,
         ease: "back.out(1.2)",
       },
       ">-0.20"
     )
     .to(
-      "#cum2 #three",
+      "#card2 #three",
       {
         opacity: 1,
-        y: +350,
+        y: "+57.09vh",
         duration: 0.4,
         ease: "back.out(1.2)",
       },
       ">-0.30"
     )
     .to(
-      "#cum2 #four",
+      "#card2 #four",
       {
         opacity: 1,
-        y: +350,
+        y: "+57.09vh",
         duration: 0.4,
         ease: "back.out(1.2)",
       },
@@ -863,140 +1009,171 @@
     paused: true,
     defaults: { duration: "0.3", ease: "sine.inOut" },
   });
-  t4.to("#cum4", {
+  t4.to("#card4", {
     width: "85vw",
     height: "90vh",
     zIndex: 1000,
-    x: -550,
-    y: -25,
+    x: "-43.44vw",
+    y: "-4.07vh",
   })
-    .fromTo(
-      "#cum4 .hover",
-      { opacity: 0 },
-      {
-        opacity: 0,
-        zIndex: -10,
-        display: "none",
-      },
-      "<"
-    )
     .to(
-      "#cum4 #logo",
+      "#card4 #logo",
       {
-        x: -300,
-        y: -30,
+        x: "-23.7vw",
+        y: "-4.9vh",
         duration: "0.5",
       },
       "+=0.2"
     )
     .to(
-      "#cum4 #name",
+      "#card4 #name",
       {
-        x: -300,
-        y: -60,
+        x: "-23.7vw",
+        y: "-4.9vh",
         duration: "0.5",
         color: "#94a3b8",
       },
       "<"
     )
-    .to("#cum4 #dis", {
+    .to("#card4 #dis", {
       opacity: 1,
-      y: +200,
+      y: "+32.62vh",
     })
-    .to("#cum4 #line", {
+    .to("#card4 #line", {
       opacity: 1,
-      x: +250,
-      y: -30,
-      height: 457,
+      x: "+=19.75vw",
+      y: "-=4.9vh",
+      height: "74.5vh",
     })
 
-    .to("#cum4 #agenda", {
+    .to("#card4 #agenda", {
       opacity: 1,
-      x: +550,
+      x: "+45vw",
     })
-    .to("#cum4 #one", {
+    .to("#card4 #one", {
       opacity: 1,
-      y: +180,
+      y: "+29.36vh",
       duration: 0.3,
       ease: "back.out(1.2)",
     })
     .to(
-      "#cum4 #two",
+      "#card4 #two",
       {
         opacity: 1,
-        y: +180,
+        y: "+29.36vh",
         duration: 0.3,
         ease: "back.out(1.2)",
       },
       ">-0.20"
     )
     .to(
-      "#cum4 #three",
+      "#card4 #three",
       {
         opacity: 1,
-        y: +350,
+        y: "+57.09vh",
         duration: 0.4,
         ease: "back.out(1.2)",
       },
       ">-0.30"
     )
     .to(
-      "#cum4 #four",
+      "#card4 #four",
       {
         opacity: 1,
-        y: +350,
+        y: "+57.09vh",
         duration: 0.4,
         ease: "back.out(1.2)",
       },
       ">-0.30"
     );
 
-  cum1 = document.getElementById("cum1");
-  cum2 = document.getElementById("cum2");
-  cum3 = document.getElementById("cum3");
-  cum4 = document.getElementById("cum4");
+  card1 = document.getElementById("card1");
+  card2 = document.getElementById("card2");
+  card3 = document.getElementById("card3");
+  card4 = document.getElementById("card4");
   clicked = false;
-  cum1.addEventListener("click", function () {
-    console.log("click");
-    if (clicked == false) {
-      t1.play();
-      clicked = true;
+
+  card1.addEventListener("click", function () {
+    if (isMobile) {
     } else {
-      t1.reverse();
-      clicked = false;
+      if (clicked == false) {
+        document
+          .getElementById("hover1")
+          .classList.remove("md:hover:opacity-100");
+        t1.play();
+        clicked = true;
+      } else {
+        t1.reverse();
+        t1.eventCallback("onReverseComplete", () => {
+          document
+            .getElementById("hover1")
+            .classList.add("md:hover:opacity-100");
+        });
+        clicked = false;
+      }
     }
   });
 
-  cum2.addEventListener("click", function () {
-    console.log("click");
-    if (clicked == false) {
-      t2.play();
-      clicked = true;
+  card2.addEventListener("click", function () {
+    if (isMobile) {
     } else {
-      t2.reverse();
-      clicked = false;
+      if (clicked == false) {
+        document
+          .getElementById("hover2")
+          .classList.remove("md:hover:opacity-100");
+        t2.play();
+        clicked = true;
+      } else {
+        t2.reverse();
+        t2.eventCallback("onReverseComplete", () => {
+          document
+            .getElementById("hover2")
+            .classList.add("md:hover:opacity-100");
+        });
+        clicked = false;
+      }
     }
   });
 
-  cum3.addEventListener("click", function () {
-    console.log("click");
-    if (clicked == false) {
-      t3.play();
-      clicked = true;
+  card3.addEventListener("click", function () {
+    if (isMobile) {
     } else {
-      t3.reverse();
-      clicked = false;
+      if (clicked == false) {
+        document
+          .getElementById("hover3")
+          .classList.remove("md:hover:opacity-100");
+        t3.play();
+        clicked = true;
+      } else {
+        t3.reverse();
+        t3.eventCallback("onReverseComplete", () => {
+          document
+            .getElementById("hover3")
+            .classList.add("md:hover:opacity-100");
+        });
+        clicked = false;
+      }
     }
   });
 
-  cum4.addEventListener("click", function () {
-    console.log("click");
-    if (clicked == false) {
-      t4.play();
-      clicked = true;
+  card4.addEventListener("click", function () {
+    if (isMobile) {
     } else {
-      t4.reverse();
-      clicked = false;
+      if (clicked == false) {
+        document
+          .getElementById("hover4")
+          .classList.remove("md:hover:opacity-100");
+        t4.play();
+        clicked = true;
+      } else {
+        t4.reverse();
+        t4.eventCallback("onReverseComplete", () => {
+          document
+            .getElementById("hover4")
+            .classList.add("md:hover:opacity-100");
+        });
+        clicked = false;
+      }
     }
   });
 </script>
