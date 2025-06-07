@@ -1,171 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <!-- MapLibre Stuff -->
     <script src="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css"
+    />
     <!-- Data AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap"
+      rel="stylesheet"
+    />
     <title>Contact Us</title>
     <style>
-        .strip { 
-            filter: blur( 100px );
+      .strip {
+        filter: blur(100px);
+      }
+      @keyframes fround1 {
+        0% {
+          transform: translateX(0px) translateY(0px);
         }
-        @keyframes fround1 {
-            0% {
-                transform: translateX(0px) translateY(0px);
-            }
-            25% {
-                transform: translateX(20px) translateY(-10px);
-            }
-            50% {
-                transform: translateX(0px) translateY(-20px);
-            }
-            75% {
-                transform: translateX(-20px) translateY(-10px);
-            }
-            100% {
-                transform: translateX(0px) translateY(0px);
-            }
+        25% {
+          transform: translateX(20px) translateY(-10px);
         }
-        .grad {
-            min-height: 100vh;
-            background: radial-gradient(#0C1226 ,  #161D3A);
+        50% {
+          transform: translateX(0px) translateY(-20px);
         }
+        75% {
+          transform: translateX(-20px) translateY(-10px);
+        }
+        100% {
+          transform: translateX(0px) translateY(0px);
+        }
+      }
+      .grad {
+        min-height: 100vh;
+        background: radial-gradient(#0c1226, #161d3a);
+      }
+      #map {
+        width: 70vw;
+        height: 90%;
+        margin-top: 2.15rem;
+        border-radius: 0.5rem; /* Optional rounded look */
+      }
+
+      .purple-icon {
+        filter: hue-rotate(250deg) saturate(120%) brightness(90%);
+      }
+
+      .custom-marker {
+        background-image: url("marker.png"); /* Replace with your marker image path */
+        background-size: cover;
+        width: 30px; /* Adjust width */
+        height: 40px; /* Adjust height */
+        cursor: pointer;
+      }
+
+      .fround {
+        animation: fround1 10s infinite ease-in-out;
+      }
+
+      #map {
+        width: 100%;
+        height: 300px;
+        border-radius: 0.5rem;
+      }
+
+      @media (min-width: 1024px) {
         #map {
-            width: 70vw;
-            height: 90%;
-            margin-top: 2.15rem;
-            border-radius: 0.5rem; /* Optional rounded look */
+          height: 500px;
         }
+      }
 
-        .purple-icon {
-            filter: hue-rotate(250deg) saturate(120%) brightness(90%);
-        }
+      body {
+        font-family: "Lato", sans-serif;
+        background-color: #000;
+      }
 
-        .custom-marker {
-            background-image: url('marker.png'); /* Replace with your marker image path */
-            background-size: cover;
-            width: 30px; /* Adjust width */
-            height: 40px; /* Adjust height */
-            cursor: pointer;
-        }
+      .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #28282b;
+        opacity: 95;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
 
-        .fround {
-            animation: fround1 10s infinite ease-in-out;
-        }
+      .sidebar a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 21px;
+        color: #a9a9a9;
+        display: block;
+        transition: 0.3s;
+      }
 
-        #map {
-          width: 100%;
-          height: 300px;
-          border-radius: 0.5rem;
-        }
+      .sidebar a:hover {
+        color: #ffffff;
+      }
 
-        @media (min-width: 1024px) {
-          #map {
-            height: 500px;
-          }
-        }
+      .sidebar .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
 
-        <style>
-            body {
-          font-family: "Lato", sans-serif;
-          background-color: #000;
-        }
+      .openbtn {
+        font-size: 20px;
+        cursor: pointer;
+        border-radius: 15px;
+        opacity: 70%;
+        background-color: #080808;
+        color: #fff;
+        position: fixed;
+        padding: 15px 21px;
+        border: none;
+      }
 
+      .openbtn:hover {
+        background-color: #444;
+      }
+
+      #main {
+        transition: margin-left 0.5s;
+        padding: 16px;
+      }
+
+      /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+      @media screen and (max-height: 450px) {
         .sidebar {
-          height: 100%;
-          width: 0;
-          position: fixed;
-          z-index: 1;
-          top: 0;
-          left: 0;
-          background-color: #28282B;
-          opacity: 95;
-          overflow-x: hidden;
-          transition: 0.5s;
-          padding-top: 60px;
+          padding-top: 15px;
         }
-
         .sidebar a {
-          padding: 8px 8px 8px 32px;
-          text-decoration: none;
-          font-size: 21px;
-          color: #A9A9A9;
-          display: block;
-          transition: 0.3s;
+          font-size: 18px;
         }
+      }
 
-        .sidebar a:hover {
-          color: #FFFFFF;
-        }
+      .name {
+        font-family: "Bungee Spice", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
 
-        .sidebar .closebtn {
-          position: absolute;
-          top: 0;
-          right: 25px;
-          font-size: 36px;
-          margin-left: 50px;
-        }
-
-        .openbtn {
-          font-size: 20px;
-          cursor: pointer;
-          border-radius: 15px;
-          opacity: 70%;
-          background-color: #080808;
-          color: #fff;
-          position: fixed;
-          padding: 15px 21px;
-          border: none;
-        }
-
-        .openbtn:hover {
-          background-color: #444;
-        }
-
-        #main {
-          transition: margin-left .5s;
-          padding: 16px;
-        }
-
-        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-        @media screen and (max-height: 450px) {
-          .sidebar {padding-top: 15px;}
-          .sidebar a {font-size: 18px;}
-        }
-
+      ul * {
+        font-weight: 200 !important;
+        color: white;
+      }
     </style>
-</head>
+  </head>
   <script>
-function openNav() {
-  document.getElementById("mySidebar").style.width = "100%";
-  document.getElementById("main").style.marginLeft = "25%";
-  document.getElementById("main").style.display="none";
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "100%";
+      document.getElementById("main").style.marginLeft = "25%";
+      document.getElementById("main").style.display = "none";
+    }
 
-}
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("main").style.marginLeft = "0";
+      document.getElementById("main").style.display = "block";
+    }
+  </script>
+  <body class="text-center text-white grad overflow-x-hidden h-[140vh]">
+    <div
+      class="strip w-[200vw] h-72 bg-[#322996bd] fixed top-25 translate-x-[-1400px] -rotate-45 z-[-1]"
+    ></div>
+    <!-- <div class="strip w-[200vw] h-72 bg-[#322996bd] absolute top-50 translate-x-[-700px] -rotate-45 z-[-1]"></div> -->
+    <div
+      class="strip w-[200vw] h-72 bg-[#322996bd] fixed top-50 translate-x-[-550px] -rotate-45 z-[-1]"
+    ></div>
+    <div
+      class="strip w-[360vw] h-72 bg-[#322996bd] fixed top-50 -translate-x-[700px] -rotate-45 z-[-1]"
+    ></div>
 
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
-    document.getElementById("main").style.display="block";
-}
-</script>
-<body class="text-center text-white grad overflow-x-hidden h-[140vh]">
-
-
-<div class="strip w-[200vw] h-72 bg-[#322996bd] fixed top-25 translate-x-[-1400px] -rotate-45 z-[-1]"></div>
-<!-- <div class="strip w-[200vw] h-72 bg-[#322996bd] absolute top-50 translate-x-[-700px] -rotate-45 z-[-1]"></div> -->
-<div class="strip w-[200vw] h-72 bg-[#322996bd] fixed top-50 translate-x-[-550px] -rotate-45 z-[-1]"></div>
-<div class="strip w-[360vw] h-72 bg-[#322996bd] fixed top-50 -translate-x-[700px] -rotate-45 z-[-1]"></div>
-
-        
     <ul
       id="nav"
       class="backdrop-filter backdrop-blur-lg bg-opacity-10 bg-black-950 mt-0 list-none p-4 text-[#169948] absolute border-b-[0.5px] border-gray-800 flex items-center justify-between w-full sticky top-0 z-50 hidden lg:flex"
@@ -224,104 +248,182 @@ function closeNav() {
         </li>
       </div>
     </ul>
-    <div id="mySidebar" class="sidebar block lg:hidden z-50 fixed top-0 left-0 h-full w-0 overflow-x-hidden bg-[#000] pt-[60px] backdrop-filter backdrop-blur-2xl bg-opacity-50 transition-all duration-500">
-  <a href="javascript:void(0)" class="closebtn absolute top-0 right-[25px] text-[#fff] text-[10vw] ml-[50px]" onclick="closeNav()">×</a>
- 
-    <a href="landing.html" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">RNPSMUN</a>
-    <a href="people.html" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">Secretariat</a>
-    <a href="commitee.html" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">Committees</a>
-    <a href="files.html" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">Guide</a>
-    <a href="contactus.html" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">Contact</a>
-    <a href="#" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">Register</a>
-  </div>
+    <div
+      id="mySidebar"
+      class="sidebar block lg:hidden z-50 fixed top-0 left-0 h-full w-0 overflow-x-hidden bg-[#000] pt-[60px] backdrop-filter backdrop-blur-2xl bg-opacity-50 transition-all duration-500"
+    >
+      <a
+        href="javascript:void(0)"
+        class="closebtn absolute top-0 right-[25px] text-[#fff] text-[10vw] ml-[50px]"
+        onclick="closeNav()"
+        >×</a
+      >
 
-<div id="main" class="block lg:hidden z-50 transition-all duration-500 p-4">
-  <button 
-    onclick="openNav()" 
-    class="fixed top-4 left-4 z-50 text-[7vw] text-white px-[5.405vw] py-[4.324vw] rounded-[70px] 
-          backdrop-filter backdrop-blur-lg bg-opacity-10 shadow-lg">
-    ☰
-  </button>
-
-  <h2></h2>
-  <p></p>
-</div>
- <div id="viewOnBigDisp" class="flex items-center justify-between px-4 w-screen h-[5vh]  text-white text-[3vw] text-center lg:hidden z-50 absolute top-0 bg-black bg-opacity-30 backdrop-blur-2xl fade-slide-in">
-      <span class="w-full text-center">BEST VIEWED ON LARGE DISPLAYS</span>
-  <button 
-  onclick="document.getElementById('viewOnBigDisp').style.display='none'" 
-  class="ml-4 flex items-center justify-center rounded-full bg-gray-700 text-white text-[4vw] leading-none hover:bg-red-500 transition duration-200"
-  style="width: 5vw; height: 5vw;">
-  &times;
-</button>
-</div>
-
-  <section class="flex flex-col lg:flex-row items-start justify-center gap-8 px-6 py-10 grow">
-    <!-- Left: Contact Info -->
-    <div class="w-full lg:w-1/2 space-y-8">
-      <!-- Box 1: Names & Phones -->
-      <div data-aos="fade-up" data-aos-duration="3000" class="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md p-6 shadow-lg">
-        <div class="flex justify-between mb-4">
-          <h2 class="text-sm uppercase tracking-wide">Name</h2>
-          <h2 class="text-sm uppercase tracking-wide">Phone</h2>
-        </div>
-        <div class="space-y-2 text-left">
-          <div class="flex justify-between"><p class="font-semibold">John Doe</p><p class="text-teal-400 font-semibold">+91 12345 67890</p></div>
-          <div class="flex justify-between"><p class="font-semibold">Vrishank R</p><p class="text-teal-400 font-semibold">+91 12489 02385</p></div>
-          <div class="flex justify-between"><p class="font-semibold">Athreya S</p><p class="text-teal-400 font-semibold">+91 98765 43210</p></div>
-          <div class="flex justify-between"><p class="font-semibold">Anita Max Wynn</p><p class="text-teal-400 font-semibold">+91 98765 12312</p></div>
-          <div class="flex justify-between"><p class="font-semibold">Dhruva Anand</p><p class="text-teal-400 font-semibold">+91 98765 43210</p></div>
-        </div>
-      </div>
-
-      <!-- Box 2: Emails -->
-      <div data-aos="fade-up" data-aos-duration="3000" data-aos-delay="1500" class="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md p-6 shadow-lg">
-        <div class="flex justify-between mb-4 text-left">
-          <h2 class="text-sm uppercase tracking-wide">Official MUN Email</h2>
-          <p class="text-teal-400 text-sm font-medium">rnpsmun24@gmail.com</p>
-        </div>
-        <div class="border-t border-white/20 my-3"></div>
-        <div class="space-y-2 text-left">
-          <div class="flex justify-between"><p class="font-semibold">UNSC</p><p class="text-teal-400">rnps2024.unsc@gmail.com</p></div>
-          <div class="flex justify-between"><p class="font-semibold">Lok Sabha</p><p class="text-teal-400">rnps2024.ls@gmail.com</p></div>
-          <div class="flex justify-between"><p class="font-semibold">HJCC</p><p class="text-teal-400">rnps2024.hjcc@gmail.com</p></div>
-          <div class="flex justify-between"><p class="font-semibold">IPC</p><p class="text-teal-400">rnps2024.ipc@gmail.com</p></div>
-        </div>
-      </div>
+      <a
+        href="landing.html"
+        class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]"
+        >RNPSMUN</a
+      >
+      <a
+        href="people.html"
+        class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]"
+        >Secretariat</a
+      >
+      <a
+        href="commitee.html"
+        class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]"
+        >Committees</a
+      >
+      <a
+        href="files.html"
+        class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]"
+        >Guide</a
+      >
+      <a
+        href="contactus.html"
+        class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]"
+        >Contact</a
+      >
+      <a href="#" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]"
+        >Register</a
+      >
     </div>
 
-    <!-- Right: Map -->
-    <div id="map" class="w-full lg:w-1/2 h-[300px] lg:h-[500px] rounded-lg" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="1000"></div>
-  </section>
+    <div id="main" class="block lg:hidden z-50 transition-all duration-500 p-4">
+      <button
+        onclick="openNav()"
+        class="fixed top-4 left-4 z-50 text-[7vw] text-white px-[5.405vw] py-[4.324vw] rounded-[70px] backdrop-filter backdrop-blur-lg bg-opacity-10 shadow-lg"
+      >
+        ☰
+      </button>
 
+      <h2></h2>
+      <p></p>
+    </div>
+    <div
+      id="viewOnBigDisp"
+      class="flex items-center justify-between px-4 w-screen h-[5vh] text-white text-[3vw] text-center lg:hidden z-50 absolute top-0 bg-black bg-opacity-30 backdrop-blur-2xl fade-slide-in"
+    >
+      <span class="w-full text-center">BEST VIEWED ON LARGE DISPLAYS</span>
+      <button
+        onclick="document.getElementById('viewOnBigDisp').style.display='none'"
+        class="ml-4 flex items-center justify-center rounded-full bg-gray-700 text-white text-[4vw] leading-none hover:bg-red-500 transition duration-200"
+        style="width: 5vw; height: 5vw"
+      >
+        &times;
+      </button>
+    </div>
 
-  <script>
-    const map = new maplibregl.Map({
-      container: 'map',
-      style: 'https://api.maptiler.com/maps/019644c7-ce71-718d-af5f-cc12a1765721/style.json?key=mKxdF9GrKORIVsFaf1GX',
-      center: [77.5492204, 12.9846442],
-      zoom: 18,
-      interactive: true
-    });
+    <section
+      class="flex flex-col lg:flex-row items-start justify-center gap-8 px-6 py-10 grow"
+    >
+      <!-- Left: Contact Info -->
+      <div class="w-full lg:w-1/2 space-y-8">
+        <!-- Box 1: Names & Phones -->
+        <div
+          data-aos="fade-up"
+          data-aos-duration="3000"
+          class="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md p-6 shadow-lg"
+        >
+          <div class="flex justify-between mb-4">
+            <h2 class="text-sm uppercase tracking-wide">Name</h2>
+            <h2 class="text-sm uppercase tracking-wide">Phone</h2>
+          </div>
+          <div class="space-y-2 text-left">
+            <div class="flex justify-between">
+              <p class="font-semibold">John Doe</p>
+              <p class="text-teal-400 font-semibold">+91 12345 67890</p>
+            </div>
+            <div class="flex justify-between">
+              <p class="font-semibold">Vrishank R</p>
+              <p class="text-teal-400 font-semibold">+91 12489 02385</p>
+            </div>
+            <div class="flex justify-between">
+              <p class="font-semibold">Athreya S</p>
+              <p class="text-teal-400 font-semibold">+91 98765 43210</p>
+            </div>
+            <div class="flex justify-between">
+              <p class="font-semibold">Anita Max Wynn</p>
+              <p class="text-teal-400 font-semibold">+91 98765 12312</p>
+            </div>
+            <div class="flex justify-between">
+              <p class="font-semibold">Dhruva Anand</p>
+              <p class="text-teal-400 font-semibold">+91 98765 43210</p>
+            </div>
+          </div>
+        </div>
 
-    map.addControl(new maplibregl.NavigationControl());
+        <!-- Box 2: Emails -->
+        <div
+          data-aos="fade-up"
+          data-aos-duration="3000"
+          data-aos-delay="1500"
+          class="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md p-6 shadow-lg"
+        >
+          <div class="flex justify-between mb-4 text-left">
+            <h2 class="text-sm uppercase tracking-wide">Official MUN Email</h2>
+            <p class="text-teal-400 text-sm font-medium">rnpsmun24@gmail.com</p>
+          </div>
+          <div class="border-t border-white/20 my-3"></div>
+          <div class="space-y-2 text-left">
+            <div class="flex justify-between">
+              <p class="font-semibold">UNSC</p>
+              <p class="text-teal-400">rnps2024.unsc@gmail.com</p>
+            </div>
+            <div class="flex justify-between">
+              <p class="font-semibold">Lok Sabha</p>
+              <p class="text-teal-400">rnps2024.ls@gmail.com</p>
+            </div>
+            <div class="flex justify-between">
+              <p class="font-semibold">HJCC</p>
+              <p class="text-teal-400">rnps2024.hjcc@gmail.com</p>
+            </div>
+            <div class="flex justify-between">
+              <p class="font-semibold">IPC</p>
+              <p class="text-teal-400">rnps2024.ipc@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    const markerDiv = document.createElement('div');
-    markerDiv.className = 'custom-marker';
-    const marker = new maplibregl.Marker(markerDiv)
-      .setLngLat([77.5492204, 12.9846442])
-      .addTo(map);
+      <!-- Right: Map -->
+      <div
+        id="map"
+        class="w-full lg:w-1/2 h-[300px] lg:h-[500px] rounded-lg"
+        data-aos="fade-left"
+        data-aos-duration="1500"
+        data-aos-delay="1000"
+      ></div>
+    </section>
 
-    markerDiv.addEventListener('click', () => {
-      window.open('https://maps.app.goo.gl/5MbitiDWBBaVERwE7');
-    });
-  </script>
+    <script>
+      const map = new maplibregl.Map({
+        container: "map",
+        style:
+          "https://api.maptiler.com/maps/019644c7-ce71-718d-af5f-cc12a1765721/style.json?key=mKxdF9GrKORIVsFaf1GX",
+        center: [77.5492204, 12.9846442],
+        zoom: 18,
+        interactive: true,
+      });
 
-<script>
-    AOS.init();
-</script>
+      map.addControl(new maplibregl.NavigationControl());
 
- <footer
+      const markerDiv = document.createElement("div");
+      markerDiv.className = "custom-marker";
+      const marker = new maplibregl.Marker(markerDiv)
+        .setLngLat([77.5492204, 12.9846442])
+        .addTo(map);
+
+      markerDiv.addEventListener("click", () => {
+        window.open("https://maps.app.goo.gl/5MbitiDWBBaVERwE7");
+      });
+    </script>
+
+    <script>
+      AOS.init();
+    </script>
+
+    <footer
       class="mt-10 w-full text-white bg-transparent border-t-[1px] border-gray-600 body-font"
     >
       <div
@@ -469,16 +571,16 @@ function closeNav() {
         </div>
       </div>
     </footer>
-<style>
-  .custom-marker {
-    background-image: url('/static/marker.png');
-    background-size: cover;
-    width: 30px;
-    height: 40px;
-    cursor: pointer;
-  }
-    
-    @keyframes fadeSlideIn {
+    <style>
+      .custom-marker {
+        background-image: url("/static/marker.png");
+        background-size: cover;
+        width: 30px;
+        height: 40px;
+        cursor: pointer;
+      }
+
+      @keyframes fadeSlideIn {
         0% {
           opacity: 0;
           transform: translateY(-20%);
@@ -492,6 +594,6 @@ function closeNav() {
       .fade-slide-in {
         animation: fadeSlideIn 1s ease-out forwards;
       }
-</style>
-</body>
+    </style>
+  </body>
 </html>
