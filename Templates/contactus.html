@@ -165,9 +165,10 @@ function closeNav() {
 <div class="strip w-[200vw] h-72 bg-[#322996bd] fixed top-50 translate-x-[-550px] -rotate-45 z-[-1]"></div>
 <div class="strip w-[360vw] h-72 bg-[#322996bd] fixed top-50 -translate-x-[700px] -rotate-45 z-[-1]"></div>
 
+        
     <ul
       id="nav"
-      class="backdrop-filter backdrop-blur-lg bg-opacity-10 bg-black-950 mt-0 list-none p-4 text-[#169948] absolute border-b-[0.5px] border-gray-800 flex items-center justify-between w-full sticky top-0 z-50 hidden md:flex"
+      class="backdrop-filter backdrop-blur-lg bg-opacity-10 bg-black-950 mt-0 list-none p-4 text-[#169948] absolute border-b-[0.5px] border-gray-800 flex items-center justify-between w-full sticky top-0 z-50 hidden lg:flex"
     >
       <!-- Left side of the navbar -->
       <li class="float-left">
@@ -234,7 +235,7 @@ function closeNav() {
     <a href="#" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">Register</a>
   </div>
 
-<div id="main" class="block md:hidden z-50 transition-all duration-500 p-4">
+<div id="main" class="block lg:hidden z-50 transition-all duration-500 p-4">
   <button 
     onclick="openNav()" 
     class="fixed top-4 left-4 z-50 text-[7vw] text-white px-[5.405vw] py-[4.324vw] rounded-[70px] 
@@ -245,6 +246,16 @@ function closeNav() {
   <h2></h2>
   <p></p>
 </div>
+ <div id="viewOnBigDisp" class="flex items-center justify-between px-4 w-screen h-[5vh]  text-white text-[3vw] text-center lg:hidden z-50 absolute top-0 bg-black bg-opacity-30 backdrop-blur-2xl fade-slide-in">
+      <span class="w-full text-center">BEST VIEWED ON LARGE DISPLAYS</span>
+  <button 
+  onclick="document.getElementById('viewOnBigDisp').style.display='none'" 
+  class="ml-4 flex items-center justify-center rounded-full bg-gray-700 text-white text-[4vw] leading-none hover:bg-red-500 transition duration-200"
+  style="width: 5vw; height: 5vw;">
+  &times;
+</button>
+</div>
+
   <section class="flex flex-col lg:flex-row items-start justify-center gap-8 px-6 py-10 grow">
     <!-- Left: Contact Info -->
     <div class="w-full lg:w-1/2 space-y-8">
@@ -311,114 +322,153 @@ function closeNav() {
 </script>
 
  <footer
- class="w-full text-white bg-transparent border-t-[1px] border-gray-600 body-font h"
->
- <div
-   class="container flex flex-col flex-wrap px-5 py-24 mx-auto md:items-center lg:items-start md:flex-row md:flex-no-wrap"
- >
-   <div
-     class="flex-shrink-0 w-64 mx-auto text-center md:mx-0 md:text-left mt-[-5vh]"
-   >
-     <div class="w-36 h-36 mt-[1.2rem]">
-       <img class="w-96 object-cover scale-[]" src="/static/nps.png" />
-     </div>
-     <div class="ml-2 mt-4">
-       <span
-         class="flex justify-center mt-2 sm:ml-auto sm:mt-0 sm:justify-start gap-6"
-       >
-         <a
-           href="tel:08023350361"
-           class="text-white cursor-pointer hover:text-[#169948] transition-all"
-         >
-           <i
-             class="fa-thin font-semilight fa-circle-phone scale-[1.2]"
-           ></i>
-         </a>
-         <a
-           href="mailto:rnpsmun24@gmail.com"
-           class="ml-3 text-white cursor-pointer hover:text-[#169948] transition-all"
-         >
-           <i class="fa-thin font-semilight fa-envelope scale-[1.2]"></i>
-         </a>
-         <a
-           href="https://www.instagram.com/rnpsmun2023/"
-           class="ml-3 text-white cursor-pointer hover:text-[#169948] transition-all"
-         >
-           <i class="fa-brands opacity-[0.7] fa-instagram scale-[1.2]"></i>
-         </a>
-       </span>
-     </div>
-   </div>
-   <div
-     class="flex flex-wrap flex-grow justify-between mt-10 -mb-20 text-center md:pl-20 md:mt-0 md:text-left"
-   >
-     <div class="w-full px-4 lg:w-1/4 md:w-1/2 h-[10vh]">
-       <h2 class="text-[#169948] font-bold uppercase">About</h2>
-       <nav class="mb-10 list-none">
-         <li class="mt-3">
-           <a
-             href="people.html"
-             class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
-             >Secretariat</a
-           >
-         </li>
-         <li class="mt-3">
-           <a
-             href="commitee.html"
-             class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
-             >Committees</a
-           >
-         </li>
-       </nav>
-     </div>
-     <div class="w-full px-4 lg:w-1/4 md:w-1/2">
-       <h2 class="text-[#169948] font-bold uppercase">Resources</h2>
-       <nav class="mb-10 list-none">
-         <li class="mt-3">
-           <a
-             href="contactus.html"
-             class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
-             >Contact Us</a
-           >
-         </li>
-         <li class="mt-3">
-           <a
-             href="files.html"
-             class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
-             >Guide</a
-           >
-         </li>
-       </nav>
-     </div>
-     <div class="w-full px-4 lg:w-1/4 md:w-1/2">
-       <h2 class="text-[#169948] font-bold uppercase">Contact</h2>
-       <nav class="mb-10 list-none">
-         <li class="mt-3">
-           <a
-             href="mailto:rnpsmun24@gmail.com"
-             class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
-             >Send a Message</a
-           >
-         </li>
-         <li class="mt-3">
-           <a
-             href="registerparthere"
-             class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
-             >Register Now</a
-           >
-         </li>
-       </nav>
-     </div>
-   </div>
- </div>
+      class="mt-10 w-full text-white bg-transparent border-t-[1px] border-gray-600 body-font"
+    >
+      <div
+        class="flex flex-col flex-wrap items-center px-5 py-24 mx-auto md:items-center lg:items-start md:flex-row md:flex-no-wrap"
+      >
+        <!-- Logo and Icons -->
+        <div
+          class="flex flex-col w-full md:w-64 mx-auto text-center md:mx-0 md:text-left mt-[-5vh] items-center mb-10 md:mb-0"
+        >
+          <div class="w-36 h-36 mt-[1.2rem]">
+            <img class="w-96 object-cover" src="static/nps.png" />
+          </div>
+          <div class="ml-2 mt-4">
+            <span
+              class="flex justify-center mt-2 sm:ml-auto sm:mt-0 sm:justify-start gap-6"
+            >
+              <a
+                href="tel:08023350361"
+                class="text-white cursor-pointer hover:text-[#169948] transition-all"
+              >
+                <i
+                  class="fa-thin font-semilight fa-circle-phone scale-[1.2]"
+                ></i>
+              </a>
+              <a
+                href="mailto:rnpsmun24@gmail.com"
+                class="ml-3 text-white cursor-pointer hover:text-[#169948] transition-all"
+              >
+                <i class="fa-thin font-semilight fa-envelope scale-[1.2]"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/rnpsmun2023/"
+                class="ml-3 text-white cursor-pointer hover:text-[#169948] transition-all"
+              >
+                <i class="fa-brands opacity-[0.7] fa-instagram scale-[1.2]"></i>
+              </a>
+            </span>
+          </div>
+        </div>
 
-   <div class="mx-auto -mt-20 mb-5 flex flex-col text-center">
-     <div class="text-teal-400">© R-NPSMUN Inc. All rights reserved.</div>
-     <div class="name tracking-[1px] mt-3">
-       Made by Vrishank R, Shrivardhan C, Athreya S
-     </div>
- </div>
-</footer>
+        <!-- Link Sections -->
+        <div
+          class="flex flex-col md:flex-row flex-grow w-full md:w-auto justify-center md:justify-between text-center md:pl-20 md:mt-0 md:text-left gap-8 md:gap-0"
+        >
+          <!-- About -->
+          <div
+            class="w-full md:w-1/4 flex flex-col md:block items-center md:items-start px-4"
+          >
+            <div
+              class="flex flex-row justify-between items-center w-full md:block"
+            >
+              <h2 class="text-[#169948] font-bold uppercase text-left">
+                About
+              </h2>
+              <nav
+                class="list-none flex flex-col md:block text-right md:text-left"
+              >
+                <li class="mt-3">
+                  <a
+                    href="people.html"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Secretariat</a
+                  >
+                </li>
+                <li class="mt-3">
+                  <a
+                    href="commitee.html"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Committees</a
+                  >
+                </li>
+              </nav>
+            </div>
+          </div>
+
+          <!-- Resources -->
+          <div
+            class="w-full md:w-1/4 flex flex-col md:block items-center md:items-start px-4"
+          >
+            <div
+              class="flex flex-row justify-between items-center w-full md:block"
+            >
+              <h2 class="text-[#169948] font-bold uppercase text-left">
+                Resources
+              </h2>
+              <nav
+                class="list-none flex flex-col md:block text-right md:text-left"
+              >
+                <li class="mt-3">
+                  <a
+                    href="contactus.html"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Contact Us</a
+                  >
+                </li>
+                <li class="mt-3">
+                  <a
+                    href="files.html"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Guide</a
+                  >
+                </li>
+              </nav>
+            </div>
+          </div>
+
+          <!-- Contact -->
+          <div
+            class="w-full md:w-1/4 flex flex-col md:block items-center md:items-start px-4"
+          >
+            <div
+              class="flex flex-row justify-between items-center w-full md:block"
+            >
+              <h2 class="text-[#169948] font-bold uppercase text-left">
+                Contact
+              </h2>
+              <nav
+                class="list-none flex flex-col md:block text-right md:text-left"
+              >
+                <li class="mt-3">
+                  <a
+                    href="mailto:rnpsmun24@gmail.com"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Send a Message</a
+                  >
+                </li>
+                <li class="mt-3">
+                  <a
+                    href="registerparthere"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Register Now</a
+                  >
+                </li>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Text -->
+      <div class="mx-auto mt-10 md:mt-[-5vh] mb-5 flex flex-col text-center">
+        <div class="text-teal-400">© R-NPSMUN Inc. All rights reserved.</div>
+        <div class="name tracking-[1px] mt-3">
+          Made by Vrishank R, Shrivardhan C, Athreya S
+        </div>
+      </div>
+    </footer>
 <style>
   .custom-marker {
     background-image: url('/static/marker.png');
@@ -427,6 +477,21 @@ function closeNav() {
     height: 40px;
     cursor: pointer;
   }
+    
+    @keyframes fadeSlideIn {
+        0% {
+          opacity: 0;
+          transform: translateY(-20%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-slide-in {
+        animation: fadeSlideIn 1s ease-out forwards;
+      }
 </style>
 </body>
 </html>
