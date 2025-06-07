@@ -33,7 +33,21 @@ function closeNav() {
 </script>
 
  <style>
-    
+    @keyframes fadeSlideIn {
+        0% {
+          opacity: 0;
+          transform: translateY(-20%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-slide-in {
+        animation: fadeSlideIn 1s ease-out forwards;
+      }
+
     .center-wrapper {
       display: flex;
       justify-content: center;
@@ -262,7 +276,7 @@ function closeNav() {
         </li>
       </div>
     </ul>
-    <div id="mySidebar" class="sidebar block lg:hidden justify-self-center z-50 fixed top-0 left-0 h-full w-0 overflow-x-hidden bg-[#000] pt-[60px] backdrop-filter backdrop-blur-2xl bg-opacity-50 transition-all duration-500">
+    <div id="mySidebar" class="sidebar block lg:hidden z-50 fixed top-0 left-0 h-full w-0 overflow-x-hidden bg-[#000] pt-[60px] backdrop-filter backdrop-blur-2xl bg-opacity-50 transition-all duration-500">
   <a href="javascript:void(0)" class="closebtn absolute top-0 right-[25px] text-[#fff] text-[10vw] ml-[50px]" onclick="closeNav()">×</a>
  
     <a href="landing.html" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">RNPSMUN</a>
@@ -284,43 +298,65 @@ function closeNav() {
   <h2></h2>
   <p></p>
 </div>
+ <div id="viewOnBigDisp" class="flex items-center justify-between px-4 w-screen h-[5vh]  text-white text-[3vw] text-center lg:hidden z-50 absolute top-0 bg-black bg-opacity-30 backdrop-blur-2xl fade-slide-in">
+      <span class="w-full text-center">BEST VIEWED ON LARGE DISPLAYS</span>
+  <button 
+  onclick="document.getElementById('viewOnBigDisp').style.display='none'" 
+  class="ml-4 flex items-center justify-center rounded-full bg-gray-700 text-white text-[4vw] leading-none hover:bg-red-500 transition duration-200"
+  style="width: 5vw; height: 5vw;">
+  &times;
+</button>
+</div>
 
+
+<div class="strip w-[200vw] h-72 bg-[#322996bd] absolute top-25 translate-x-[-1400px] -rotate-45 z-[-1]"></div>
+<div class="strip w-[200vw] h-72 bg-[#322996bd] absolute top-50 translate-x-[-550px] -rotate-45 z-[-1]"></div>
+<div class="strip w-[360vw] h-72 bg-[#322996bd] absolute top-50 -translate-x-[700px] -rotate-45 z-[-1]"></div>
+<div class="strip w-[275px] aspect-square bg-[#322996] absolute top-[360vh] left-[50vw] rounded-full z-[-1]"></div>
+<div class="strip w-[275px] aspect-square bg-[#322996] absolute top-[380vh] left-[20vw] rounded-full z-[-1]"></div>
+<div class="strip w-[275px] aspect-square bg-[#322996] absolute top-[380vh] left-[80vw] rounded-full z-[-1]"></div>
+
+
+<!-- Countdown -->
 <section class="w-[92vw] h-[80vh] bg-black-900">
-    <div class="relative translate-y-24 flex items-center gap-20 justify-center">
-    <div id="day" class="glass aspect-square shadow-lg relative countdowncard h-32 text-[#d2516f] text-5xl font-semibold text-center flex items-center justify-center translate-y-[-400px]">
-        <p class="absolute text-[#169948] bottom-[-40px] text-sm font-semibold tracking-[3px]">DAYS</p>
-        <p class="text-[#169948]" id="days"></p>
+    <div class="relative md:translate-y-24 md:flex-row flex-col flex items-center gap-[6.5vw]  justify-center">
+    <div id="day" class="glass aspect-square shadow-lg relative countdowncard w-[max(10vw,_100px)] text-[#d2516f] text-[max(3vw,_30px)] font-semibold text-center flex md:flex-col flex-row items-center justify-center md:translate-y-[-400px] md:translate-x-0 translate-x-[-10vw] md:mt-auto mt-[20vh]">
+      <p class="text-[#169948]" id="days"></p>
+      <p class="text-[#169948] absolute md:bottom-[-3vw] md:right-auto right-[min(-20vw,_-100px)] text-[max(1.2vw,_14px)] font-semibold tracking-[3px]">DAYS</p>
     </div>
     
-    <div id="hour" class="glass aspect-square shadow-lg relative countdowncard h-32 text-[#d2516f] text-5xl font-semibold text-center flex items-center justify-center translate-y-[-400px]">
-        <p class="absolute text-[#169948] bottom-[-40px] text-sm font-semibold tracking-[3px]">HOURS</p>
-        <p class="text-[#169948]" id="hours"></p>
+    <div id="hour" class="glass aspect-square shadow-lg relative countdowncard w-[max(10vw,_100px)] text-[#d2516f] text-[max(3vw,_30px)] font-semibold text-center flex md:flex-col flex-row items-center justify-center md:translate-y-[-400px] md:translate-x-0 translate-x-[-10vw]">
+      <p class="text-[#169948]" id="hours"></p>
+      <p class="text-[#169948] absolute md:bottom-[-3vw] md:right-auto right-[min(-20vw,_-100px)] text-[max(1.2vw,_14px)] font-semibold tracking-[3px]">HOURS</p>
     </div>
     
-    <div id="min" class="glass aspect-square shadow-lg relative countdowncard h-32 text-[#d2516f] text-5xl font-semibold text-center flex items-center justify-center translate-y-[-400px]">
-        <p class="absolute text-[#169948] bottom-[-40px] text-sm font-semibold tracking-[3px]">MINUTES</p>
-        <p class="text-[#169948]" id="mins"></p>
+    <div id="min" class="glass aspect-square shadow-lg relative countdowncard w-[max(10vw,_100px)] text-[#d2516f] text-[max(3vw,_30px)] font-semibold text-center flex md:flex-col flex-row items-center justify-center md:translate-y-[-400px] md:translate-x-0 translate-x-[-10vw]">
+      <p class="text-[#169948]" id="mins"></p>
+      <p class="text-[#169948] absolute md:bottom-[-3vw] md:right-auto right-[min(-20vw,_-100px)] text-[max(1.2vw,_14px)] font-semibold tracking-[3px]">MINUTES</p>
     </div>
     
-    <div id="sec" class="glass aspect-square shadow-lg relative countdowncard h-32 text-[#d2516f] text-5xl font-semibold text-center flex items-center justify-center translate-y-[-400px]">
-        <p class="absolute text-[#169948] bottom-[-40px] text-sm font-semibold tracking-[3px]">SECONDS</p>
-        <p class="text-[#169948]" id="secs"></p>
+    <div id="sec" class="glass aspect-square shadow-lg relative countdowncard w-[max(10vw,_100px)] text-[#d2516f] text-[max(3vw,_30px)] font-semibold text-center flex md:flex-col flex-row items-center justify-center md:translate-y-[-400px] md:translate-x-0 translate-x-[-10vw]">
+      <p class="text-[#169948]" id="secs"></p>
+      <p class="text-[#169948] absolute md:bottom-[-3vw] md:right-auto right-[min(-20vw,_-100px)] text-[max(1.2vw,_14px)] font-semibold tracking-[3px]">SECONDS</p>
     </div>
-    <p id="to" class="font absolute text-[#169948] bottom-[-40px] text-[80px] font-bold translate-x-[-400px] opacity-0 translate-y-[170px] tracking-[2px]">TO</p>
-    <p id="mun" class="font absolute text-[#169948] bottom-[-40px] text-[80px] font-bold translate-x-[200px] opacity-0 translate-y-[170px] tracking-[2px]">RNPSMUN 25'</p>
-    <p class="date absolute opacity-0 right-[10px] translate-x-[75px] translate-y-[290px] text-[40px] text-[#e16383] tracking-[4px]">2 / 3</p>
-    <p class="date absolute opacity-0 right-1 translate-x-[75px] translate-y-[330px] text-[45px] text-[#e16383] tracking-[4px]">JULY</p>
+    <p id="to" class="hidden md:inline font absolute text-[#169948] md:bottom-[-40px] md:top-auto top-[4vh] text-[max(6.5vw,_30px)] font-bold md:translate-x-[-400px] md:opacity-0 md:translate-y-[170px] md:tracking-[2px] translate-y-[3vh]">TO</p>
+    <p id="mun" class="font absolute text-[#169948] md:bottom-[-40px] md:top-auto top-[4vh] text-[max(6.5vw,_30px)] font-bold md:translate-x-[200px] md:opacity-0 md:translate-y-[170px] md:tracking-[2px] translate-y-[-3vh]">RNPSMUN 25'</p>
+    <p id="in" class="md:hidden inline font absolute text-[#169948] md:bottom-[-40px] md:top-auto top-[max(8vh,_50px)] text-[max(6.5vw,_30px)] font-bold md:translate-x-[200px] md:opacity-0 md:translate-y-[170px] md:tracking-[2px] translate-y-[-3vh]">IN</p>
+    <p class="date absolute md:opacity-0 right-[10px] md:translate-x-[75px] md:bottom-auto bottom-[-10vh] md:translate-y-[290px] text-[max(3.15vw,_20px)] text-[#e16383] tracking-[clamp(1px,_0.3vw,_3px)]">2 / 3</p>
+    <p class="date absolute md:opacity-0 right-1 md:translate-x-[75px] md:bottom-auto bottom-[-13vh] md:translate-y-[330px] text-[max(3.5vw,_20px)] text-[#e16383] tracking-[clamp(1px,_0.3vw,_4px)]">JULY</p>
     </div>
 
-    <div class="links opacity-0 absolute left-5 translate-x-[-30px] flex gap-[2px]">
-        <a href="https://www.instagram.com/rnpsmun2023/" class="p-2 border border-[#e16383] border-[1.5px] translate-y-[350px] scale-[0.8] w-12 aspect-square grid flex items-center justify-center rounded-full"><i class="text-[#e16383] text-[20px] fa-brands fa-instagram fa-thin"></i></a>
-        <a href="mailto:rnpsmun24@gmail.com" class="p-2 border border-[#e16383] border-[1.5px] translate-y-[350px] scale-[0.8] w-12 aspect-square grid flex items-center justify-center rounded-full"><i class="text-[#e16383] text-[20px] fa-thin fa-envelope"></i></a>
-        <a href="tel:08023350361" class="p-2 border border-[#e16383] border-[1.5px] translate-y-[350px] scale-[0.8] w-12 aspect-square grid flex items-center justify-center rounded-full"><i class="text-[#e16383] text-[20px] fa-thin fa-circle-phone"></i></a>
+    <div class="links md:opacity-0 absolute translate-y-[5vh] md:translate-y-0 md:bottom-auto left-5 md:translate-x-[-30px] flex gap-[2px]">
+        <a href="https://www.instagram.com/rnpsmun2023/" class="p-2 border border-[#e16383] border-[1.5px] md:translate-y-[350px] scale-[0.8] w-12 aspect-square grid flex items-center justify-center rounded-full"><i class="text-[#e16383] text-[20px] fa-brands fa-instagram fa-thin"></i></a>
+        <a href="mailto:rnpsmun24@gmail.com" class="p-2 border border-[#e16383] border-[1.5px] md:translate-y-[350px] scale-[0.8] w-12 aspect-square grid flex items-center justify-center rounded-full"><i class="text-[#e16383] text-[20px] fa-thin fa-envelope"></i></a>
+        <a href="tel:08023350361" class="p-2 border border-[#e16383] border-[1.5px] md:translate-y-[350px] scale-[0.8] w-12 aspect-square grid flex items-center justify-center rounded-full"><i class="text-[#e16383] text-[20px] fa-thin fa-circle-phone"></i></a>
     </div>
 
 </section>
 
-<div class="mt-10 bigcont">
+
+<!-- Letters -->
+<div class="md:mt-10 bigcont mt-[50vh]">
     <div class="center-wrapper">
       <div id="expandableDiv" class="container" data-expandable>
         <button type="button" class="cancel-btn" aria-label="Collapse content" aria-expanded="false">X</button>
@@ -371,7 +407,7 @@ function closeNav() {
     </div>
   </div>
 
-
+<!-- Timelines -->
 <section class="mt-20 flex flex-col items-center">
     <div class="font translate-y-[80px] relative text-[100px] text-[#169948] tracking-[7px]">THE <p class="font uppercase inline tracking-[2px]">Schedule</p></div>
     <div class="w-[100vw] h-[150vh] p-8 overflow-hidden flex flex-col items-center justify-center gap-[30px]">
@@ -452,7 +488,7 @@ function closeNav() {
                 <div class="relative w-[40vw]" id="content">
                 <h3 class="fade2 text-xl font-semibold mb-2 text-white" id="title2">Session 04</h3>
                 <p class="fade2 text-white/70 mb-4" id="des2">
-                    We restart the mun on Day 02 with the 4th session!
+                  We restart the mun on Day 02 with the 4th session!
                 </p>
                 <div class="absolute translate-x-[260px] bottom-2 flex items-center gap-4 scale-[0.8]">
                       <button onclick="prevStep2()" class="w-12 h-12 rounded-full bg-[#2BD4A9] text-[#0C1226] text-xl font-bold">&larr;</button>
@@ -460,22 +496,24 @@ function closeNav() {
                       <button onclick="nextStep2()" class="w-12 h-12 rounded-full bg-[#2BD4A9] text-[#0C1226] text-xl font-bold">&rarr;</button>
                   </div>
                 </div>
-            </div>
+              </div>
         </div>
-
-  </div>
-
+        
+      </div>
+    </section>
+      
   <footer
-      class="mt-20 w-full flex flex-col gap-20 items-center text-white bg-transparent border-t-[1px] border-gray-600 body-font h"
+      class="mt-10 w-full text-white bg-transparent border-t-[1px] border-gray-600 body-font"
     >
       <div
-        class=" flex flex-col flex-wrap px-5 mt-16 mx-auto md:items-center lg:items-start md:flex-row md:flex-no-wrap"
+        class="flex flex-col flex-wrap items-center px-5 py-24 mx-auto md:items-center lg:items-start md:flex-row md:flex-no-wrap"
       >
+        <!-- Logo and Icons -->
         <div
-          class="flex-shrink-0 w-64 mx-auto text-center md:mx-0 md:text-left mt-[-5vh]"
+          class="flex flex-col w-full md:w-64 mx-auto text-center md:mx-0 md:text-left mt-[-5vh] items-center mb-10 md:mb-0"
         >
           <div class="w-36 h-36 mt-[1.2rem]">
-            <img class="w-96 object-cover scale-[]" src="static/nps.png" />
+            <img class="w-96 object-cover" src="static/nps.png" />
           </div>
           <div class="ml-2 mt-4">
             <span
@@ -504,77 +542,114 @@ function closeNav() {
             </span>
           </div>
         </div>
+
+        <!-- Link Sections -->
         <div
-          class="flex flex-wrap flex-grow justify-between mt-10 -mb-20 text-center md:pl-20 md:mt-0 md:text-left"
+          class="flex flex-col md:flex-row flex-grow w-full md:w-auto justify-center md:justify-between text-center md:pl-20 md:mt-0 md:text-left gap-8 md:gap-0"
         >
-          <div class="w-full px-4 lg:w-1/4 md:w-1/2 h-[10vh]">
-            <h2 class="text-[#169948] font-bold uppercase">About</h2>
-            <nav class="mb-10 list-none">
-              <li class="mt-3">
-                <a
-                  href="people.html"
-                  class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
-                  >Secretariat</a
-                >
-              </li>
-              <li class="mt-3">
-                <a
-                  href="commitee.html"
-                  class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
-                  >Committees</a
-                >
-              </li>
-            </nav>
+          <!-- About -->
+          <div
+            class="w-full md:w-1/4 flex flex-col md:block items-center md:items-start px-4"
+          >
+            <div
+              class="flex flex-row justify-between items-center w-full md:block"
+            >
+              <h2 class="text-[#169948] font-bold uppercase text-left">
+                About
+              </h2>
+              <nav
+                class="list-none flex flex-col md:block text-right md:text-left"
+              >
+                <li class="mt-3">
+                  <a
+                    href="people.html"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Secretariat</a
+                  >
+                </li>
+                <li class="mt-3">
+                  <a
+                    href="commitee.html"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Committees</a
+                  >
+                </li>
+              </nav>
+            </div>
           </div>
-          <div class="w-full px-4 lg:w-1/4 md:w-1/2">
-            <h2 class="text-[#169948] font-bold uppercase">Resources</h2>
-            <nav class="mb-10 list-none">
-              <li class="mt-3">
-                <a
-                  href="contactus.html"
-                  class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
-                  >Contact Us</a
-                >
-              </li>
-              <li class="mt-3">
-                <a
-                  href="files.html"
-                  class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
-                  >Guide</a
-                >
-              </li>
-            </nav>
+
+          <!-- Resources -->
+          <div
+            class="w-full md:w-1/4 flex flex-col md:block items-center md:items-start px-4"
+          >
+            <div
+              class="flex flex-row justify-between items-center w-full md:block"
+            >
+              <h2 class="text-[#169948] font-bold uppercase text-left">
+                Resources
+              </h2>
+              <nav
+                class="list-none flex flex-col md:block text-right md:text-left"
+              >
+                <li class="mt-3">
+                  <a
+                    href="contactus.html"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Contact Us</a
+                  >
+                </li>
+                <li class="mt-3">
+                  <a
+                    href="files.html"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Guide</a
+                  >
+                </li>
+              </nav>
+            </div>
           </div>
-          <div class="w-full px-4 lg:w-1/4 md:w-1/2">
-            <h2 class="text-[#169948] font-bold uppercase">Contact</h2>
-            <nav class="mb-10 list-none">
-              <li class="mt-3">
-                <a
-                  href="mailto:rnpsmun24@gmail.com"
-                  class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
-                  >Send a Message</a
-                >
-              </li>
-              <li class="mt-3">
-                <a
-                  href="registerparthere"
-                  class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
-                  >Register Now</a
-                >
-              </li>
-            </nav>
+
+          <!-- Contact -->
+          <div
+            class="w-full md:w-1/4 flex flex-col md:block items-center md:items-start px-4"
+          >
+            <div
+              class="flex flex-row justify-between items-center w-full md:block"
+            >
+              <h2 class="text-[#169948] font-bold uppercase text-left">
+                Contact
+              </h2>
+              <nav
+                class="list-none flex flex-col md:block text-right md:text-left"
+              >
+                <li class="mt-3">
+                  <a
+                    href="mailto:rnpsmun24@gmail.com"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Send a Message</a
+                  >
+                </li>
+                <li class="mt-3">
+                  <a
+                    href="registerparthere"
+                    class="text-gray-400 cursor-pointer hover:text-[#169948] transition-all"
+                    >Register Now</a
+                  >
+                </li>
+              </nav>
+            </div>
           </div>
         </div>
       </div>
 
-          <div class="mt flex text-center flex-col">
-            <div class="text-teal-400">© R-NPSMUN Inc. All rights reserved.</div>
-            <div class="name tracking-[1px] mt-3">
-              Made by Vrishank R, Shrivardhan C, Athreya S
-            </div>
-          </div>
+      <!-- Bottom Text -->
+      <div class="mx-auto mt-10 md:mt-[-5vh] mb-5 flex flex-col text-center">
+        <div class="text-teal-400">© R-NPSMUN Inc. All rights reserved.</div>
+        <div class="name tracking-[1px] mt-3">
+          Made by Vrishank R, Shrivardhan C, Athreya S
+        </div>
+      </div>
     </footer>
-</section>
  <script>
     document.addEventListener("DOMContentLoaded", () => {
       const containers = document.querySelectorAll("[data-expandable]");
@@ -796,6 +871,29 @@ function closeNav() {
 
 </script>
 <script>
+  
+  const isMobile = window.innerWidth <= 768;
+  clicked = false;
+
+  window.addEventListener("resize", () => {
+    const isMobile = window.innerWidth <= 768;
+
+    if (window.innerWidth <= 768) {
+      [
+        "#hour",
+        "#day",
+        "#sec",
+        "#min",
+        "#to",
+        "#mun",
+        "#dis",
+        ".date",
+        ".links",
+      ].forEach((item) => {
+        gsap.set(item, { clearProps: "all" });
+      });
+    }
+  });
     const MainDay = new Date('2025-07-02T08:15:00');
     const Today = Date.now();
     diff = Math.round((MainDay-Today)/1000);
@@ -823,7 +921,9 @@ function closeNav() {
     document.getElementById("hours").innerText = document.getElementById("hours").innerText + hours
     document.getElementById("mins").innerText = document.getElementById("mins").innerText + mins
     document.getElementById("secs").innerText =document.getElementById("secs").innerText +  secs
-
+    
+    if (isMobile){}
+    else{
     tmain = gsap.timeline({ delay: 1, defaults: {ease: "power4.out"}})
     tmain.to("#day", {
         y : +0,
@@ -859,6 +959,7 @@ function closeNav() {
         x: +0,
         duration: 0.5
     })
+    }
 </script>
 <style>
 
